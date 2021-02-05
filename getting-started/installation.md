@@ -2,7 +2,7 @@
 title: Installation
 description: How to install AzuraCast on your server
 published: true
-date: 2021-02-05T19:39:30.085Z
+date: 2021-02-05T19:40:13.043Z
 tags: 
 editor: markdown
 dateCreated: 2021-02-05T19:10:58.100Z
@@ -29,7 +29,7 @@ For a majority of users, our Docker installation method is the preferred way of 
 
 - [Installing AzuraCast with Docker](/en/getting-started/installation/docker)
 
-# Other Installation Methods (Unsupported)
+# Other Methods (Unsupported)
 
 
 > Ansible installations are not officially supported; we strongly recommend Docker installations.
