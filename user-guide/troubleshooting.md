@@ -2,7 +2,7 @@
 title: Troubleshooting
 description: Having trouble with AzuraCast? This page has several resources that can help you solve your problem and be back up and running.
 published: true
-date: 2021-02-05T21:17:05.327Z
+date: 2021-02-05T21:18:27.039Z
 tags: 
 editor: markdown
 dateCreated: 2021-02-05T21:17:05.327Z
@@ -14,7 +14,7 @@ Our core maintainers, along with our vast community of station operators, can an
 
 Your first steps should be to check these docs for any tips or pointers. Many common issues can be solved by following the instructions in our guide pages.
 
-If you aren't sure of what is causing your issue, [checking the logs](https://www.azuracast.com/help/logs) can help. Not only do the system logs often explain your error in more detail, but they're essential for our developers to be able to easily diagnose and resolve your issue.
+If you aren't sure of what is causing your issue, [checking the logs](/en/user-guide/logs) can help. Not only do the system logs often explain your error in more detail, but they're essential for our developers to be able to easily diagnose and resolve your issue.
 
 # Submitting an Issue
 
@@ -37,4 +37,4 @@ Please include the following:
 - Any errors you may have encountered
 - A full step-by-step guide on how to reproduce the issue
 - Screenshots if applicable
-- Relevant [logs (click here for instructions on how to get them)](https://www.azuracast.com/help/logs)
+- Relevant [logs (click here for instructions on how to get them)](/en/user-guide/logs)
