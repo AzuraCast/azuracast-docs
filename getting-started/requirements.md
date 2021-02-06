@@ -2,7 +2,7 @@
 title: Requirements
 description: This page tells you what is required to run AzuraCast
 published: true
-date: 2021-02-06T22:24:35.811Z
+date: 2021-02-06T22:28:43.466Z
 tags: 
 editor: markdown
 dateCreated: 2021-02-05T18:58:13.221Z
@@ -55,5 +55,9 @@ On the Administration page you can find a basic `Server Status` section that sho
 
 ## IceCast
 
-For IceCast you can find some benchmarks at https://icecast.org/loadtest/
+For IceCast you can find some benchmarks for the following topics at https://icecast.org/loadtest/
+
+- [Testing the maximum numbers of connected listeners](https://icecast.org/loadtest/1/)
+- [Testing the maximum numbers of connected sources](https://icecast.org/loadtest/2/)
+- [Icecast/Shoutcast comparsion](https://icecast.org/loadtest/3/)
 
