@@ -2,7 +2,7 @@
 title: List of Events
 description: A list of events available for event listeners through the EventDispatcher
 published: true
-date: 2021-02-06T22:13:18.086Z
+date: 2021-02-06T22:15:05.826Z
 tags: 
 editor: markdown
 dateCreated: 2021-02-06T20:12:02.133Z
@@ -446,18 +446,15 @@ class ExampleWriteLiquidsoapConfigurationEventHandler implements EventSubscriber
     public static function getSubscribedEvents()
     {
         return [
-            Event\Radio\BuildQueue::class => [
-                ['setNextSong', -20]
+            Event\Radio\WriteLiquidsoapConfiguration::class => [
+                ['addLiquidsoapConfiguration', -20]
             ],
         ];
     }
 
-    public function setNextSong(Event\Radio\BuildQueue $event)
+    public function addLiquidsoapConfiguration(Event\Radio\WriteLiquidsoapConfiguration $event)
     {   
-        // You need to build your own logic for building the next song
-        $nextSong = null;
-    
-        $event->setNextSong($nextSong);
+        $event->appendBlock('');
     }
 }
 ```
