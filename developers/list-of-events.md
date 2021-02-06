@@ -2,11 +2,13 @@
 title: List of Events
 description: A list of events available for event listeners through the EventDispatcher
 published: true
-date: 2021-02-06T22:15:05.826Z
+date: 2021-02-06T22:17:18.962Z
 tags: 
 editor: markdown
 dateCreated: 2021-02-06T20:12:02.133Z
 ---
+
+You can also find all Event classes of AzuraCast in [our GitHub repository](https://github.com/AzuraCast/AzuraCast/tree/master/src/Event).
 
 # `\App\Event\BuildAdminMenu`
 
