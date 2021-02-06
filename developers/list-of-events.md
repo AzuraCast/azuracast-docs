@@ -2,7 +2,7 @@
 title: List of Events
 description: A list of events available for event listeners through the EventDispatcher
 published: true
-date: 2021-02-06T21:57:14.335Z
+date: 2021-02-06T22:10:47.025Z
 tags: 
 editor: markdown
 dateCreated: 2021-02-06T20:12:02.133Z
@@ -376,16 +376,58 @@ Then register the EventHandler as a service subscriber in the `events.php` like 
 $dispatcher->addSubscriber(new \Plugin\ExamplePlugin\EventHandler\ExampleNowPlayingEventHandler);
 ```
 
-# `\App\Event\Radio\GetNextSong`
+# `\App\Event\Radio\BuildQueue`
 
-- [Class reference](https://github.com/AzuraCast/AzuraCast/blob/master/src/Event/Radio/GetNextSong.php)
+- [Class reference](https://github.com/AzuraCast/AzuraCast/blob/master/src/Event/Radio/BuildQueue.php)
 
 This event is triggered as the AzuraCast AutoDJ is determining the next song to play for a given station. By default, ths checks for an existing "next song" record in the database, and if one isn't present, determines what should play next based on all available playlists and their scheduling status.
 
+Create a new EventHandler in `EventHandler/ExampleBuildQueueEventHandler.php`:
 
+```php
+<?php
+
+declare(strict_types=1);
+
+namespace Plugin\ExamplePlugin\EventHandler;
+
+use App\Event;
+use NowPlaying\Result\Result;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+
+class ExampleBuildQueueEventHandler implements EventSubscriberInterface
+{
+    public static function getSubscribedEvents()
+    {
+        return [
+            Event\Radio\BuildQueue::class => [
+                ['setNextSong', -20]
+            ],
+        ];
+    }
+
+    public function setNextSong(Event\Radio\BuildQueue $event)
+    {   
+        // You need to build your own logic for building the next song
+        $nextSong = null;
+    
+        $event->setNextSong($nextSong);
+    }
+}
+```
+
+Then register the EventHandler as a service subscriber in the `events.php` like this:
+
+```php
+$dispatcher->addSubscriber(new \Plugin\ExamplePlugin\EventHandler\ExampleBuildQueueEventHandler);
+```
 
 # `\App\Event\Radio\WriteLiquidsoapConfiguration`
 
 - [Class reference](https://github.com/AzuraCast/AzuraCast/blob/master/src/Event/Radio/WriteLiquidsoapConfiguration.php)
 
 This event is triggered when changes to the Liquidsoap configuration are being written to disk. This process uses the Event Dispatcher because it is by far the most complex configuration file written by the system, and there are multiple points at which one may want to override the configuration written by AzuraCast itself. Users are already able to write custom configuration to one specific location (between the playlists being built and mixed with the live signal, and the signal being broadcast to local and remote sources), but overriding this event allows you to modify the configuration in any other location.
+
+```php
+
+```
