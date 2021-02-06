@@ -2,7 +2,7 @@
 title: Docker
 description: 
 published: true
-date: 2021-02-06T06:41:47.092Z
+date: 2021-02-06T06:42:52.915Z
 tags: 
 editor: markdown
 dateCreated: 2021-02-06T06:41:47.092Z
@@ -22,6 +22,8 @@ Docker installations come with four files by default:
 
 If you're using the Docker installation method to run AzuraCast, we have created a helpful utility script to perform common functions without having to type long command names.
 
+<br>
+
 ## Download the Utility Script
 
 If you've recently followed the [Docker installation instructions](/en/getting-started/installation/docker), you already have the Docker Utility Script installed. The file is named `docker.sh`.
@@ -33,6 +35,8 @@ curl -L https://raw.githubusercontent.com/AzuraCast/AzuraCast/master/docker.sh >
 chmod a+x docker.sh
 ```
 
+<br>
+
 ## Run Command Line Tools
 
 ```
@@ -41,6 +45,8 @@ chmod a+x docker.sh
 
 Runs any command exposed by the command line interface tools.
 
+<br>
+
 ## Install AzuraCast
 
 ```
@@ -48,6 +54,8 @@ Runs any command exposed by the command line interface tools.
 ```
 
 Pulls the latest version of all Docker images and sets up the AzuraCast database. When complete, your AzuraCast instance should be up and running.
+
+<br>
 
 ## Update AzuraCast
 
@@ -60,6 +68,8 @@ Note: You should always run update-self first to update the updater script.
 
 Automatically pulls down any updated Docker images and applies any database and configuration changes since your last AzuraCast update.
 
+<br>
+
 ## Uninstall AzuraCast
 
 ```
@@ -71,6 +81,8 @@ Turns off and permanently deletes both the AzuraCast Docker containers and perma
 > This command will fully remove any station media, statistics and metrics, and the entire database associated with your AzuraCast instance.
 {.is-warning}
 
+<br>
+
 ## Back Up Files and Settings
 
 ```
@@ -78,6 +90,8 @@ Turns off and permanently deletes both the AzuraCast Docker containers and perma
 ```
 
 Creates a .tar.gz backup copy of the media, statistics and metrics of every station, along with a copy of the full AzuraCast database. You can later restore from this same file in the event of data loss or corruption.
+
+<br>
 
 ## Restore Files and Settings
 
@@ -89,6 +103,8 @@ Extracts a .tar.gz file previously created by this same script's backup command,
 
 > Restoring from a backup will remove any existing AzuraCast database or media that exists inside the Docker volumes.
 {.is-warning}
+
+<br>
 
 ## Set Up LetsEncrypt
 
@@ -102,7 +118,6 @@ Once you have a domain name pointed to your AzuraCast installation, you can run 
 
 > Your LetsEncrypt certificate is valid for 3 months. The web service will automatically attempt to renew certificates every night.
 {.is-info}
-
 
 # Customizing Docker Installations
 
