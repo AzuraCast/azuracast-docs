@@ -2,7 +2,7 @@
 title: Docker
 description: 
 published: true
-date: 2021-02-06T23:16:19.874Z
+date: 2021-02-06T23:19:20.743Z
 tags: 
 editor: markdown
 dateCreated: 2021-02-06T06:41:47.092Z
@@ -199,3 +199,9 @@ docker-compose up -d
 ```
 
 Note that this will temporarily shut down your AzuraCast installation and will briefly disconnect your listeners.
+
+# Multi-Site Installation
+
+AzuraCast includes support for hosting multiple sites directly in the core AzuraCast installation. No additional modification is required.
+
+Check out our [Multi-Site Docker Installation guide](/en/administration/docker/multi-site-installation) for more information.
