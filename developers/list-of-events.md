@@ -2,7 +2,7 @@
 title: List of Events
 description: A list of events available for event listeners through the EventDispatcher
 published: true
-date: 2021-02-06T20:40:47.905Z
+date: 2021-02-06T20:55:24.132Z
 tags: 
 editor: markdown
 dateCreated: 2021-02-06T20:12:02.133Z
@@ -21,11 +21,13 @@ $dispatcher->addListener(App\Event\BuildAdminMenu::class, function(App\Event\Bui
     $event->addItem('example', [
         'label' => __('Example'),
         'icon' => 'cast',
-        'url' => $router->fromHere('example-plugin:admin:example'),
+        'url' => $router->fromHere('example-plugin:admin:example:index'),
         'permission' => Acl::GLOBAL_VIEW,
     ]);
 });
 ```
+
+For more examples take a look at the [admin menu definition in AzuraCast](https://github.com/AzuraCast/AzuraCast/blob/master/config/menus/admin.php).
 
 # `\App\Event\BuildConsoleCommands`
 
@@ -102,6 +104,8 @@ interface AclConstants
 
 ```
 
+Example event listener:
+
 ```php
 $dispatcher->addListener(App\Event\BuildPermissions::class, function(App\Event\BuildPermissions $event) {
     $permissions = $event->getPermissions();
@@ -117,6 +121,47 @@ $dispatcher->addListener(App\Event\BuildPermissions::class, function(App\Event\B
 - [Class reference](https://github.com/AzuraCast/AzuraCast/blob/master/src/Event/BuildRoutes.php)
 
 This event allows you to register custom routes to the HTTP Router. This allows you to create entirely new routes handled exclusively by your plugins.
+
+```php
+$dispatcher->addListener(App\Event\BuildRoutes::class, function(App\Event\BuildRoutes $event) {
+    $app = $event->getApp();
+    
+    $app->group('/station/{station_id}', function (Slim\Routing\RouteCollectorProxy $group) {
+        $group->get('/podcasts', \Plugin\ExamplePlugin\Controller\Stations\ExampleController::class)
+            ->setName('example-plugin:stations:example:index');
+    })
+        ->add(App\Middleware\Module\Stations::class)
+        ->add(new App\Middleware\Permissions(Acl::STATION_VIEW, true))
+        ->add(new App\Middleware\Permissions(Plugin\ExamplePlugin\Constants\AclConstants::STATION_EXAMPLE_PERMISSION, true))
+        ->add(App\Middleware\RequireStation::class)
+        ->add(App\Middleware\GetStation::class)
+        ->add(App\Middleware\EnableView::class)
+        ->add(App\Middleware\RequireLogin::class);
+});
+```
+
+Take a look at how [AzuraCasts own routes](https://github.com/AzuraCast/AzuraCast/tree/master/config/routes) are defined for more examples for admin, API, public and station routes.
+
+# `\App\Event\BuildStationMenu`
+
+- [Class reference](https://github.com/AzuraCast/AzuraCast/blob/master/src/Event/BuildStationMenu.php)
+
+This event allows you to customize and extend the station sidebar menu.
+
+```php
+$dispatcher->addListener(App\Event\BuildStationMenu::class, function(App\Event\BuildStationMenu $event) {
+    $router = $event->getRouter();
+
+    $event->addItem('example', [
+        'label' => __('Example'),
+        'icon' => 'cast',
+        'url' => $router->fromHere('example-plugin:station:example:index'),
+        'permission' => Acl::STATION_VIEW,
+    ]);
+});
+```
+
+For more examples take a look at the [station menu definition in AzuraCast](https://github.com/AzuraCast/AzuraCast/blob/master/config/menus/station.php).
 
 # `\App\Event\BuildView`
 
