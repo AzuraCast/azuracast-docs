@@ -2,7 +2,7 @@
 title: Docker
 description: 
 published: true
-date: 2021-02-06T23:19:20.743Z
+date: 2021-02-06T23:46:45.756Z
 tags: 
 editor: markdown
 dateCreated: 2021-02-06T06:41:47.092Z
@@ -199,6 +199,170 @@ docker-compose up -d
 ```
 
 Note that this will temporarily shut down your AzuraCast installation and will briefly disconnect your listeners.
+
+# Using Non-standard Ports
+
+You may want to serve the AzuraCast web application itself on a different port, or host your radio station on a port that isn't within the default range AzuraCast serves (8000-8999).
+
+You can use a helper tool in the Docker Utility Script to easily change the ports used by AzuraCast:
+
+```bash
+cd /var/azuracast
+./docker.sh update-self
+./docker.sh change-ports
+```
+
+To override more complex functionality in your Docker installation, see the "Customizing Docker" section below.
+
+# Expanding the Station Port Range
+
+For performance reasons, by default Docker installations only open radio ports from port 8000 to 8500. This allows for 50 unique stations to operate.
+
+Depending on your hardware, it may be possible to run more than 50 stations on one AzuraCast instance, but if you want to directly access the additional radio ports, you can follow this simple process.
+
+In the same folder where your Docker installation is (if using recommended instructions, this is `/var/azuracast`), create a new file named `docker-compose.override.yml`.
+
+In this file, paste the following contents:
+
+```yaml
+version: '2.2'
+
+services:
+  stations:
+    ports:
+      - "8500-8999:8500-8999"
+```
+
+You can modify the port range in this file to meet your needs, such as expanding it to port 8999 instead of 8500.
+
+When creating a new station, AzuraCast will attempt to automatically assign it an available port from the available port range. If you change this port range, you should let AzuraCast know by adding or updating the following values in your `azuracast.env` file:
+
+```
+AUTO_ASSIGN_PORT_MIN=8500
+AUTO_ASSIGN_PORT_MAX=8999
+```
+
+You will need to restart your Docker containers using `docker-compose down`, then `docker-compose up -d` to apply any changes made to these files.
+
+# Mounting a directory into a station
+
+You may want to add music to a station from a directory on your host machine without copying the data into AzuraCast. You can mount the directory into your stations and web container to make them available to AzuraCast by creating a `docker-compose.override.yml`.
+
+In the same folder where your Docker installation is (if using recommended instructions, this is `/var/azuracast`), create a new file named `docker-compose.override.yml`.
+
+In this file, paste the following contents:
+
+```yaml
+version: '2.2'
+
+services:
+  web:
+    volumes:
+      - /path/on/host/computer:/var/azuracast/stations/<STATION_NAME>/media/
+
+  stations:
+    volumes:
+      - /path/on/host/computer:/var/azuracast/stations/<STATION_NAME>/media/
+```
+
+Replace  the `<STATION_NAME>` with the name of the station directory found under the "Administration" section of the station's profile settings and modify the `/path/on/host/computer` with the path to the directory that you want to mount.
+
+You will need to restart your Docker containers using `docker-compose down`, then `docker-compose up -d` to apply any changes made to this file.
+
+# Storing your station data on the host machine
+
+You can store all of you station data in a directory on your host machine. This can be useful if you want to have AzuraCast running on a small SSD and store the station data on a large HDD.
+
+In the same folder where your Docker installation is (if using recommended instructions, this is `/var/azuracast`), create a new file named `docker-compose.override.yml`.
+
+In this file, paste the following contents:
+
+```yaml
+version: '2.2'
+
+services:
+  web:
+    volumes:
+      - /path/on/host/computer:/var/azuracast/stations
+
+  stations:
+    volumes:
+      - /path/on/host/computer:/var/azuracast/stations
+```
+
+Modify the `/path/on/host/computer` with the path to the directory that you want to mount.
+
+You will need to restart your Docker containers using `docker-compose down`, then `docker-compose up -d` to apply any changes made to this file.
+
+# Using a custom default track
+
+When nothing is playing on your station you'll hear the default error.mp3 file of AzuraCast playing. You can replace this file by mounting your own .mp3 file via a `docker-compose.override.yml`.
+
+In the same folder where your Docker installation is (if using recommended instructions, this is `/var/azuracast`), create a new file named `docker-compose.override.yml`.
+
+In this file, paste the following contents:
+
+```yaml
+version: '2.2'
+
+services:
+    stations:
+        volumes:
+            - /path/to/your/file.mp3:/usr/local/share/icecast/web/error.mp3
+```
+
+You can place your .mp3 file anywhere on your host machine. You just have to specify the path to it by replacing this part: `/path/to/your/file.mp3`
+
+We recommend to put that file inside the `/var/azuracast` directory though so that you have everything in the same place.
+
+You will need to restart your Docker containers using `docker-compose down`, then `docker-compose up -d` to apply any changes made to this file.
+
+> Make sure that the format of the file specified matches the streaming format exactly.
+{.is-warning}
+
+# Adding a Stream Intro File
+
+You can add a music file to play when someone initially connects to your stream. Remember when creating intro files that they **must match the exact same format, bitrate and sample rate as your mount point to work properly.**
+
+First, tell the Docker filesystem where to find your intro file. Inside the AzuraCast directory on your host (by default, `/var/azuracast`), create a file named `docker-compose.override.yml` with the following contents:
+
+```yaml
+version: '2.2'
+services:
+    stations:
+        volumes:
+            - /path/to/your/file.mp3:/usr/local/share/icecast/web/intro.mp3
+```
+
+Now restart AzuraCast via `docker-compose down && docker-compose up -d`.
+
+Return to the AzuraCast web interface, visit the "Mount Points" page for your station, edit the mount point you want to add an intro for, and inside the "Advanced: Custom Frontend Configuration" field, enter this, based on the last portion of the mounted file from the above example:
+
+```
+<intro>/intro.mp3</intro>
+```
+
+For more information, see the [IceCast documentation.](https://www.icecast.org/docs/)
+
+# Using a Custom Browser Icon (Favicon)
+
+To override the favicon and other browser icons used by AzuraCast, you should follow these steps:
+
+1. Upload your icon to [favicon-generator.org](http://www.favicon-generator.org/). Be sure to leave "Generate icons for Web, Android, Microsoft, and iOS (iPhone and iPad) Apps" checked.
+
+2. Once your icon set is downloaded, it will be in a `.zip` file format; extract that file and copy it to the host server where AzuraCast is hosted.
+
+3. Inside the AzuraCast directory on your host (by default, `/var/azuracast`), create a file named `docker-compose.override.yml` with the following contents:
+
+```yaml
+version: '2.2'
+services:
+    web:
+        volumes:
+            - /path/to/your/favicon/folder:/var/azuracast/www/static/icons/production
+```
+
+4. Restart AzuraCast via `docker-compose down && docker-compose up -d`.
 
 # Multi-Site Installation
 
