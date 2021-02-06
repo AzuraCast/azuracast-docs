@@ -2,11 +2,19 @@
 title: Liquidsoap
 description: Liquidsoap the audio processing tool and language
 published: true
-date: 2021-02-06T19:39:05.548Z
+date: 2021-02-06T19:45:38.076Z
 tags: 
 editor: markdown
 dateCreated: 2021-02-06T19:39:05.548Z
 ---
+
+# What is Liquidsoap?
+
+[Liquidsoap](https://www.liquidsoap.info/) is a powerful and flexible language for describing audio and video streams. It offers a rich collection of operators that you can combine at will for creating or transforming streams.
+
+# Liquidsoap in AzuraCast
+
+AzuraCast uses Liquidsoap as the the AutoDJ to generate and manipulate audio streams. It transforms the input streams to the correct format for each mount point, handles live DJ connections, filtering, compression, and more.
 
 # Liquidsoap Annotation Reference
 
