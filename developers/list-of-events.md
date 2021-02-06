@@ -2,7 +2,7 @@
 title: List of Events
 description: A list of events available for event listeners through the EventDispatcher
 published: true
-date: 2021-02-06T20:55:24.132Z
+date: 2021-02-06T21:38:32.827Z
 tags: 
 editor: markdown
 dateCreated: 2021-02-06T20:12:02.133Z
@@ -88,7 +88,7 @@ This event allows you to register custom permissions for AzuraCasts ACL system.
 
 It is adviced to create a separate constants file for your permissions so that you can use it at all places where you need to reference the same permission.
 
-Example `Plugin\ExamplePlugin\Constants\AclConstants.php` file:
+Example `Constants/AclConstants.php` file:
 
 ```php
 <?php
@@ -131,7 +131,7 @@ $dispatcher->addListener(App\Event\BuildRoutes::class, function(App\Event\BuildR
             ->setName('example-plugin:stations:example:index');
     })
         ->add(App\Middleware\Module\Stations::class)
-        ->add(new App\Middleware\Permissions(Acl::STATION_VIEW, true))
+        ->add(new App\Middleware\Permissions(App\Acl::STATION_VIEW, true))
         ->add(new App\Middleware\Permissions(Plugin\ExamplePlugin\Constants\AclConstants::STATION_EXAMPLE_PERMISSION, true))
         ->add(App\Middleware\RequireStation::class)
         ->add(App\Middleware\GetStation::class)
@@ -156,7 +156,7 @@ $dispatcher->addListener(App\Event\BuildStationMenu::class, function(App\Event\B
         'label' => __('Example'),
         'icon' => 'cast',
         'url' => $router->fromHere('example-plugin:station:example:index'),
-        'permission' => Acl::STATION_VIEW,
+        'permission' => App\Acl::STATION_VIEW,
     ]);
 });
 ```
@@ -169,11 +169,117 @@ For more examples take a look at the [station menu definition in AzuraCast](http
 
 This event lets you inject custom data into the template renderer, or modify the existing data that's already injected. This includes the current user, current station, page title, etc.
 
+```php
+$dispatcher->addListener(App\Event\BuildView::class, function(App\Event\BuildView $event) {
+    $event->getView()->addFolder('example-plugin', __DIR__.'/templates');
+});
+```
+
 # `\App\Event\SendWebhooks`
+
+> Currently not available
+{.is-danger}
 
 - [Class reference](https://github.com/AzuraCast/AzuraCast/blob/master/src/Event/SendWebhooks.php)
 
 This event is triggered any time web hooks are triggered for a station. It includes the current "now playing" data along with a list of the triggers that are associated with the webhook (i.e. if the song changed, DJ connected/disconnected, etc).
+
+You can use this to add your own web hooks.
+
+```php
+
+```
+
+# `\App\Event\GetNotifications`
+
+- [Class reference](https://github.com/AzuraCast/AzuraCast/blob/master/src/Event/GetNotifications.php)
+
+This event let's you read and add notifications to AzuraCasts notification system.
+
+```php
+$dispatcher->addListener(App\Event\GetNotifications::class, function(App\Event\GetNotifications $event) {
+    $notification = new App\Entity\Api\Notification();
+    $notification->type = App\Session\Flash::INFO;
+
+    $notification->title = 'Example Notification';
+    $notification->body = 'This is an example notification';
+
+    $notification->actionLabel = 'Example Action';
+    $notification->actionUrl = 'https://example.com';
+
+    $event->addNotification($notification);
+});
+```
+
+Available notification types: `INFO`, `WARNING`, `ERROR`, `SUCCESS`
+
+# `\App\Event\GetSyncTasks`
+
+- [Class reference](https://github.com/AzuraCast/AzuraCast/blob/master/src/Event/GetSyncTasks.php)
+
+This event allows you to register your own tasks to the [Sync Tasks](/en/administration/sync-tasks) system of AzuraCast.
+
+You should create a Sync Task for your plugin under `Task/ExampleTask.php`.
+
+```php
+<?php
+
+declare(strict_types=1);
+
+namespace Plugin\ExamplePlugin\Task;
+
+use App\Entity;
+use App\Event\GetSyncTasks;
+use App\Sync\Task\AbstractTask;
+use Doctrine\ORM\EntityManagerInterface;
+use Psr\Log\LoggerInterface;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+
+class ExampleTask extends AbstractTask implements EventSubscriberInterface
+{
+    public function __construct(
+        EntityManagerInterface $em,
+        LoggerInterface $logger,
+        Entity\Settings $settings
+    ) {
+        parent::__construct($em, $logger, $settings);
+    }
+
+    public static function getSubscribedEvents()
+    {
+        yield GetSyncTasks::class => ['checkSyncTask', -1];
+    }
+
+    public function checkSyncTask(GetSyncTasks $event): void
+    {
+        if (GetSyncTasks::SYNC_LONG === $event->getType()) {
+            $event->addTask($this);
+        }
+    }
+
+    public function run(bool $force = false): void
+    {
+        $stations = $this->em->getRepository(Entity\Station::class)
+            ->findAll();
+
+        foreach ($stations as $station) {
+            /** @var Entity\Station $station */
+            $this->processStation($station);
+        }
+    }
+
+    public function processStation(Entity\Station $station): void
+    {
+        // DO STUFF
+    }
+}
+```
+
+Then register the task as a service subscriber in the `events.php` like this:
+
+```php
+$dispatcher->addServiceSubscriber(Plugin\ExamplePlugin\Task\ExampleTask::class);
+```
 
 # `\App\Event\Radio\AnnotateNextSong`
 
