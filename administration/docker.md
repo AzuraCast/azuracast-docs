@@ -2,7 +2,7 @@
 title: Docker
 description: 
 published: true
-date: 2021-02-06T23:15:43.645Z
+date: 2021-02-06T23:16:19.874Z
 tags: 
 editor: markdown
 dateCreated: 2021-02-06T06:41:47.092Z
@@ -176,6 +176,8 @@ If you follow our installation instructions (or use one of our prebuilt images),
 - `azuracast.env`, a list of environment (configuration) variables that are sent to the AzuraCast application itself, running inside the web container; and
 
 - `.env`, a separate environment file that affects how Docker Compose _itself_ is configured, and is thus used for higher-level configuration changes like port mappings.
+
+<br>
 
 ## Overriding Docker Compose
 
