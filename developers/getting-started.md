@@ -2,7 +2,7 @@
 title: Getting Started
 description: Developing with AzuraCast
 published: true
-date: 2021-02-06T07:31:58.854Z
+date: 2021-02-06T19:14:03.851Z
 tags: 
 editor: markdown
 dateCreated: 2021-02-06T07:31:58.854Z
@@ -13,6 +13,21 @@ dateCreated: 2021-02-06T07:31:58.854Z
 Development on the main AzuraCast application should always be applicable to a broad community of radio station operators and not specific features to one station or group of stations.
 
 If you would like to build a set of features specific to one station or group of stations, you should take advantage of AzuraCast's plugin architecture. The plugin system takes advantage of event listeners that are built into AzuraCast itself. Check out the [example plugin](https://github.com/AzuraCast/example-plugin) for more details on what is possible via plugins.
+
+## Contributing Code Changes
+
+AzuraCast is open-source software, and as part of this dedication to openness and transparency, we fully support contributions from members of the community who are skilled in the languages that we use to build our applications.
+
+A majority of our repositories come with an `.editorconfig` file in the root, which will set many standards for indentation, punctuation and other style items for you automatically. You may need to enable EditorConfig support in your IDE of choice.
+
+If your IDE does not support EditorConfig, the most important standard to remember that we follow is the PHP Framework Interoperability Group's [PSR-12 Extended Coding Style](https://www.php-fig.org/psr/psr-12/) standard.
+
+Accessibility, security, and modern best practices are very important in AzuraCast's development. Any newly contributed code can, and should, take advantage of the full suite of new features made available in `PHP 7.4` and newer.
+
+Contributions are also welcome in the supporting technologies used to make AzuraCast possible, such as:
+
+- Dockerfiles (see [our separate repositories](https://github.com/AzuraCast) for Docker containers)
+- [Ansible configuration](https://github.com/AzuraCast/AzuraCast/tree/master/util/ansible) for Ansible installs
 
 # Setting Up a Local Environment
 
