@@ -2,7 +2,7 @@
 title: Updates
 description: How to update your AzuraCast installation
 published: true
-date: 2021-02-05T20:11:10.517Z
+date: 2021-02-06T06:47:48.072Z
 tags: 
 editor: markdown
 dateCreated: 2021-02-05T20:11:10.517Z
@@ -28,6 +28,25 @@ By default, the updater will prompt you to update your `docker-compose.yml` file
 cd /var/azuracast
 ./docker.sh update-self
 yes "" | ./docker.sh update
+```
+
+# Ansible
+
+AzuraCast also includes a handy updater script for Ansible installations that pulls down the latest copy of the codebase from Git, flushes the site caches and makes any necessary database updates. Run these commands as any user with `sudo` permissions:
+
+```
+cd /var/azuracast/www
+ 
+sudo chmod a+x update.sh
+sudo ./update.sh
+```
+
+## Force a Full Update
+
+Normally, the Ansible installer's update script only updates the portion of the system that have been modified since your last update. If an update was interrupted or otherwise is causing trouble, you can force the update script to process all components, which can often fix any issues:
+
+```
+./update.sh --full
 ```
 
 # Switching Update Release Channels
