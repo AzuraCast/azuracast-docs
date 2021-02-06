@@ -2,7 +2,7 @@
 title: Docker
 description: 
 published: true
-date: 2021-02-06T06:42:52.915Z
+date: 2021-02-06T06:43:41.795Z
 tags: 
 editor: markdown
 dateCreated: 2021-02-06T06:41:47.092Z
@@ -129,7 +129,7 @@ For power users looking to customize or expand their Docker configuration, you s
 
 - Environment variables set in `.env are only used by Docker Compose itself, and aren't passed directly into the AzuraCast containers. You should only modify this file to change the HTTP and HTTPS port mappings used by Nginx (see the "Use Non-Standard Ports" section above).
 
-- The `azuracast.env file is specific to your environment and can be customized however you like. It will not be replaced during any updates. Once your database has been created, however, changing the password listed in this file will cause the system to fail. If you want to destructively wipe your existing database and other files and set up a new one with the updated password, add the `-v` flag to the end of `docker-compose down to remove all existing volumes, including your database.
+- The `azuracast.env` file is specific to your environment and can be customized however you like. It will not be replaced during any updates. Once your database has been created, however, changing the password listed in this file will cause the system to fail. If you want to destructively wipe your existing database and other files and set up a new one with the updated password, add the `-v` flag to the end of `docker-compose down to remove all existing volumes, including your database.
 
 - If possible, you should not directly modify `docker-compose.yml`, as some updates may modify how it is defined to resolve bugs or add new features. When updating, you will always be asked if you want to update this file; if you have not modified it, you should always do so.
 
