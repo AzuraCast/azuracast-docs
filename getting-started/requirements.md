@@ -2,7 +2,7 @@
 title: Requirements
 description: This page tells you what is required to run AzuraCast
 published: true
-date: 2021-02-06T07:33:09.344Z
+date: 2021-02-06T22:24:35.811Z
 tags: 
 editor: markdown
 dateCreated: 2021-02-05T18:58:13.221Z
@@ -46,3 +46,14 @@ Some hosting providers use OpenVZ or LXC, and sometimes these technologies are i
 
 ### **CentOS:**
 Recent versions of CentOS are moving away from supporting Docker and instead supporting Podman, a different container-based solution. AzuraCast does not currently support being deployed on Podman. If you are selecting a Linux OS for your server, the LTS distributions of Ubuntu and Debian are strongly recommended.
+
+# Resource Usage
+
+On the Administration page you can find a basic `Server Status` section that shows you the `CPU Load`, `Memory` and `Disk Space` usage of your server.
+
+<br> 
+
+## IceCast
+
+For IceCast you can find some benchmarks at https://icecast.org/loadtest/
+
