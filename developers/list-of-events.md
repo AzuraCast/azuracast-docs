@@ -2,7 +2,7 @@
 title: List of Events
 description: A list of events available for event listeners through the EventDispatcher
 published: true
-date: 2021-02-06T20:26:47.046Z
+date: 2021-02-06T20:40:19.599Z
 tags: 
 editor: markdown
 dateCreated: 2021-02-06T20:12:02.133Z
@@ -15,7 +15,7 @@ dateCreated: 2021-02-06T20:12:02.133Z
 This event allows you to customize and extend the Administration page menu.
 
 ```php
-$dispatcher->addListener(Event\BuildAdminMenu::class, function(Event\BuildAdminMenu $event) {
+$dispatcher->addListener(App\Event\BuildAdminMenu::class, function(App\Event\BuildAdminMenu $event) {
     $router = $event->getRouter();
 
     $event->addItem('example', [
@@ -34,7 +34,7 @@ $dispatcher->addListener(Event\BuildAdminMenu::class, function(Event\BuildAdminM
 This event allows you to register your own CLI console commands, which appear when running the [AzuraCast CLI](http://www.azuracast.com/cli.html).
 
 ```php
-$dispatcher->addListener(Event\BuildConsoleCommands::class, function (Event\BuildConsoleCommands $event) {
+$dispatcher->addListener(App\Event\BuildConsoleCommands::class, function (App\Event\BuildConsoleCommands $event) {
     $console = $event->getConsole();
 
     $console->command(
@@ -51,13 +51,64 @@ $dispatcher->addListener(Event\BuildConsoleCommands::class, function (Event\Buil
 This event allows you to register custom doctrine mappings for your own database entities.
 
 ```php
-$dispatcher->addListener(Event\BuildDoctrineMappingPaths::class, function (Event\BuildDoctrineMappingPaths $event) {
+$dispatcher->addListener(App\Event\BuildDoctrineMappingPaths::class, function (App\Event\BuildDoctrineMappingPaths $event) {
     $mappingClassesPaths = $event->getMappingClassesPaths();
     $baseDir = $event->getBaseDir();
 
     $mappingClassesPaths[] = $baseDir . '/plugins/ExamplePlugin/src/Entity';
 
     $event->setMappingClassesPaths($mappingClassesPaths);
+});
+```
+
+# `\App\Event\BuildMigrationConfigurationArray`
+
+- [Class reference](https://github.com/AzuraCast/AzuraCast/blob/master/src/Event/BuildMigrationConfigurationArray.php)
+
+This event allows you to register your own Doctrine database migrations.
+
+```php
+$dispatcher->addListener(App\Event\BuildMigrationConfigurationArray::class, function (App\Event\BuildMigrationConfigurationArray $event) {
+    $migrationConfigurations = $event->getMigrationConfigurations();
+    $baseDir = $event->getBaseDir();
+
+    $migrationConfigurations['migrations_paths']['Plugin\ExamplePlugin\Entity\Migration'] = $baseDir . '/plugins/ExamplePlugin/src/Entity/Migration';
+
+    $event->setMigrationConfigurations($migrationConfigurations);
+});
+```
+
+# `\App\Event\BuildPermissions`
+
+- [Class reference](https://github.com/AzuraCast/AzuraCast/blob/master/src/Event/BuildPermissions.php)
+
+This event allows you to register custom permissions for AzuraCasts ACL system.
+
+It is adviced to create a separate constants file for your permissions so that you can use it at all places where you need to reference the same permission.
+
+Example `Plugin\ExamplePlugin\Constants\AclConstants.php` file:
+
+```php
+<?php
+
+declare(strict_types=1);
+
+namespace Plugin\ExamplePlugin\Constants;
+
+interface AclConstants
+{
+    public const STATION_EXAMPLE_PERMISSION = 'view station example';
+}
+
+```
+
+```php
+$dispatcher->addListener(App\Event\BuildPermissions::class, function(App\Event\BuildPermissions $event) {
+    $permissions = $event->getPermissions();
+
+    $permissions['station'][AclConstants::STATION_EXAMPLE_PERMISSION] = __('Manage Station Podcasts');
+
+    $event->setPermissions($permissions);
 });
 ```
 
