@@ -2,7 +2,7 @@
 title: Frequently Asked Questions (FAQ)
 description: 
 published: true
-date: 2021-02-06T02:31:49.799Z
+date: 2021-02-06T02:32:38.599Z
 tags: 
 editor: markdown
 dateCreated: 2021-02-06T02:31:49.799Z
@@ -29,5 +29,3 @@ php /var/azuracast/www/bin/console azuracast:account:reset-password YOUREMAILADD
 AzuraCast includes a SFTP server built-in on Docker installations, if your machine does not have it [update your system](/en/getting-started/updates) to at least version `0.9.8.1` or higher. The SFTP server uses port 2022 but this can be changed in the `.env` file.
 
 For more information on how to use SFTP, review the [SFTP documentation](/en/user-guide/sftp-server).
-
-#
