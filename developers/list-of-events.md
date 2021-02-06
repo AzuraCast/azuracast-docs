@@ -2,17 +2,64 @@
 title: List of Events
 description: A list of events available for event listeners through the EventDispatcher
 published: true
-date: 2021-02-06T20:12:02.133Z
+date: 2021-02-06T20:26:47.046Z
 tags: 
 editor: markdown
 dateCreated: 2021-02-06T20:12:02.133Z
 ---
+
+# `\App\Event\BuildAdminMenu`
+
+- [Class reference](https://github.com/AzuraCast/AzuraCast/blob/master/src/Event/BuildAdminMenu.php)
+
+This event allows you to customize and extend the Administration page menu.
+
+```php
+$dispatcher->addListener(Event\BuildAdminMenu::class, function(Event\BuildAdminMenu $event) {
+    $router = $event->getRouter();
+
+    $event->addItem('example', [
+        'label' => __('Example'),
+        'icon' => 'cast',
+        'url' => $router->fromHere('example-plugin:admin:example'),
+        'permission' => Acl::GLOBAL_VIEW,
+    ]);
+});
+```
 
 # `\App\Event\BuildConsoleCommands`
 
 - [Class reference](https://github.com/AzuraCast/AzuraCast/blob/master/src/Event/BuildConsoleCommands.php)
 
 This event allows you to register your own CLI console commands, which appear when running the [AzuraCast CLI](http://www.azuracast.com/cli.html).
+
+```php
+$dispatcher->addListener(Event\BuildConsoleCommands::class, function (Event\BuildConsoleCommands $event) {
+    $console = $event->getConsole();
+
+    $console->command(
+        'plugin:example',
+        Plugin\ExamplePlugin\Command\ExampleCommand::class,
+    )->setDescription('Execute the example command');
+}, -1);
+```
+
+# `\App\Event\BuildDoctrineMappingPaths`
+
+- [Class reference](https://github.com/AzuraCast/AzuraCast/blob/master/src/Event/BuildDoctrineMappingPaths.php)
+
+This event allows you to register custom doctrine mappings for your own database entities.
+
+```php
+$dispatcher->addListener(Event\BuildDoctrineMappingPaths::class, function (Event\BuildDoctrineMappingPaths $event) {
+    $mappingClassesPaths = $event->getMappingClassesPaths();
+    $baseDir = $event->getBaseDir();
+
+    $mappingClassesPaths[] = $baseDir . '/plugins/ExamplePlugin/src/Entity';
+
+    $event->setMappingClassesPaths($mappingClassesPaths);
+});
+```
 
 # `\App\Event\BuildRoutes`
 
