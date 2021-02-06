@@ -2,7 +2,7 @@
 title: List of Events
 description: A list of events available for event listeners through the EventDispatcher
 published: true
-date: 2021-02-06T22:10:47.025Z
+date: 2021-02-06T22:13:18.086Z
 tags: 
 editor: markdown
 dateCreated: 2021-02-06T20:12:02.133Z
@@ -428,6 +428,42 @@ $dispatcher->addSubscriber(new \Plugin\ExamplePlugin\EventHandler\ExampleBuildQu
 
 This event is triggered when changes to the Liquidsoap configuration are being written to disk. This process uses the Event Dispatcher because it is by far the most complex configuration file written by the system, and there are multiple points at which one may want to override the configuration written by AzuraCast itself. Users are already able to write custom configuration to one specific location (between the playlists being built and mixed with the live signal, and the signal being broadcast to local and remote sources), but overriding this event allows you to modify the configuration in any other location.
 
-```php
+Create a new EventHandler in `EventHandler/ExampleWriteLiquidsoapConfigurationEventHandler.php`:
 
+```php
+<?php
+
+declare(strict_types=1);
+
+namespace Plugin\ExamplePlugin\EventHandler;
+
+use App\Event;
+use NowPlaying\Result\Result;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+
+class ExampleWriteLiquidsoapConfigurationEventHandler implements EventSubscriberInterface
+{
+    public static function getSubscribedEvents()
+    {
+        return [
+            Event\Radio\BuildQueue::class => [
+                ['setNextSong', -20]
+            ],
+        ];
+    }
+
+    public function setNextSong(Event\Radio\BuildQueue $event)
+    {   
+        // You need to build your own logic for building the next song
+        $nextSong = null;
+    
+        $event->setNextSong($nextSong);
+    }
+}
+```
+
+Then register the EventHandler as a service subscriber in the `events.php` like this:
+
+```php
+$dispatcher->addSubscriber(new \Plugin\ExamplePlugin\EventHandler\ExampleWriteLiquidsoapConfigurationEventHandler);
 ```
