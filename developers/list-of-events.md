@@ -2,7 +2,7 @@
 title: List of Events
 description: A list of events available for event listeners through the EventDispatcher
 published: true
-date: 2021-02-06T21:38:32.827Z
+date: 2021-02-06T21:57:14.335Z
 tags: 
 editor: markdown
 dateCreated: 2021-02-06T20:12:02.133Z
@@ -287,17 +287,102 @@ $dispatcher->addServiceSubscriber(Plugin\ExamplePlugin\Task\ExampleTask::class);
 
 This event is triggered once the next song has been determined by the AzuraCast AutoDJ software and is being sent to Liquidsoap. Annotations allow you to customize fade-in, fade-out, cue-in and cue-out data, and the artist/title displayed for a song.
 
+Create a new EventHandler in `EventHandler/ExampleAnnotationEventHandler.php`:
+
+```php
+<?php
+
+declare(strict_types=1);
+
+namespace Plugin\ExamplePlugin\EventHandler;
+
+use App\Event;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+
+class ExampleAnnotationEventHandler implements EventSubscriberInterface
+{
+    public static function getSubscribedEvents()
+    {
+        return [
+            Event\Radio\AnnotateNextSong::class => [
+                ['setExampleAnnotation', -20]
+            ],
+        ];
+    }
+
+    public function setExampleAnnotation(Event\Radio\AnnotateNextSong $event)
+    {
+        $title = $event->getMedia()->getTitle();
+
+        $event->addAnnotations([
+            'title' => strtoupper($title)
+        ]);
+    }
+}
+```
+
+Then register the EventHandler as a service subscriber in the `events.php` like this:
+
+```php
+$dispatcher->addSubscriber(new \Plugin\ExamplePlugin\EventHandler\ExampleAnnotationEventHandler);
+```
+
 # `\App\Event\Radio\GenerateRawNowPlaying`
 
 - [Class reference](https://github.com/AzuraCast/AzuraCast/blob/master/src/Event/Radio/GenerateRawNowPlaying.php)
 
 This event is triggered when building the "Now Playing" data for a given station. This data is called "raw" because it has not been converted yet into the standardized API response format served by AzuraCast's API. By modifying the "raw" nowplaying response, you can change the currently playing song or modify the listener count.
 
+Create a new EventHandler in `EventHandler/ExampleNowPlayingEventHandler.php`:
+
+```php
+<?php
+
+declare(strict_types=1);
+
+namespace Plugin\ExamplePlugin\EventHandler;
+
+use App\Event;
+use NowPlaying\Result\Result;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+
+class ExampleNowPlayingEventHandler implements EventSubscriberInterface
+{
+    public static function getSubscribedEvents()
+    {
+        return [
+            Event\Radio\GenerateRawNowPlaying::class => [
+                ['setListenerCount', -20]
+            ],
+        ];
+    }
+
+    public function setListenerCount(Event\Radio\GenerateRawNowPlaying $event)
+    {
+        $np_raw = $event->getResult()->toArray();
+
+        $np_raw['listeners']['current'] = mt_rand(5, 25);
+        $np_raw['listeners']['unique'] = mt_rand(0, $np_raw['listeners']['current']);
+        $np_raw['listeners']['total'] = $np_raw['listeners']['current'];
+
+        $event->setResult(Result::fromArray($np_raw));
+    }
+}
+```
+
+Then register the EventHandler as a service subscriber in the `events.php` like this:
+
+```php
+$dispatcher->addSubscriber(new \Plugin\ExamplePlugin\EventHandler\ExampleNowPlayingEventHandler);
+```
+
 # `\App\Event\Radio\GetNextSong`
 
 - [Class reference](https://github.com/AzuraCast/AzuraCast/blob/master/src/Event/Radio/GetNextSong.php)
 
 This event is triggered as the AzuraCast AutoDJ is determining the next song to play for a given station. By default, ths checks for an existing "next song" record in the database, and if one isn't present, determines what should play next based on all available playlists and their scheduling status.
+
+
 
 # `\App\Event\Radio\WriteLiquidsoapConfiguration`
 
