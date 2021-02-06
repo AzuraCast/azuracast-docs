@@ -2,7 +2,7 @@
 title: Docker
 description: 
 published: true
-date: 2021-02-06T23:46:45.756Z
+date: 2021-02-06T23:50:32.746Z
 tags: 
 editor: markdown
 dateCreated: 2021-02-06T06:41:47.092Z
@@ -294,7 +294,7 @@ Modify the `/path/on/host/computer` with the path to the directory that you want
 
 You will need to restart your Docker containers using `docker-compose down`, then `docker-compose up -d` to apply any changes made to this file.
 
-# Using a custom default track
+# Custom default track
 
 When nothing is playing on your station you'll hear the default error.mp3 file of AzuraCast playing. You can replace this file by mounting your own .mp3 file via a `docker-compose.override.yml`.
 
@@ -320,7 +320,7 @@ You will need to restart your Docker containers using `docker-compose down`, the
 > Make sure that the format of the file specified matches the streaming format exactly.
 {.is-warning}
 
-# Adding a Stream Intro File
+# Stream Intro File
 
 You can add a music file to play when someone initially connects to your stream. Remember when creating intro files that they **must match the exact same format, bitrate and sample rate as your mount point to work properly.**
 
@@ -344,7 +344,7 @@ Return to the AzuraCast web interface, visit the "Mount Points" page for your st
 
 For more information, see the [IceCast documentation.](https://www.icecast.org/docs/)
 
-# Using a Custom Browser Icon (Favicon)
+# Custom Favicon
 
 To override the favicon and other browser icons used by AzuraCast, you should follow these steps:
 
