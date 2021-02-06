@@ -2,7 +2,7 @@
 title: List of Events
 description: A list of events available for event listeners through the EventDispatcher
 published: true
-date: 2021-02-06T20:40:19.599Z
+date: 2021-02-06T20:40:47.905Z
 tags: 
 editor: markdown
 dateCreated: 2021-02-06T20:12:02.133Z
@@ -106,7 +106,7 @@ interface AclConstants
 $dispatcher->addListener(App\Event\BuildPermissions::class, function(App\Event\BuildPermissions $event) {
     $permissions = $event->getPermissions();
 
-    $permissions['station'][AclConstants::STATION_EXAMPLE_PERMISSION] = __('Manage Station Podcasts');
+    $permissions['station'][AclConstants::STATION_EXAMPLE_PERMISSION] = __('View Station Example');
 
     $event->setPermissions($permissions);
 });
