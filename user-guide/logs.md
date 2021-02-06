@@ -2,7 +2,7 @@
 title: Logs
 description: How to get logs and what logs are available
 published: true
-date: 2021-02-06T00:56:30.589Z
+date: 2021-02-06T00:58:19.685Z
 tags: 
 editor: markdown
 dateCreated: 2021-02-05T22:33:04.885Z
@@ -27,13 +27,11 @@ In addition to the logs you can also view the IceCast, SHOUTcast and Liquidsoap 
 
 # Log Types
 
-### AzuraCast Application Log
+## AzuraCast Application Log
  
 This log file contains the log output of the AzuraCast application itself. If you encounter any errors with the application itself you will most likely find more information about those errors in this log file.
 
-
-
-### Liquidsoap Log
+## Liquidsoap Log
 
 This log file contains the log output of the Liquidsoap instance for your station. Liquidsoap is responsible for the audio transcoding in AzuraCast and interfaces with the AzuraCast application to provide the AutoDJ for your station.
 
@@ -41,13 +39,13 @@ In this log you can find information on how the streams are generated, what info
 
 If you encounter any problems with your stream generation this look should contain useful information in diagnosing the issue.
 
-### IceCast Access Log
+## IceCast Access Log
 
 This log file contains the raw access log data of the IceCast server.
 
 For most issues this log does not contain any useful information but can be used for analytical purposes.
 
-### IceCast Error Log
+## IceCast Error Log
 
 This log file contains the error output of the IceCast server.
 
@@ -59,31 +57,31 @@ Some system logs can only be accessed from a shell session on the host computer.
 
 ## Available Containers
 
-### nginx_proxy
+### `nginx_proxy`
 
 This is the container with the NGINX web server proxy that is responsible for making the AzuraCast application available to browsers. This container is also providing the [Let's Encrypt](/en/administration/ssl-and-lets-encrypt) integration for AzuraCast and Multi-Site installtions.
 
-### nginx_proxy_letsencrypt
+### `nginx_proxy_letsencrypt`
 
 This container is responsible for retrieving and updating the Let's Encrypt certificates for SSL. If you encounter any issues with the Let's Encrypt setup you should look into the logs of this container.
 
-### web
+### `web`
 
 This container is hosting the main AzuraCast PHP application that controls the stations and provides the web interface.
 
 If you encounter any server 500 errors or have issues with your sync tasks you should look into the logs of this container.
 
-### mariadb
+### `mariadb`
 
 This container is providing AzuraCast with the MariaDB database.
 
 If you encounter any database related issues you should look into the logs of this container.
 
-### redis
+### `redis`
 
 This container is providing the AzuraCast application with a Redis server for caching. This is mainly used for caching the filesystem.
 
-### stations
+### `stations`
 
 This container contains the IceCast, SHOUTcast and Liquidsoap processes which are responsible for generating your streams.
 
