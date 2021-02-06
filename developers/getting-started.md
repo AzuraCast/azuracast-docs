@@ -2,7 +2,7 @@
 title: Getting Started
 description: Developing with AzuraCast
 published: true
-date: 2021-02-06T19:14:03.851Z
+date: 2021-02-06T19:15:20.787Z
 tags: 
 editor: markdown
 dateCreated: 2021-02-06T07:31:58.854Z
@@ -13,6 +13,8 @@ dateCreated: 2021-02-06T07:31:58.854Z
 Development on the main AzuraCast application should always be applicable to a broad community of radio station operators and not specific features to one station or group of stations.
 
 If you would like to build a set of features specific to one station or group of stations, you should take advantage of AzuraCast's plugin architecture. The plugin system takes advantage of event listeners that are built into AzuraCast itself. Check out the [example plugin](https://github.com/AzuraCast/example-plugin) for more details on what is possible via plugins.
+
+<br>
 
 ## Contributing Code Changes
 
