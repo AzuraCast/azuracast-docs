@@ -2,7 +2,7 @@
 title: AzuraCast Docs
 description: Documentation for AzuraCast
 published: true
-date: 2021-02-06T02:58:43.467Z
+date: 2021-02-06T03:04:08.436Z
 tags: 
 editor: markdown
 dateCreated: 2021-02-05T06:09:43.264Z
@@ -17,6 +17,12 @@ dateCreated: 2021-02-05T06:09:43.264Z
 >
 > To install AzuraCast, you should have a basic understanding of the Linux shell terminal. Once installed, every aspect of your radio station can be managed via AzuraCast's web interface.
 {.is-info}
+
+# What is AzuraCast?
+
+**AzuraCast** is a self-hosted, all-in-one web radio management suite. Using its easy installer and powerful but intuitive web interface, you can start up a fully working web radio station in a few quick minutes.
+
+AzuraCast works for web radio stations of all types and sizes, and is built to run on even the most affordable VPS web hosts. AzuraCast's mascot is Azura Ruisselante, created by [Tyson Tan](https://tysontan.deviantart.com/).
 
 # License
 AzuraCast is licensed under the [Apache license, version 2.0](https://github.com/AzuraCast/AzuraCast/blob/master/LICENSE.txt). This project is free and open-source software, and pull requests are always welcome
