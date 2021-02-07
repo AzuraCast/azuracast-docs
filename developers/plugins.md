@@ -2,7 +2,7 @@
 title: Plugins
 description: 
 published: true
-date: 2021-02-06T20:06:57.052Z
+date: 2021-02-07T23:23:52.153Z
 tags: 
 editor: markdown
 dateCreated: 2021-02-06T20:06:57.052Z
@@ -98,3 +98,4 @@ As you can see, each event listener that you register has to provide the event t
 You can find a listing of the events that can be overridden by plugins on this page:
 
 - [List of Events](/en/developers/list-of-events)
+{.links-list}
