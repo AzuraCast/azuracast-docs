@@ -2,7 +2,7 @@
 title: Requirements
 description: This page tells you what is required to run AzuraCast
 published: true
-date: 2021-02-06T22:28:43.466Z
+date: 2021-02-07T22:55:23.196Z
 tags: 
 editor: markdown
 dateCreated: 2021-02-05T18:58:13.221Z
@@ -11,7 +11,7 @@ dateCreated: 2021-02-05T18:58:13.221Z
 AzuraCast is powered by Docker and uses pre-built images that contain every component of the software. Don't worry if you aren't very familiar with Docker; our easy installer tools will handle installing Docker and Docker Compose for you, and updates are very simple.
 
 
-# System Requirements
+# :computer: System Requirements
 
 - A 64-bit x86 (x86_64) CPU
 - at least 2GB of RAM
