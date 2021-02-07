@@ -2,7 +2,7 @@
 title: Installation
 description: How to install AzuraCast on your server
 published: true
-date: 2021-02-06T22:29:42.084Z
+date: 2021-02-07T23:10:46.934Z
 tags: 
 editor: markdown
 dateCreated: 2021-02-05T19:10:58.100Z
@@ -31,6 +31,7 @@ The easiest way to get started with AzuraCast is to create a new VPS with one of
 
 
 - [Installing AzuraCast with Docker](/en/getting-started/installation/docker)
+{.links-list}
 
 # Other Methods (Unsupported)
 
@@ -45,4 +46,4 @@ Most servers and hosting providers support Docker without any issues. If your pr
 
 - [Installing AzuraCast on a Raspberry Pi 3B/4](/en/getting-started/installation/raspberry-pi)
 - [Installing AzuraCast with Ansible](/en/getting-started/installation/ansible)
-
+{.links-list}
