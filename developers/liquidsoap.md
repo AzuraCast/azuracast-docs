@@ -2,7 +2,7 @@
 title: Liquidsoap
 description: Liquidsoap the audio processing tool and language
 published: true
-date: 2021-02-06T19:45:38.076Z
+date: 2021-02-07T11:47:59.421Z
 tags: 
 editor: markdown
 dateCreated: 2021-02-06T19:39:05.548Z
@@ -175,3 +175,13 @@ Fade the beginning of tracks. Metadata 'liq_video_fade_in' can be used to set th
 ### liq_video_fade_out
 
 Fade the end of tracks. Metadata 'liq_video_fade_out' can be used to set the duration for a specific track (float in seconds).
+
+# LADSPA Plugins
+
+[LADSPA](https://www.ladspa.org/) is a standard that allows software audio processors and effects to be plugged into a wide range of audio synthesis and recording packages.
+
+Our latest rolling-release Docker image and Ansible scripts add support for LADSPA to Liquidsoap. We include several popular plugins, allowing you to perform powerful equalization in your configuration.
+
+We have modified the [MK Pascal script](https://github.com/mkpascal/mk_liquidsoap_processing/blob/master/process.liq) to work with AzuraCast.
+
+You can check out the [full script here](https://gist.github.com/SlvrEagle23/43a06ee6624975273fdc903ba4a39998) that you can include in your Liquidsoap configuration via the `Utilities` -> `Edit Liquidsoap Configuration` page of your station after enabling the [Advanced Features](/en/administration/advanced-features).
