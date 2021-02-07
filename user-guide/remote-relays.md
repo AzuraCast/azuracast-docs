@@ -2,7 +2,7 @@
 title: Remote Relays
 description: 
 published: true
-date: 2021-02-06T22:46:31.290Z
+date: 2021-02-07T09:40:21.045Z
 tags: 
 editor: markdown
 dateCreated: 2021-02-06T22:46:31.290Z
@@ -23,6 +23,8 @@ If you're serving radio traffic to a large volume of listeners and want to add r
 Install AzuraRelay on a VPS of your choice, configure it to refer to the base AzuraCast installation, and it will automatically pull a list of available streams and relay them, while sending listener statistics back to the main installation.
 
 You can add as many AzuraRelay instances as you want, and they will have very little performance impact on the main installation, because the relays are configured to pull the transcoded signal from AzuraCast's mount points and relay it directly.
+
+Take a look at our [documentation of the AzuraRelay](/en/user-guide/azura-relay) for installation instructions.
 
 # Required Permissions
 
