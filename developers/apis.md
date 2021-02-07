@@ -2,7 +2,7 @@
 title: AzuraCast APIs
 description: All about the APIs of AzuraCast
 published: true
-date: 2021-02-06T19:21:58.881Z
+date: 2021-02-07T09:47:51.167Z
 tags: 
 editor: markdown
 dateCreated: 2021-02-06T19:21:58.881Z
@@ -44,3 +44,9 @@ The most important and frequently accessed pieces of information that AzuraCast 
 Because of how valuable this information is, we serve it in a number of ways depending on whether performance or flexibility is your main concern.
 
 Check out our [Now Playing Data APIs](/en/developers/apis/now-playing-data) page for more detailed information on these APIs.
+
+# SDKs & API clients
+
+- **PHP**
+  - Packagist: [`azuracast/php-api-client`](https://packagist.org/packages/azuracast/php-api-client)
+  - GitHub: https://github.com/AzuraCast/php-api-client
