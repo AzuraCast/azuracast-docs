@@ -2,7 +2,7 @@
 title: SFTP Server
 description: The built-in SFTP server for Docker installations
 published: true
-date: 2021-02-06T01:52:19.099Z
+date: 2021-02-07T23:14:06.406Z
 tags: 
 editor: markdown
 dateCreated: 2021-02-06T01:52:19.098Z
@@ -35,5 +35,6 @@ Here's a small list of FTP clients you can use that are known to work with Azura
 - [Filezilla](https://filezilla-project.org/) - Windows, Mac OS X and Linux 32 bit & 64 bit
 - [WinSCP](https://winscp.net/eng/download.php) - Windows only
 - [Cyberduck](https://cyberduck.io/) - Windows and Mac
+{.links-list}
 
 A more exhaustive list can be found [here](https://en.wikipedia.org/wiki/Comparison_of_FTP_client_software).
