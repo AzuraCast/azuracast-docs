@@ -2,8 +2,8 @@
 title: Getting Started
 description: Developing with AzuraCast
 published: true
-date: 2021-02-06T19:15:20.787Z
-tags: 
+date: 2021-02-08T03:56:48.445Z
+tags: development
 editor: markdown
 dateCreated: 2021-02-06T07:31:58.854Z
 ---
