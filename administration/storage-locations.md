@@ -2,8 +2,8 @@
 title: Storage Locations
 description: 
 published: true
-date: 2021-02-06T07:09:01.235Z
-tags: 
+date: 2021-02-08T04:24:42.065Z
+tags: administration
 editor: markdown
 dateCreated: 2021-02-06T07:09:01.235Z
 ---
