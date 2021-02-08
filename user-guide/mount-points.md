@@ -2,8 +2,8 @@
 title: Mount Points
 description: 
 published: true
-date: 2021-02-06T22:44:39.864Z
-tags: 
+date: 2021-02-08T04:16:42.116Z
+tags: user guide
 editor: markdown
 dateCreated: 2021-02-06T22:44:39.864Z
 ---
