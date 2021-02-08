@@ -2,8 +2,8 @@
 title: AzuraCast Settings
 description: 
 published: true
-date: 2021-02-06T01:31:58.396Z
-tags: 
+date: 2021-02-08T04:57:43.716Z
+tags: getting started
 editor: markdown
 dateCreated: 2021-02-06T01:26:40.798Z
 ---
