@@ -2,8 +2,8 @@
 title: Now Playing Data APIs
 description: 
 published: true
-date: 2021-02-06T19:26:07.120Z
-tags: 
+date: 2021-02-08T05:10:44.960Z
+tags: development, api
 editor: markdown
 dateCreated: 2021-02-06T19:26:07.120Z
 ---
