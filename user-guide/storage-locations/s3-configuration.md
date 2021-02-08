@@ -2,8 +2,8 @@
 title: S3 Storage Location Configuration
 description: 
 published: true
-date: 2021-02-06T02:36:40.146Z
-tags: 
+date: 2021-02-08T05:07:22.514Z
+tags: user guide
 editor: markdown
 dateCreated: 2021-02-06T02:11:19.866Z
 ---
