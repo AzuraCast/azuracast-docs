@@ -2,8 +2,8 @@
 title: Plugins
 description: 
 published: true
-date: 2021-02-07T23:23:52.153Z
-tags: 
+date: 2021-02-08T04:00:28.274Z
+tags: development, plugin
 editor: markdown
 dateCreated: 2021-02-06T20:06:57.052Z
 ---
