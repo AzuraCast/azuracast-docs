@@ -2,8 +2,8 @@
 title: Streamers & DJs
 description: 
 published: true
-date: 2021-02-06T02:18:45.926Z
-tags: 
+date: 2021-02-08T04:18:16.759Z
+tags: user guide
 editor: markdown
 dateCreated: 2021-02-06T02:18:45.926Z
 ---
@@ -16,7 +16,7 @@ In order to allow a seamless transition between live DJs and the AutoDJ, each st
 
 AzuraCast will keep track of the broadcast history for each DJ that broadcasts live on your station.
 
-We have guides for how to configure many kinds of popular streaming software. See the [Streaming Software](/en/user-guide/streamers-and-djs/streaming-software) page for more information.
+We have guides for how to configure many kinds of popular streaming software. See the [Streaming Software](/en/user-guide/streaming-software) page for more information.
 
 # Recording Broadcasts
 
