@@ -2,8 +2,8 @@
 title: Troubleshooting
 description: Having trouble with AzuraCast? This page has several resources that can help you solve your problem and be back up and running.
 published: true
-date: 2021-02-08T04:59:17.317Z
-tags: getting started
+date: 2021-02-08T05:00:16.386Z
+tags: getting started, debugging
 editor: markdown
 dateCreated: 2021-02-05T21:17:05.327Z
 ---
