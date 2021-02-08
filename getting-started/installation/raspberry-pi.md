@@ -2,8 +2,8 @@
 title: Installing AzuraCast on a Raspberry Pi 3B/4
 description: 
 published: true
-date: 2021-02-05T19:54:24.611Z
-tags: 
+date: 2021-02-08T05:03:20.235Z
+tags: ansible, getting started
 editor: markdown
 dateCreated: 2021-02-05T19:54:24.611Z
 ---
