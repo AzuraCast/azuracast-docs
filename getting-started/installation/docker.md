@@ -2,8 +2,8 @@
 title: Docker Installation Guide
 description: How to install AzuraCast with Docker
 published: true
-date: 2021-02-05T19:38:47.919Z
-tags: 
+date: 2021-02-08T05:02:48.443Z
+tags: docker, getting started
 editor: markdown
 dateCreated: 2021-02-05T19:38:47.919Z
 ---
