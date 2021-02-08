@@ -2,7 +2,7 @@
 title: CloudFlare
 description: 
 published: true
-date: 2021-02-08T04:25:31.928Z
+date: 2021-02-08T05:41:46.014Z
 tags: administration
 editor: markdown
 dateCreated: 2021-02-06T07:13:38.279Z
@@ -16,7 +16,7 @@ AzuraCast has full support for using CloudFlare's protection in front of your ra
 
 Enabling CloudFlare support from the CloudFlare control panel is as simple as ensuring the little "cloud" next to your radio server's domain (or subdomain) is orange, indicating protection is enabled.
 
-![cloudflare_enable.png](/images/cloudflare_enable.png)
+![cloudflare_enable.png](/images/cloudflare/cloudflare_enable.png)
 
 The default settings for CloudFlare will suffice, though you can also switch from "Flexible" to "Full" SSL mode if you like (since AzuraCast itself supports HTTPS). "Strict" SSL mode isn't recommended, as this requires that you maintain an up-to-date SSL certificate on AzuraCast itself (which is possible, but not necessary).
 
@@ -25,7 +25,7 @@ Once you've enabled CloudFlare support for your domain (or radio station's subdo
 # Enabling the Web Proxy for Radio Broadcasts
 One major limitation imposed by CloudFlare is that they do not forward incoming connections to your server that don't come from the traditional web ports (that is, 80 and 443). By default, AzuraCast serves each radio station on its own distinct port in a range from 8000 to 9000. This means your listeners wouldn't normally be able to connect.
 
-![cloudflare_proxy.png](/images/cloudflare_proxy.png)
+![cloudflare_proxy.png](/images/cloudflare/cloudflare_proxy.png)
 
 Fortunately, we've already built a solution to this problem! In AzuraCast's system administration, on the "System Settings" page, we have a checkbox labeled "Use Web Proxy for Radio". Enable this checkbox and all of the station playback URLs across the system will be updated to automatically use the web port proxy links, which are fully accessible even when CloudFlare protection is enabled.
 
@@ -38,7 +38,7 @@ Due to the strict Content Security Policy in AzuraCast you will have to disable 
 
 If you have enabled CloudFlare for your AzuraCast installation and your Dashboard shows up like this you should check if your browser's JavaScript console shows the following error and disable Rocket Loader.
 
-![cloudflare_rocket_loader_issue.png](/images/cloudflare_rocket_loader_issue.png)
+![cloudflare_rocket_loader_issue.png](/images/cloudflare/cloudflare_rocket_loader_issue.png)
 
 ```
 Refused to load the script 'https://ajax.cloudflare.com/cdn-cgi/scripts/a2bd7673/cloudflare-static/rocket-loader.min.js' because it violates the following Content Security Policy directive: "script-src 'self' 'unsafe-eval' 'nonce-oRJ+doQCy3ixkj24VkvoznVv'". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback.
