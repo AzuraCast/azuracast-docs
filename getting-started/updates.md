@@ -2,8 +2,8 @@
 title: Updates
 description: How to update your AzuraCast installation
 published: true
-date: 2021-02-08T04:58:17.080Z
-tags: ansible, docker, getting started
+date: 2021-02-08T05:00:51.896Z
+tags: ansible, docker, getting started, debugging
 editor: markdown
 dateCreated: 2021-02-05T20:11:10.517Z
 ---
