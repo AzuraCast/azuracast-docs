@@ -2,8 +2,8 @@
 title: Synchronisation Tasks
 description: All about the AzuraCast automatic processing tasks
 published: true
-date: 2021-02-06T04:53:24.798Z
-tags: 
+date: 2021-02-08T04:23:00.051Z
+tags: administration
 editor: markdown
 dateCreated: 2021-02-06T04:53:24.798Z
 ---
