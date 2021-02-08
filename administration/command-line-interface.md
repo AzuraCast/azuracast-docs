@@ -2,8 +2,8 @@
 title: Command-Line Interface
 description: 
 published: true
-date: 2021-02-06T07:25:29.538Z
-tags: 
+date: 2021-02-08T04:27:16.732Z
+tags: administration
 editor: markdown
 dateCreated: 2021-02-06T07:25:29.538Z
 ---
