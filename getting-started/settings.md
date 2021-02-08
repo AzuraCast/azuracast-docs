@@ -1,8 +1,8 @@
 ---
 title: AzuraCast Settings
-description: 
+description: Tuning AzuraCasts settings and performance
 published: true
-date: 2021-02-08T04:57:43.716Z
+date: 2021-02-08T05:37:53.589Z
 tags: getting started
 editor: markdown
 dateCreated: 2021-02-06T01:26:40.798Z
