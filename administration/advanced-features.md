@@ -1,8 +1,8 @@
 ---
 title: Advanced Features
-description: 
+description: What are Advanced Features and how to enable them
 published: true
-date: 2021-02-08T04:27:53.209Z
+date: 2021-02-08T05:35:48.940Z
 tags: advanced feature, administration
 editor: markdown
 dateCreated: 2021-02-06T23:08:02.099Z
