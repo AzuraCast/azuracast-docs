@@ -2,8 +2,8 @@
 title: Ansible
 description: 
 published: true
-date: 2021-02-08T04:11:00.053Z
-tags: advanced feature, ansible
+date: 2021-02-08T04:26:32.908Z
+tags: advanced feature, ansible, administration
 editor: markdown
 dateCreated: 2021-02-06T06:50:37.504Z
 ---
