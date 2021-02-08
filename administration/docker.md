@@ -2,8 +2,8 @@
 title: Docker
 description: 
 published: true
-date: 2021-02-08T04:26:04.019Z
-tags: administration
+date: 2021-02-08T04:54:42.229Z
+tags: administration, docker
 editor: markdown
 dateCreated: 2021-02-06T06:41:47.092Z
 ---
