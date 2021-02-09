@@ -1,8 +1,8 @@
 ---
 title: Streamers & DJs
-description: 
+description: Managing live DJs with separate connection details, name, settings and how to connect
 published: true
-date: 2021-02-08T04:18:16.759Z
+date: 2021-02-09T03:21:36.055Z
 tags: user guide
 editor: markdown
 dateCreated: 2021-02-06T02:18:45.926Z
