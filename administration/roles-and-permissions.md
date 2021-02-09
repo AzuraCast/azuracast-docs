@@ -1,8 +1,8 @@
 ---
 title: Roles & Permissions
-description: 
+description: AzuraCasts Access Control List (ACL) system allows you to control the specific permissions of each group of users
 published: true
-date: 2021-02-08T04:22:26.792Z
+date: 2021-02-09T03:26:11.708Z
 tags: administration
 editor: markdown
 dateCreated: 2021-02-06T22:59:10.465Z
