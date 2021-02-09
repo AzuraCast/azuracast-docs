@@ -1,8 +1,8 @@
 ---
 title: Docker
-description: 
+description: All about Docker installations of AzuraCast
 published: true
-date: 2021-02-08T04:54:42.229Z
+date: 2021-02-09T03:32:17.498Z
 tags: administration, docker
 editor: markdown
 dateCreated: 2021-02-06T06:41:47.092Z
