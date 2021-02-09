@@ -2,7 +2,7 @@
 title: Requirements
 description: This page tells you what is required to run AzuraCast
 published: true
-date: 2021-02-09T03:08:14.702Z
+date: 2021-02-09T03:10:06.468Z
 tags: getting started
 editor: markdown
 dateCreated: 2021-02-05T18:58:13.221Z
@@ -38,12 +38,12 @@ We strongly recommend one of the following distributions and versions for your A
 
 <br>
 
-- ### **OpenVZ or LXC-based Web Hosts:**
+- **OpenVZ or LXC-based Web Hosts:**
 
-Some hosting providers use OpenVZ or LXC, and sometimes these technologies are incompatible with Docker. If the Docker installation does not work on your host, you should consider using a different server for AzuraCast, or you can use the unsupported Ansible installation method.
+  - Some hosting providers use OpenVZ or LXC, and sometimes these technologies are incompatible with Docker. If the Docker installation does not work on your host, you should consider using a different server for AzuraCast, or you can use the unsupported Ansible installation method.
 
-- ### **CentOS:**
-Recent versions of CentOS are moving away from supporting Docker and instead supporting Podman, a different container-based solution. AzuraCast does not currently support being deployed on Podman. If you are selecting a Linux OS for your server, the LTS distributions of Ubuntu and Debian are strongly recommended.
+- **CentOS:**
+  - Recent versions of CentOS are moving away from supporting Docker and instead supporting Podman, a different container-based solution. AzuraCast does not currently support being deployed on Podman. If you are selecting a Linux OS for your server, the LTS distributions of Ubuntu and Debian are strongly recommended.
 
 # :bar_chart: Resource Usage
 
