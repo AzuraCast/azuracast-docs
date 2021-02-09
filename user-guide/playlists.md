@@ -1,8 +1,8 @@
 ---
 title: Playlists
-description: 
+description: Managing playlists in AzuraCast
 published: true
-date: 2021-02-08T04:16:15.197Z
+date: 2021-02-09T03:18:16.167Z
 tags: user guide
 editor: markdown
 dateCreated: 2021-02-06T01:57:04.425Z
