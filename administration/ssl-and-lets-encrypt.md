@@ -1,8 +1,8 @@
 ---
 title: SSL & Let's Encrypt
-description: 
+description: Securing your AzuraCast installation with SSL / HTTPS
 published: true
-date: 2021-02-08T04:55:31.765Z
+date: 2021-02-09T03:31:07.064Z
 tags: administration, docker
 editor: markdown
 dateCreated: 2021-02-05T19:28:14.682Z
