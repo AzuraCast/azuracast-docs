@@ -1,8 +1,8 @@
 ---
 title: Station Management
-description: 
+description: Managing your AzuraCast station and station profile
 published: true
-date: 2021-02-08T04:14:43.162Z
+date: 2021-02-09T03:16:16.030Z
 tags: user guide
 editor: markdown
 dateCreated: 2021-02-06T01:36:06.013Z
