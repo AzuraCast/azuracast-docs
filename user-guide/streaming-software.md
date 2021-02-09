@@ -1,8 +1,8 @@
 ---
 title: Streaming Software
-description: 
+description: Examples and tutorials of software that can be used to stream to AzuraCast
 published: true
-date: 2021-02-08T04:19:13.632Z
+date: 2021-02-09T03:22:50.942Z
 tags: user guide
 editor: markdown
 dateCreated: 2021-02-08T00:05:33.501Z
