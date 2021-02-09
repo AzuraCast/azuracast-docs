@@ -1,8 +1,8 @@
 ---
 title: Users
-description: 
+description: User management for the web interface of AzuraCast
 published: true
-date: 2021-02-08T04:22:01.724Z
+date: 2021-02-09T03:25:19.263Z
 tags: administration
 editor: markdown
 dateCreated: 2021-02-06T22:57:29.149Z
