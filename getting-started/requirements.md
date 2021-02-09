@@ -2,7 +2,7 @@
 title: Requirements
 description: This page tells you what is required to run AzuraCast
 published: true
-date: 2021-02-08T04:56:55.584Z
+date: 2021-02-09T03:07:20.569Z
 tags: getting started
 editor: markdown
 dateCreated: 2021-02-05T18:58:13.221Z
@@ -21,7 +21,7 @@ AzuraCast is powered by Docker and uses pre-built images that contain every comp
 > For Linux hosts, the `sudo`, `curl` and `git` packages should be installed before installing AzuraCast. Most Linux distributions include these packages already.
 {.is-info}
 
-# Operating System
+# :dvd: Operating System
 
 > Regardless of which OS you choose, to avoid any compatibility or permissions issues you should install AzuraCast on a fresh minimal installation without Docker or Docker Compose installed.
 {.is-success}
@@ -34,7 +34,7 @@ We strongly recommend one of the following distributions and versions for your A
 - Debian 10 "Buster"
 - Debian 9 "Stretch"
 
-## Known Incompatibilities
+## :warning: Known Incompatibilities
 
 <br>
 
@@ -47,7 +47,7 @@ Some hosting providers use OpenVZ or LXC, and sometimes these technologies are i
 ### **CentOS:**
 Recent versions of CentOS are moving away from supporting Docker and instead supporting Podman, a different container-based solution. AzuraCast does not currently support being deployed on Podman. If you are selecting a Linux OS for your server, the LTS distributions of Ubuntu and Debian are strongly recommended.
 
-# Resource Usage
+# :bar_chart: Resource Usage
 
 On the Administration page you can find a basic `Server Status` section that shows you the `CPU Load`, `Memory` and `Disk Space` usage of your server.
 
