@@ -2,7 +2,7 @@
 title: Station Management
 description: Managing your AzuraCast station and station profile
 published: true
-date: 2021-02-09T03:16:16.030Z
+date: 2021-02-11T02:50:40.200Z
 tags: user guide
 editor: markdown
 dateCreated: 2021-02-06T01:36:06.013Z
@@ -25,6 +25,21 @@ Every station has two essential components that are always running and which gen
 - The **Broadcasting Software** (or the "Broadcasting Frontend") is the lightweight piece of software (either Icecast or SHOUTcast) whose primary job is to take the signal created by the AutoDJ and broadcast it out to potentially hundreds or thousands of listeners. This software is specifically optimized to support very many concurrent incoming connections with very little impact on system performance.
 
 Part of AzuraCast's function is to ensure both of these processes are properly configured, automatically started and kept running behind the scenes. When running an AzuraCast installation, you don't have to directly start either of these services for any station, and (with the exception of some specific changes, which require a brief restart) don't need to modify them directly for configuration changes in AzuraCast to take effect.
+
+# SHOUTcast
+
+<br>
+
+## Adding a License Key
+
+- Visit the `Station Profile`
+- Click `Edit Profile`
+- Switch to the `Broadcasting` tab
+- Put the following in the `Custom Configuration` section:
+
+```json
+{ "licenceid": "YOUR_LICENSE_ID", "userid": "YOUR_USER_ID" }
+```
 
 # Required Permissions
 To view a station's administration section, users must be in a role that has the "View Station Page" permission for the specified station.
