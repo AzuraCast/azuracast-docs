@@ -2,7 +2,7 @@
 title: AzuraCast Docs
 description: Documentation for AzuraCast
 published: true
-date: 2021-02-07T23:31:25.849Z
+date: 2021-02-11T03:19:58.730Z
 tags: 
 editor: markdown
 dateCreated: 2021-02-05T06:09:43.264Z
@@ -12,11 +12,11 @@ dateCreated: 2021-02-05T06:09:43.264Z
 {.is-success}
 
 > **AzuraCast is currently in beta**
->
-> Many web radio stations already run AzuraCast, but keeping your server up-to-date with the latest code from the GitHub repository is strongly recommended for security, bug fixes and new feature releases. It's unlikely, but updates may result in unexpected issues or data loss, so always make sure to keep your station's media files backed up in a second location.
->
-> To install AzuraCast, you should have a basic understanding of the Linux shell terminal. Once installed, every aspect of your radio station can be managed via AzuraCast's web interface.
 {.is-info}
+
+**Many web radio stations already run AzuraCast, but keeping your server up-to-date with the latest code from the GitHub repository is strongly recommended for security, bug fixes and new feature releases. It's unlikely, but updates may result in unexpected issues or data loss, so always make sure to keep your station's media files backed up in a second location.**
+
+**To install AzuraCast, you should have a basic understanding of the Linux shell terminal. Once installed, every aspect of your radio station can be managed via AzuraCast's web interface.**
 
 # What is AzuraCast?
 
