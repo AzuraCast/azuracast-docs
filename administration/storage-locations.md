@@ -2,7 +2,7 @@
 title: Storage Locations
 description: Managing the storage locations of your media files, recordings and backups for your stations
 published: true
-date: 2021-02-09T03:29:59.855Z
+date: 2021-02-22T22:51:29.326Z
 tags: administration
 editor: markdown
 dateCreated: 2021-02-06T07:09:01.235Z
@@ -22,4 +22,4 @@ If you want to use an S3 compatible storage provider to store your files please 
 
 # Dropbox Storage Location
 
-Tbd
+If you want to use a Dropbox account to store your files please refer to our [Dropbox Configuration guide](/en/user-guide/storage-locations/dropbox-configuration).
