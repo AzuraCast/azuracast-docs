@@ -2,7 +2,7 @@
 title: Donate
 description: Support AzuraCast and it's developers by donating
 published: true
-date: 2021-02-07T23:27:12.443Z
+date: 2021-02-22T23:38:04.461Z
 tags: 
 editor: markdown
 dateCreated: 2021-02-06T02:56:39.033Z
@@ -14,31 +14,22 @@ Although the AzuraCast community has contributed in many ways to the project, mu
 
 Not only are donations to AzuraCast going to good use, but they help us devote the time we need to keep the application new and updated. Almost every day for years now, we've updated the application to fix a bug, add a new feature or improve the user experience. We never stop working to serve our audience, and your donations help make that possible.
 
-# Recurring Donations
-
-<br>
-
-## GitHub Sponsors
+## How to Donate {.tabset}
+### GitHub Sponsors
 
 If you're a GitHub user, supporting through GitHub Sponsors is one of the best ways to show your support for AzuraCast's development. You can manage your pledge at any time through the Sponsors dashboard.
 
 - [GitHub Sponsors Page](https://github.com/sponsors/SlvrEagle23)
 {.links-list}
 
-<br>
-
-## Patreon
+### Patreon
 
 Supporting our patreon is another great way to provide ongoing support for the project over a long term. Patreon takes slightly higher fees than GitHub Sponsors, but if you're already a Patreon user it's a convenient way to support this project along with other creative professionals and projects.
 
 - [Become a Patron](https://www.patreon.com/bePatron?u=232463)
 {.links-list}
 
-# One-Time Donations
-
-<br>
-
-## Donate via Ko-Fi
+### Ko-Fi (PayPal/Stripe)
 
 If you'd like to make a one-time donation, you can do so at the Ko-Fi page below. Payments via both Paypal and Stripe are supported.
 
