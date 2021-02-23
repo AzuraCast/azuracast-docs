@@ -2,7 +2,7 @@
 title: Donate
 description: Support AzuraCast and it's developers by donating
 published: true
-date: 2021-02-23T00:04:01.283Z
+date: 2021-02-23T21:01:45.352Z
 tags: 
 editor: markdown
 dateCreated: 2021-02-06T02:56:39.033Z
@@ -19,7 +19,7 @@ Not only are donations to AzuraCast going to good use, but they help us devote t
 
 If you're a GitHub user, supporting through GitHub Sponsors is one of the best ways to show your support for AzuraCast's development. You can manage your pledge at any time through the Sponsors dashboard.
 
-- [GitHub Sponsors Page](https://github.com/sponsors/SlvrEagle23)
+- [GitHub Sponsors Page](https://github.com/sponsors/AzuraCast)
 {.links-list}
 
 ### OpenCollective
