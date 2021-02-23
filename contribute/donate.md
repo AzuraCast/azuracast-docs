@@ -2,7 +2,7 @@
 title: Donate
 description: Support AzuraCast and it's developers by donating
 published: true
-date: 2021-02-23T00:03:15.754Z
+date: 2021-02-23T00:04:01.283Z
 tags: 
 editor: markdown
 dateCreated: 2021-02-06T02:56:39.033Z
@@ -24,7 +24,7 @@ If you're a GitHub user, supporting through GitHub Sponsors is one of the best w
 
 ### OpenCollective
 
-AzuraCast has an OpenCollective account that is managed by the Open Source Collective. Contributions and expenses made to this account are open and transparent.
+AzuraCast has an OpenCollective account that is fiscally hosted by the Open Source Collective. Contributions made to, and expenses withdrawn from, this account are fully open and transparent.
 
 - [OpenCollective](https://opencollective.com/azuracast)
 {.links-list}
