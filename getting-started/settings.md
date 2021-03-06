@@ -2,7 +2,7 @@
 title: AzuraCast Settings
 description: Tuning AzuraCasts settings and performance
 published: true
-date: 2021-02-08T05:37:53.589Z
+date: 2021-03-06T02:12:04.397Z
 tags: getting started
 editor: markdown
 dateCreated: 2021-02-06T01:26:40.798Z
@@ -23,9 +23,13 @@ AZURACAST_HTTP_PORT=80
 AZURACAST_HTTPS_PORT=443
 
 AZURACAST_SFTP_PORT=2022
+
+NGINX_TIMEOUT=1800
 ```
 
 This file controls the ports that AzuraCast is using for HTTP/S and SFTP. Those settings can also be changed with the `docker.sh` script.
+
+In this file the timeout limits for the `web` and `nginx_proxy` containers can also be changed if needed. This controls the `fastcgi_read_timeout` and the `proxy_read_timeout` values of the nginx configs.
 
 ## The `azuracast.env` File
 
