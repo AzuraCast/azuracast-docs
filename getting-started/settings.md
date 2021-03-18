@@ -2,7 +2,7 @@
 title: AzuraCast Settings
 description: Tuning AzuraCasts settings and performance
 published: true
-date: 2021-03-06T02:12:04.397Z
+date: 2021-03-18T17:53:26.467Z
 tags: getting started
 editor: markdown
 dateCreated: 2021-02-06T01:26:40.798Z
@@ -14,22 +14,22 @@ There are 2 files with environment variables that can change different aspects o
 
 ## The `.env` File
 
+> Because this file's name starts with a period, it is often hidden when using commands like `ls` to view a directory. You can list a directory (including this file) by using the `ls -a` flag (i.e. `ls -lah`).
+{.is-info}
+
+The `.env` file is used by Docker itself to determine how certain parts of the infrastructure is set up.
+
 The default `.env` file contains the following variables:
 
-```
-COMPOSE_PROJECT_NAME=azuracast
+Variable | Default Value | Description
+- | - | -
+`COMPOSE_PROJECT_NAME` | azuracast | An internal variable used by Docker Compose; this should not be changed.
+`AZURACAST_HTTP_PORT` | 80 | The port used to serve insecure HTTP web traffic.
+`AZURACAST_HTTPS_PORT` | 443 | The port used to serve secure HTTPS web traffic.
+`AZURACAST_SFTP_PORT` | 2022 | The port used to listen for incoming SFTP connections (used for bulk file management).
+`NGINX_TIMEOUT` | 1800 | The time limit (in seconds) that nginx will wait for a response from the PHP application. Corresponds with `proxy_read_timeout` on the proxy and `fastcgi_read_timeout` on the web container. This should match your longest timeout value in `azuracast.env`.
 
-AZURACAST_HTTP_PORT=80
-AZURACAST_HTTPS_PORT=443
-
-AZURACAST_SFTP_PORT=2022
-
-NGINX_TIMEOUT=1800
-```
-
-This file controls the ports that AzuraCast is using for HTTP/S and SFTP. Those settings can also be changed with the `docker.sh` script.
-
-In this file the timeout limits for the `web` and `nginx_proxy` containers can also be changed if needed. This controls the `fastcgi_read_timeout` and the `proxy_read_timeout` values of the nginx configs.
+If you don't want to manually edit this file, you can also change the HTTP, HTTPS and SFTP ports by running `./docker.sh change-ports`.
 
 ## The `azuracast.env` File
 
