@@ -2,7 +2,7 @@
 title: Plugins
 description: 
 published: true
-date: 2021-02-08T04:00:28.274Z
+date: 2021-03-27T20:15:23.725Z
 tags: development, plugin
 editor: markdown
 dateCreated: 2021-02-06T20:06:57.052Z
@@ -35,7 +35,7 @@ services:
       - ./path_to_plugin:/var/azuracast/www/plugins/example-plugin:ro
 ```
 
-Make sure to restart the Docker containers afterward (using `docker-compose down` and `docker-compose up -d`).
+Make sure to update and restart the Docker containers afterwards (using `./docker.sh update`).
 
 <br>
 
