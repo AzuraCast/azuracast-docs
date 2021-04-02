@@ -12,7 +12,7 @@ AzuraCast is powered by Docker and uses pre-built images that contain every comp
 
 # :warning: General Disclaimer
 
-> We, AzuraCast, the developers of this software, are not liable for music licenses and royalties to respective creators. You will need to follow your countries laws on copyright and radio broadcasting and purchase the legally required licenses. If in doubt, speak with a attorney. 
+> We, AzuraCast, the developers of this software, are not liable for music licenses and royalties to respective creators. You will need to follow your countries laws on copyright, radio broadcasting and purchase the legally required licenses. If in doubt, speak with a attorney. 
 {.is-info}
 
 
