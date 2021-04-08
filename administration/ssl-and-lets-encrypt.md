@@ -2,7 +2,7 @@
 title: SSL & Let's Encrypt
 description: Securing your AzuraCast installation with SSL / HTTPS
 published: true
-date: 2021-02-09T03:31:07.064Z
+date: 2021-04-08T09:30:34.921Z
 tags: administration, docker
 editor: markdown
 dateCreated: 2021-02-05T19:28:14.682Z
@@ -43,9 +43,36 @@ Answer the prompts as shown to complete the setup process.
 
 <br>
 
-## Renewing a LetsEncrypt Certificate
+## Renewing a Let's Encrypt Certificate
 
 The web service will automatically renew your LetsEncrypt certificates. If you provide an e-mail in the initial setup process, that e-mail will be used to send you reminders of upcoming expiration in the event that automatic renewal fails.
+
+## What to do when Let's Encrypt is not working
+
+The first thing that you should do when you have set up Let's Encrypt as described above and you still see AzuraCast serving a self-signed certificate is to restart AzuraCast via the following commands:
+
+```
+docker-compose down
+docker-compose up -d
+```
+
+After starting AzuraCast wait a few minutes just to be sure that everything has started up correctly then check if AzuraCast is still serving the self-signed certificate.
+
+If it is still serving the self-signed certificate take a look into the logs of the `nginx_proxy_letsencrypt` container to see if there are any errors related to retrieving or renewing the certificate:
+
+```
+docker-compose logs nginx_proxy_letsencrypt
+```
+
+If you have been tinkering with the Let's Encrypt integration of AzuraCast for a bit you might be running into the rate limiting of the Let's Encrypt API which would look like this in the logs:
+
+```
+nginx_proxy_letsencrypt_1 | "detail": "Error creating new order :: too many certificates already issued for exact set of domains: example.com: see https://letsencrypt.org/docs/rate-limits/",
+```
+
+More about the rate limits of the Let's Encrypt API can be found here: https://letsencrypt.org/docs/rate-limits/
+
+When you reach out to us about issues with Let's Encrypt in AzuraCast make sure to always check the logs of the `nginx_proxy_letsencrypt` first and include them in your message to us. Without these logs we can't help you and the first thing we will do is ask for those logs.
 
 # Using a Custom Certificate
 
