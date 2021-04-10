@@ -2,7 +2,7 @@
 title: Docker
 description: All about Docker installations of AzuraCast
 published: true
-date: 2021-02-09T03:32:17.498Z
+date: 2021-04-10T16:31:12.421Z
 tags: administration, docker
 editor: markdown
 dateCreated: 2021-02-06T06:41:47.092Z
@@ -363,6 +363,36 @@ services:
 ```
 
 4. Restart AzuraCast via `docker-compose down && docker-compose up -d`.
+
+# Increase PHP Allowed Memory
+
+When you encounter an error like the following one you will need to increase the amount of memory that PHP is allowed to use:
+
+```
+AzuraCast.CRITICAL: Fatal error: Allowed memory size of 268435456 bytes exhausted (tried to allocate 212992 bytes) ...
+```
+
+You can easily do this by editing the `azuracast.env` located in `/var/azuracast/`.
+
+There you can find the following entry:
+
+```
+# PHP's maximum memory limit.
+# PHP_MEMORY_LIMIT=128M
+```
+
+Change this to look like this:
+
+```
+# PHP's maximum memory limit.
+PHP_MEMORY_LIMIT=512M
+```
+
+You should increase the value until the error dissappears.
+
+The `M` after the value stands for `Megabytes`.
+
+Refer to the following page for more information about the allowed values for this setting: https://www.php.net/manual/en/faq.using.php#faq.using.shorthandbytes
 
 # Multi-Site Installation
 
