@@ -2,7 +2,7 @@
 title: AzuraCast Settings
 description: Tuning AzuraCasts settings and performance
 published: true
-date: 2021-03-18T17:53:26.467Z
+date: 2021-04-10T01:57:54.653Z
 tags: getting started
 editor: markdown
 dateCreated: 2021-02-06T01:26:40.798Z
@@ -11,6 +11,13 @@ dateCreated: 2021-02-06T01:26:40.798Z
 # Environment Variables
 
 There are 2 files with environment variables that can change different aspects of AzuraCast.
+
+Remember to restart AzuraCast after changing values in these files via:
+
+```
+docker-compose down
+docker-compose up -d
+```
 
 ## The `.env` File
 
