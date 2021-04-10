@@ -2,7 +2,7 @@
 title: Docker
 description: All about Docker installations of AzuraCast
 published: true
-date: 2021-04-10T16:31:12.421Z
+date: 2021-04-10T16:36:36.379Z
 tags: administration, docker
 editor: markdown
 dateCreated: 2021-02-06T06:41:47.092Z
@@ -393,6 +393,8 @@ You should increase the value until the error dissappears.
 The `M` after the value stands for `Megabytes`.
 
 Refer to the following page for more information about the allowed values for this setting: https://www.php.net/manual/en/faq.using.php#faq.using.shorthandbytes
+
+After you have changed this setting you need to restart AzuraCast via `docker-compose down && docker-compose up -d`.
 
 # Multi-Site Installation
 
