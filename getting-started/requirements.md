@@ -10,6 +10,11 @@ dateCreated: 2021-02-05T18:58:13.221Z
 
 AzuraCast is powered by Docker and uses pre-built images that contain every component of the software. Don't worry if you aren't very familiar with Docker; our easy installer tools will handle installing Docker and Docker Compose for you, and updates are very simple.
 
+# :warning: General Disclaimer
+
+> We, AzuraCast, the developers of this software, are not liable for music licenses and royalties to respective creators. You will need to follow your countries laws on copyright, radio broadcasting and purchase the legally required licenses. If in doubt, speak with a attorney. 
+{.is-info}
+
 
 # :computer: System Requirements
 
