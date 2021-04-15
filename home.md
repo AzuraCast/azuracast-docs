@@ -2,13 +2,13 @@
 title: AzuraCast Docs
 description: Documentation for AzuraCast
 published: true
-date: 2021-04-09T11:59:29.475Z
+date: 2021-04-15T12:41:34.516Z
 tags: 
 editor: markdown
 dateCreated: 2021-02-05T06:09:43.264Z
 ---
 
-> The current stable version of AzuraCast is `v0.12.2 (#9af25b3)`
+> The current stable version of AzuraCast is `v0.12.3 (#b8f112b)`
 {.is-success}
 
 > **AzuraCast is currently in beta.**
