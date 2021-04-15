@@ -2,7 +2,7 @@
 title: Updates
 description: How to update your AzuraCast installation
 published: true
-date: 2021-02-08T05:00:51.896Z
+date: 2021-04-15T12:38:02.241Z
 tags: ansible, docker, getting started, debugging
 editor: markdown
 dateCreated: 2021-02-05T20:11:10.517Z
@@ -11,6 +11,14 @@ dateCreated: 2021-02-05T20:11:10.517Z
 Updating AzuraCast will update both the web app itself and all of its dependencies, so you will be on the latest version of all of the supporting software.
 
 During the update process, your stations will be briefly offline to listeners, so you should set aside a time to update and notify listeners if necessary.
+
+> **Always make a backup before updating your installation!**
+> 
+> The AzuraCast team is not responsible for any downtime or loss of data of your production installations of AzuraCast if you run into any errors while updating. Especially if you are updating a production installation with a lot of stations on a single server.
+> 
+> Please follow the general [troubleshooting steps](/en/user-guide/troubleshooting) and instructions on how to report an issue. Be polite, patient and **don't** treat the maintainers of this **free and open source** software like a big company with a dedicated support team.
+{.is-info}
+
 
 # Docker Installations
 
