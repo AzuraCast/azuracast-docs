@@ -2,7 +2,7 @@
 title: Synchronisation Tasks
 description: All about the AzuraCast automatic processing tasks
 published: true
-date: 2021-02-08T04:23:00.051Z
+date: 2021-04-17T10:52:24.587Z
 tags: administration
 editor: markdown
 dateCreated: 2021-02-06T04:53:24.798Z
@@ -24,6 +24,37 @@ Now Playing Data | 15 seconds | `BuildQueueTask`, `NowPlayingTask`, `ReactivateS
 1-Hour Sync | 60 minutes | `RunAnalyticsTask`, `RunAutomatedAssignmentTask`, `CleanupHistoryTask`, `CleanupStorageTask`, `RotateLogsTask`, `UpdateGeoLiteTask`
 
 <br>
+
+# Increase Execution Timeout
+
+If you are regularly running into timeouts while a sync task is processing you can manually increase the time that the sync tasks are allowed to run via the `azuracast.env` in `/var/azuracast/`.
+
+In the `azuracast.env` look for the following entries and increase the specified time in seconds to your needs.
+
+```
+# The maximum execution time (and lock timeout) for the 15-second, 1-minute and 5-minute synchronization tasks.
+# SYNC_SHORT_EXECUTION_TIME=600
+
+# The maximum execution time (and lock timeout) for the 1-hour synchronization task.
+# SYNC_LONG_EXECUTION_TIME=1800
+```
+
+This is how these lines should look like after changing (the values are just for demonstration):
+
+```
+# The maximum execution time (and lock timeout) for the 15-second, 1-minute and 5-minute synchronization tasks.
+SYNC_SHORT_EXECUTION_TIME=900
+
+# The maximum execution time (and lock timeout) for the 1-hour synchronization task.
+SYNC_LONG_EXECUTION_TIME=2200
+```
+
+After changing these entries restart your AzuraCast installation via:
+
+```
+docker-compose down
+docker-compose up -d
+```
 
 # Now Playing Data
 
