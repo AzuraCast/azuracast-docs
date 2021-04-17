@@ -2,7 +2,7 @@
 title: Docker
 description: All about Docker installations of AzuraCast
 published: true
-date: 2021-04-10T16:36:36.379Z
+date: 2021-04-17T11:17:12.917Z
 tags: administration, docker
 editor: markdown
 dateCreated: 2021-02-06T06:41:47.092Z
@@ -395,6 +395,21 @@ The `M` after the value stands for `Megabytes`.
 Refer to the following page for more information about the allowed values for this setting: https://www.php.net/manual/en/faq.using.php#faq.using.shorthandbytes
 
 After you have changed this setting you need to restart AzuraCast via `docker-compose down && docker-compose up -d`.
+
+# Adding custom NGINX configurations
+
+If you need to add some custom configurations to NGINX you can do this by your `custom.conf` file into the `web` container via the `docker-compose.override.yml` like this:
+
+```
+version: '2.2'
+
+services:
+  web:
+    volumes:
+      - ./custom.conf:/etc/nginx/azuracast.conf.d/custom.conf
+```
+
+All config files placed in the `/etc/nginx/azuracast.conf.d/` are automatically included in the main AzuraCast NGINX configuration.
 
 # Multi-Site Installation
 
