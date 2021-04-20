@@ -2,7 +2,7 @@
 title: Backup & Restore
 description: Creating backups and restoring your AzuraCast installation from them
 published: true
-date: 2021-02-09T03:28:59.716Z
+date: 2021-04-20T18:35:54.772Z
 tags: administration
 editor: markdown
 dateCreated: 2021-02-06T07:01:08.655Z
@@ -33,7 +33,7 @@ You can also pass the --exclude-media flag to back up just the database and stat
 
 ```bash
 cd /var/azuracast
-./docker.sh backup --exclude-media path-to-backup.zip
+./docker.sh backup path-to-backup.zip --exclude-media
 ```
 
 Both .zip and .tar.gz formats are supported for backups. The correct format will automatically be determined by the extension of the filename you specify for the backup file.
