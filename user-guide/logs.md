@@ -2,7 +2,7 @@
 title: Logs
 description: How to get logs and what logs are available
 published: true
-date: 2021-02-08T04:59:51.872Z
+date: 2021-04-22T20:52:29.021Z
 tags: getting started, debugging
 editor: markdown
 dateCreated: 2021-02-05T22:33:04.885Z
@@ -54,6 +54,9 @@ If you encounter any problems with accessing the streams or your mount points th
 # Docker Container Logs
 
 Some system logs can only be accessed from a shell session on the host computer. You can run `docker-compose logs -f <container_name>` to access container logs from the terminal. Replace `<container_name>` with one of the following container names.
+
+> In order to run this command you need to be in the installation directory of your AzuraCast installation. By default this should be `/var/azuracast/`
+{.is-info}
 
 ## Available Containers
 
