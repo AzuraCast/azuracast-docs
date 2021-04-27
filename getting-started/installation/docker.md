@@ -2,7 +2,7 @@
 title: Docker Installation Guide
 description: How to install AzuraCast with Docker
 published: true
-date: 2021-02-08T05:02:48.443Z
+date: 2021-04-27T11:07:41.163Z
 tags: docker, getting started
 editor: markdown
 dateCreated: 2021-02-05T19:38:47.919Z
@@ -28,7 +28,7 @@ cd /var/azuracast
 Use these commands to download our Docker Utility Script, set it as executable and then run the Docker installation process:
 
 ```
-curl -fsSL https://raw.githubusercontent.com/AzuraCast/AzuraCast/master/docker.sh > docker.sh
+curl -fsSL https://raw.githubusercontent.com/AzuraCast/AzuraCast/main/docker.sh > docker.sh
 chmod a+x docker.sh
 ./docker.sh install
 ```
@@ -52,7 +52,7 @@ To automatically install AzuraCast on the rolling release channel, run this scri
 ```
 mkdir -p /var/azuracast
 cd /var/azuracast
-curl -fsSL https://raw.githubusercontent.com/AzuraCast/AzuraCast/master/docker.sh > docker.sh
+curl -fsSL https://raw.githubusercontent.com/AzuraCast/AzuraCast/main/docker.sh > docker.sh
 chmod a+x docker.sh
 yes '' | ./docker.sh install
 ```
@@ -64,7 +64,7 @@ To automatically install AzuraCast on the stable channel, run this script:
 ```
 mkdir -p /var/azuracast
 cd /var/azuracast
-curl -fsSL https://raw.githubusercontent.com/AzuraCast/AzuraCast/master/docker.sh > docker.sh
+curl -fsSL https://raw.githubusercontent.com/AzuraCast/AzuraCast/main/docker.sh > docker.sh
 chmod a+x docker.sh
 yes 'Y' | ./docker.sh setup-release
 yes '' | ./docker.sh install
