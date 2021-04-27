@@ -2,7 +2,7 @@
 title: Docker
 description: All about Docker installations of AzuraCast
 published: true
-date: 2021-04-17T11:17:12.917Z
+date: 2021-04-27T11:08:36.208Z
 tags: administration, docker
 editor: markdown
 dateCreated: 2021-02-06T06:41:47.092Z
@@ -31,7 +31,7 @@ If you've recently followed the [Docker installation instructions](/en/getting-s
 If you have an older installation, you can use the Docker Utility Script by running these commands inside your AzuraCast directory on your host computer:
 
 ```
-curl -L https://raw.githubusercontent.com/AzuraCast/AzuraCast/master/docker.sh > docker.sh
+curl -L https://raw.githubusercontent.com/AzuraCast/AzuraCast/main/docker.sh > docker.sh
 chmod a+x docker.sh
 ```
 
