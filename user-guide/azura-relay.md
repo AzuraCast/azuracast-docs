@@ -2,7 +2,7 @@
 title: AzuraRelay
 description: A "relay in a box" containing a lightweight web application and Icecast servers that can connect to and relay an AzuraRelay parent instance.
 published: true
-date: 2021-02-08T05:06:27.605Z
+date: 2021-04-27T11:09:11.050Z
 tags: user guide, docker, relay
 editor: markdown
 dateCreated: 2021-02-07T09:42:11.032Z
@@ -39,7 +39,7 @@ cd /var/azurarelay
 Use these commands to download our Docker Utility Script, set it as executable and then run the Docker installation process:
 
 ```bash
-curl -L https://raw.githubusercontent.com/AzuraCast/AzuraRelay/master/docker.sh > docker.sh
+curl -L https://raw.githubusercontent.com/AzuraCast/AzuraRelay/main/docker.sh > docker.sh
 chmod a+x docker.sh
 ./docker.sh install
 ```
