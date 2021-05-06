@@ -2,7 +2,7 @@
 title: AzuraCast Docs
 description: Documentation for AzuraCast
 published: true
-date: 2021-05-06T21:02:10.821Z
+date: 2021-05-06T21:05:57.779Z
 tags: 
 editor: markdown
 dateCreated: 2021-02-05T06:09:43.264Z
@@ -14,7 +14,7 @@ dateCreated: 2021-02-05T06:09:43.264Z
 > To install AzuraCast, you should have a basic understanding of the Linux shell terminal. Once installed, every aspect of your radio station can be managed via AzuraCast's web interface.
 {.is-info}
 
-[](https://img.shields.io/packagist/v/azuracast/azuracast.svg?label=latest+stable+version)
+![](https://img.shields.io/packagist/v/azuracast/azuracast.svg?label=latest+stable+version&style=for-the-badge)
 
 # What is AzuraCast?
 
@@ -61,7 +61,7 @@ as a broadcasting frontend. SHOUTcast is non-free software and does not come bun
 
 * **[NGINX](https://www.nginx.com)** for serving web pages and the radio proxy
 * **[MariaDB](https://mariadb.org/)** as the primary database
-* **[PHP 7.4](https://secure.php.net/)** powering the web application
+* **[PHP 8.0](https://secure.php.net/)** powering the web application
 * **[Redis](https://redis.io/)** for sessions, message queue storage, database and general caching
 
 # AzuraCast API
