@@ -2,20 +2,19 @@
 title: AzuraCast Docs
 description: Documentation for AzuraCast
 published: true
-date: 2021-04-20T02:25:11.326Z
+date: 2021-05-06T21:02:10.821Z
 tags: 
 editor: markdown
 dateCreated: 2021-02-05T06:09:43.264Z
 ---
-
-> The current stable version of AzuraCast is `v0.12.3 (#b8f112b)`
-{.is-success}
 
 > **AzuraCast is currently in beta.**
 > Many web radio stations already run AzuraCast, but keeping your server up-to-date with the latest code from the GitHub repository is strongly recommended for security, bug fixes and new feature releases. It's unlikely, but updates may result in unexpected issues or data loss, so always make sure to keep your station's media files backed up in a second location.
 >
 > To install AzuraCast, you should have a basic understanding of the Linux shell terminal. Once installed, every aspect of your radio station can be managed via AzuraCast's web interface.
 {.is-info}
+
+[](https://img.shields.io/packagist/v/azuracast/azuracast.svg?label=latest+stable+version)
 
 # What is AzuraCast?
 
