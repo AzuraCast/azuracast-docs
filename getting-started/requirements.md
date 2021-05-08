@@ -18,12 +18,23 @@ AzuraCast is powered by Docker and uses pre-built images that contain every comp
 
 # :computer: System Requirements
 
+### Minimum Requirements
 - A 64-bit x86 (x86_64) CPU
 - at least 2GB of RAM
 - 20GB or greater of hard drive space
 - A computer/server capable of running Docker
 
-> For Linux hosts, the `sudo`, `curl` and `git` packages should be installed before installing AzuraCast. Most Linux distributions include these packages already.
+> For Linux hosts, the `sudo`, `curl` and `git` packages should be installed before installing AzuraCast. Most Linux distributions include these packages already. This is the barest of minimum to run AzuraCast, there's no guarantees it will run perfectly. 
+{.is-info}
+
+### Recommended Requirements
+- 4 CPU cores
+- 4GB of ram. 
+- 40 GB or greater of hard drive space 
+- A computer/server capable of running Docker
+
+
+> Recommeneded Requirements should allow  you to run a few stations with ease, this is aimed for hobby usage (5 to 10 stations).
 {.is-info}
 
 # :dvd: Operating System
