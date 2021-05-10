@@ -34,7 +34,7 @@ AzuraCast is powered by Docker and uses pre-built images that contain every comp
 - A computer/server capable of running Docker
 
 
-> Recommeneded Requirements should allow  you to run a few stations with ease, this is aimed for hobby usage (5 to 10 stations).
+> Recommeneded Requirements should allow  you to run a few stations with ease, this is aimed for hobby usage (5 to 10 stations). [If you wish to increase the memory even further, consult this guide on Swap Space](https://www.digitalocean.com/community/tutorials/how-to-add-swap-space-on-ubuntu-20-04)
 {.is-info}
 
 # :dvd: Operating System
