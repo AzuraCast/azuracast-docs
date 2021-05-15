@@ -1,8 +1,8 @@
 ---
 title: Getting Started on Ubuntu 
-description: 
+description: Developing for Azuracast on Ubuntu
 published: true
-date: 2021-05-15T15:30:38.282Z
+date: 2021-05-15T17:02:39.740Z
 tags: 
 editor: markdown
 dateCreated: 2021-05-15T15:20:36.340Z
@@ -37,21 +37,15 @@ Regardless of your host operating system, it's highly recommended to use **Docke
 
 For the steps below, we're assuming you've created a folder where you will store all of your AzuraCast-related projects, like `/home/myuser/azuracast/`.
 
-You will need Git and Docker installed locally. If you're on Windows or Mac, the best way to use Docker is via the native [Docker Desktop](https://www.docker.com/products/docker-desktop) applications for those platforms.
+You will need `git`, `docker-compose` and `cURL` installed on the Virtual Box.
 
-For Windows, an installer tool like [Scoop](https://scoop.sh/) is highly recommended for dependencies like Git and your terminal of choice. A third-party shell client like Cmder is also often helpful.
+For this guide, using a virtual machine like [Virtual Box](https://www.virtualbox.org/) is recommended, for this guide we will be using Ubuntu 20.04 LTS, as it's the latest Long Term Support itteration of Ubuntu. [Guide on installing Ubuntu 20.04 on Virtual Box](https://linuxhint.com/install_ubuntu_virtualbox_2004) 
 
 <br>
 
 ## Clone the Repositories
 
 Using Git, clone the AzuraCast core repository and the various Docker containers into a single folder. When developing locally, the Docker containers are built from scratch, so you will need those repositories to be alongside the main "AzuraCast" project in the same folder.
-
-> **Note for Windows developers:** Before cloning the repositories, you should ensure your Git is locally configured to not automatically convert line endings from Linux style (LF) to Windows style (CRLF), which will break AzuraCast. You can set this globally by running:
-> 
-> ```sh
-> git config --global core.autocrlf input
-> ```
 
 In the same folder, run your platform's equivalent of:
 
@@ -73,7 +67,7 @@ All commands from this point forward should be run in the `AzuraCast` repository
 cd AzuraCast
 ```
 
-to enter the core repository's directory.
+To enter the core repository's directory.
 
 <br>
 
@@ -108,11 +102,13 @@ INIT_MUSIC_PATH=/var/azuracast/www/util/fixtures/init_music
 
 ## Build the Docker Containers
 
-Build the Docker containers from your local copies by running:
+Build the Docker containers from your local copies by running this command.  This may take some time to fully build the containers. 
 
 ```bash
 docker-compose build
 ```
+> :warning: You may need to run this command as `sudo` if it throws `Cannot connect to Docker daemon at http+docker://localhost` errors. 
+{.is-warning}
 
 <br>
 
@@ -135,6 +131,9 @@ To preload sample data (provided in the `azuracast.env` file above) and start wi
 ```bash
 bash docker.sh install --load-fixtures
 ```
+
+> :warning: This command may require `sudo` incase you run into issues with it. 
+{.is-warning}
 
 <br>
 
