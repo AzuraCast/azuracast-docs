@@ -2,7 +2,7 @@
 title: Liquidsoap
 description: Liquidsoap the audio processing tool and language
 published: true
-date: 2021-02-08T04:06:07.674Z
+date: 2021-05-30T14:20:57.325Z
 tags: development, audio processing, advanced feature
 editor: markdown
 dateCreated: 2021-02-06T19:39:05.548Z
@@ -181,6 +181,18 @@ Fade the end of tracks. Metadata 'liq_video_fade_out' can be used to set the dur
 [LADSPA](https://www.ladspa.org/) is a standard that allows software audio processors and effects to be plugged into a wide range of audio synthesis and recording packages.
 
 Our latest rolling-release Docker image and Ansible scripts add support for LADSPA to Liquidsoap. We include several popular plugins, allowing you to perform powerful equalization in your configuration.
+
+Use the following command to view all the available LADSPA plugins that come pre-installed with AzuraCast:
+
+```
+docker-compose run --rm --user=azuracast stations liquidsoap --list-plugins
+```
+
+To get detailed information about the usage of a specific LADSPA plugin use the following command and replace the `plugin` part of the `ladspa.plugin` with the name of the plugin you want to look at:
+
+```
+docker-compose run --rm --user=azuracast stations liquidsoap -h ladspa.plugin
+```
 
 We have modified the [MK Pascal script](https://github.com/mkpascal/mk_liquidsoap_processing/blob/master/process.liq) to work with AzuraCast.
 
