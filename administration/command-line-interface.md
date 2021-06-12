@@ -2,7 +2,7 @@
 title: Command-Line Interface
 description: 
 published: true
-date: 2021-02-08T04:27:16.732Z
+date: 2021-06-12T00:43:32.781Z
 tags: administration
 editor: markdown
 dateCreated: 2021-02-06T07:25:29.538Z
@@ -31,7 +31,7 @@ docker-compose run --rm cli azuracast_cli [command]
 **Ansible Installation:**
 
 ```bash
-php /var/azuracast/www/util/cli.php [command]
+php /var/azuracast/www/bin/console [command]
 ```
 
 # Command Reference
