@@ -2,7 +2,7 @@
 title: SSL & Let's Encrypt
 description: Securing your AzuraCast installation with SSL / HTTPS
 published: true
-date: 2021-04-08T10:05:40.029Z
+date: 2021-06-30T20:02:54.751Z
 tags: administration, docker
 editor: markdown
 dateCreated: 2021-02-05T19:28:14.682Z
@@ -98,3 +98,16 @@ The naming convention for the mapping (the second part of each of the `volumes` 
 - **Domain name:** `example.azuracast.com`
 - **Certificate path:** `/etc/nginx/certs/example.azuracast.com.crt`
 - **Key path:** `/etc/nginx/certs/example.azuracast.com.key`
+
+After creating the `docker-compose.override.yml` you will need to edit the `.env` file (not the `azuracast.env`) and add the following environment variable to it:
+
+```
+LETSENCRYPT_HOST=yourdomain.com
+```
+
+Finally you need to restart AzuraCast in order to apply the changes:
+
+```bash
+docker-compose down
+docker-compose up -d
+```
