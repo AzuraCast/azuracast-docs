@@ -2,7 +2,7 @@
 title: Getting Started
 description: Developing with AzuraCast
 published: true
-date: 2021-02-08T03:56:48.445Z
+date: 2021-07-18T08:05:28.187Z
 tags: development
 editor: markdown
 dateCreated: 2021-02-06T07:31:58.854Z
@@ -58,6 +58,7 @@ In the same folder, run your platform's equivalent of:
 ```bash
 git clone https://github.com/AzuraCast/AzuraCast.git
 git clone https://github.com/AzuraCast/docker-azuracast-nginx-proxy.git
+git clone https://github.com/AzuraCast/docker-azuracast-nginx-proxy-letsencrypt.git
 git clone https://github.com/AzuraCast/docker-azuracast-db.git
 git clone https://github.com/AzuraCast/docker-azuracast-redis.git
 git clone https://github.com/AzuraCast/docker-azuracast-radio.git
