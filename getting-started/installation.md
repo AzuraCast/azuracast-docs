@@ -2,7 +2,7 @@
 title: Installation
 description: How to install AzuraCast on your server
 published: true
-date: 2021-02-09T03:10:58.528Z
+date: 2021-07-26T03:59:14.372Z
 tags: getting started
 editor: markdown
 dateCreated: 2021-02-05T19:10:58.100Z
@@ -16,7 +16,7 @@ You can also install AzuraCast yourself on most server hardware and many compute
 {.is-info}
 
 
-# :computer_mouse: One-Click Installers
+# One-Click Installers
 
 The easiest way to get started with AzuraCast is to create a new VPS with one of our supported partners via the options below.
 
@@ -24,16 +24,19 @@ The easiest way to get started with AzuraCast is to create a new VPS with one of
 
 - **Linode:** Deploy a new Linode instance with the [AzuraCast one-click installer in the Linode Marketplace](https://www.linode.com/marketplace/apps/linode/azuracast/?r=68daf2976efcb77d2e3d4ced67a02b031edc3ba1).
 
-# :whale: Docker (Recommended)
+# Self-Hosted Installation
 
-> For a majority of users, our Docker installation method is the preferred way of installing and using AzuraCast:
+## :whale: Docker (Recommended)
+
+> For a majority of users, our Docker installation method is the preferred way of installing and using AzuraCast.
 {.is-success}
 
+Click the link below for Docker installation instructions.
 
 - [Installing AzuraCast with Docker](/en/getting-started/installation/docker)
 {.links-list}
 
-# Other Methods (Unsupported)
+## Other Methods
 
 > Ansible installations are not officially supported; we strongly recommend Docker installations.
 > 
