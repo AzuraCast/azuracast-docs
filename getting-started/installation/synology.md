@@ -2,13 +2,11 @@
 title: Installing AzuraCast on a Synology NAS
 description: 
 published: true
-date: 2021-07-26T04:06:17.767Z
+date: 2021-07-26T04:07:34.632Z
 tags: docker
 editor: markdown
 dateCreated: 2021-07-26T04:06:17.767Z
 ---
-
-# Installing AzuraCast on Synology NAS
 
 ## Configure Environment
 
