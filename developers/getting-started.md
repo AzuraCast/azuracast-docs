@@ -2,7 +2,7 @@
 title: Getting Started
 description: Developing with AzuraCast
 published: true
-date: 2021-07-18T08:05:28.187Z
+date: 2021-07-26T05:59:43.599Z
 tags: development
 editor: markdown
 dateCreated: 2021-02-06T07:31:58.854Z
@@ -24,7 +24,7 @@ A majority of our repositories come with an `.editorconfig` file in the root, wh
 
 If your IDE does not support EditorConfig, the most important standard to remember that we follow is the PHP Framework Interoperability Group's [PSR-12 Extended Coding Style](https://www.php-fig.org/psr/psr-12/) standard.
 
-Accessibility, security, and modern best practices are very important in AzuraCast's development. Any newly contributed code can, and should, take advantage of the full suite of new features made available in `PHP 7.4` and newer.
+Accessibility, security, and modern best practices are very important in AzuraCast's development. Any newly contributed code can, and should, take advantage of the full suite of new features made available in PHP 8.0 and newer.
 
 Contributions are also welcome in the supporting technologies used to make AzuraCast possible, such as:
 
@@ -41,11 +41,9 @@ You will need Git and Docker installed locally. If you're on Windows or Mac, the
 
 For Windows, an installer tool like [Scoop](https://scoop.sh/) is highly recommended for dependencies like Git and your terminal of choice. A third-party shell client like Cmder is also often helpful.
 
-<br>
+## Clone the Core Repository
 
-## Clone the Repositories
-
-Using Git, clone the AzuraCast core repository and the various Docker containers into a single folder. When developing locally, the Docker containers are built from scratch, so you will need those repositories to be alongside the main "AzuraCast" project in the same folder.
+Using Git, clone the AzuraCast core repository into a subfolder of your working directory.
 
 > **Note for Windows developers:** Before cloning the repositories, you should ensure your Git is locally configured to not automatically convert line endings from Linux style (LF) to Windows style (CRLF), which will break AzuraCast. You can set this globally by running:
 > 
@@ -53,49 +51,30 @@ Using Git, clone the AzuraCast core repository and the various Docker containers
 > git config --global core.autocrlf input
 > ```
 
-In the same folder, run your platform's equivalent of:
+To do this, your initial command should look like:
 
 ```bash
 git clone https://github.com/AzuraCast/AzuraCast.git
-git clone https://github.com/AzuraCast/docker-azuracast-nginx-proxy.git
-git clone https://github.com/AzuraCast/docker-azuracast-nginx-proxy-letsencrypt.git
-git clone https://github.com/AzuraCast/docker-azuracast-db.git
-git clone https://github.com/AzuraCast/docker-azuracast-redis.git
-git clone https://github.com/AzuraCast/docker-azuracast-radio.git
 ```
 
-<br>
+## Setup via Docker Utility Script
 
-## Move into AzuraCast Repository Directory
+We have added a developer-specific helper tool to our Docker Utility Script that takes care of a lot of the common setup tasks for you. This script will copy the default environment configuration files, clone the additional repositories, and even install Docker and Docker Compose for you if they aren't installed already.
 
-All commands from this point forward should be run in the `AzuraCast` repository's folder. From the parent folder, run:
+From the previous command, you can run this script by running:
 
 ```bash
 cd AzuraCast
+bash docker.sh install-dev
 ```
-
-to enter the core repository's directory.
-
-<br>
-
-## Copy Default Files
-
-Copy the example files into their proper locations:
-
-```bash
-cp sample.env .env
-cp azuracast.dev.env azuracast.env
-cp docker-compose.sample.yml docker-compose.yml
-cp docker-compose.dev.yml docker-compose.override.yml
-```
-
-<br>
 
 ## Modify the Environment File
 
-AzuraCast can automatically load data "fixtures" which will preconfigure a sample station with sensible defaults, to avoid needing to complete the setup process every time.
+During the developer setup process, if you haven't done so already, you will be prompted to customize your `azuracast.env` file to make sure the proper values are input into this file.
 
-To customize how the fixtures load in your environment, open the newly copied `azuracast.env` file and customize the following values:
+Many of the values left blank by default are what are called "fixtures", which will automatically populate parts of the database upon initial installation, saving you the trouble of setting those values up every time you reset your database or code.
+
+If you want to populate those values, you can modify them in the `azuracast.env` file, where they will look like the fields below:
 
 ```
 INIT_BASE_URL=docker.local
@@ -105,39 +84,26 @@ INIT_ADMIN_PASSWORD=
 INIT_MUSIC_PATH=/var/azuracast/www/util/fixtures/init_music
 ```
 
-<br>
+If you would prefer to follow the traditional post-installation setup process instead, just remove any fields from the `azuracast.env` file that start with `INIT_`.
 
-## Build the Docker Containers
+# Common Tasks
 
-Build the Docker containers from your local copies by running:
+## Rebuilding the Docker Images
+
+By default, developer installations bind mount the current code from your local computer into the Docker container, so changes to the code will be visible immediately in the running web application.
+
+If you need to make changes to the containers themselves, though, or your containers get out of date with the ones in our repositories, you can rebuild them by running:
 
 ```bash
 docker-compose build
 ```
 
-<br>
-
-## Run the in-container installation
-
-<br>
-
-#### Without Data Fixtures
-
-To run the setup process without preconfiguring the installation in any way, run:
+You should then restart your installation by running:
 
 ```bash
-bash docker.sh install
+docker-compose down
+docker-compose up -d
 ```
-
-#### With Data Fixtures
-
-To preload sample data (provided in the `azuracast.env` file above) and start with a preconfigured installation, run:
-
-```bash
-bash docker.sh install --load-fixtures
-```
-
-<br>
 
 ## Building Static Assets
 
@@ -149,23 +115,44 @@ To access the static container, run:
 bash docker.sh static npm run build
 ```
 
-By default, this will clean up the existing asset manifests and build new CSS and JS files. To access the terminal inside this container, run `./docker.sh static bash`.
+By default, this will clean up the existing asset manifests and build new CSS and JS files. 
 
-<br>
+## Accessing `bash` Inside the Container
 
-## Spin up the Docker containers
+It is common to need to access the bash shell inside the running `web` container in order to see or modify the current state of the application while it's running.
 
-By default, AzuraCast will be available at http://localhost/. A self-signed TLS certificate is also provided out of the box, so you can take advantage of the HTTPS functionality after manually exempting the site via your browser.
+There is a helper command you can run using the Docker Utility Script to easily accomplish this:
 
-<br>
+```bash
+bash docker.sh bash
+```
+
+## Customize Local SSL
+
+Out of the box, AzuraCast comes with a self-signed SSL certificate that you can use for local development. Most browsers will complain about this, but you can add an exception to allow you to proceed anyway.
+
+If you want to use a valid SSL certificate on your local installation, we highly recommend a tool called [mkcert](https://github.com/FiloSottile/mkcert).
+
+We commonly use this tool to register a local SSL-enabled domain at `azuracast.local`. You will need to edit your `/etc/hosts` file to point this domain to your own computer as a one-time change.
+
+The process for installing this certificate into the AzuraCast ecosystem looks like this command, run from the main repository's project root:
+
+```bash
+mkcert azuracast.local -cert-file util/local_ssl/azurcast.local.crt -key-file util/local_ssl/azuracast.local.key
+```
+
+To make your new certificate take effect, you will need to restart the Docker containers using:
+
+```bash
+docker-compose down
+docker-compose up -d
+```
 
 ## Translations (Locales)
 
 Locales are managed by the application in two places: the backend PHP code and the frontend (primarily Vue.js) JavaScript code. When new locales are added or translations are changed, they should be processed in both locations.
 
 There are two steps to the translation process:
-
-<br>
 
 ### Generating New Translations
 
@@ -180,8 +167,6 @@ bash docker.sh cli locale:generate
 # Frontend
 bash docker.sh static npm run generate-locales
 ```
-
-<br>
 
 ### Import New Translated Strings
 
