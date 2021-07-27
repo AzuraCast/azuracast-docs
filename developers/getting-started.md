@@ -2,7 +2,7 @@
 title: Getting Started
 description: Developing with AzuraCast
 published: true
-date: 2021-07-27T21:42:07.493Z
+date: 2021-07-27T21:48:30.339Z
 tags: development
 editor: markdown
 dateCreated: 2021-02-06T07:31:58.854Z
@@ -138,7 +138,7 @@ We commonly use this tool to register a local SSL-enabled domain at `azuracast.l
 The process for installing this certificate into the AzuraCast ecosystem looks like this command, run from the main repository's project root:
 
 ```bash
-mkcert -cert-file util/local_ssl/azurcast.local.crt -key-file util/local_ssl/azuracast.local.key azuracast.local
+mkcert -cert-file util/local_ssl/azuracast.local.crt -key-file util/local_ssl/azuracast.local.key azuracast.local
 ```
 
 To make your new certificate take effect, you will need to restart the Docker containers using:
