@@ -2,7 +2,7 @@
 title: Docker
 description: All about Docker installations of AzuraCast
 published: true
-date: 2021-04-27T11:08:36.208Z
+date: 2021-08-01T23:49:32.375Z
 tags: administration, docker
 editor: markdown
 dateCreated: 2021-02-06T06:41:47.092Z
@@ -216,6 +216,9 @@ To override more complex functionality in your Docker installation, see the "Cus
 
 # Expanding the Station Port Range
 
+> Updated AzuraCast installations using the Rolling Release channel can now take advantage of the interactive installer script, which will automatically write any custom port ranges to the `docker-compose.yml` file for you.
+{.is-info}
+
 For performance reasons, by default Docker installations only open radio ports from port 8000 to 8500. This allows for 50 unique stations to operate.
 
 Depending on your hardware, it may be possible to run more than 50 stations on one AzuraCast instance, but if you want to directly access the additional radio ports, you can follow this simple process.
@@ -322,6 +325,9 @@ You will need to restart your Docker containers using `docker-compose down`, the
 
 # Stream Intro File
 
+> Updated AzuraCast installations using the Rolling Release channel can now directly upload an intro track on the Mount Point edit page.
+{.is-info}
+
 You can add a music file to play when someone initially connects to your stream. Remember when creating intro files that they **must match the exact same format, bitrate and sample rate as your mount point to work properly.**
 
 First, tell the Docker filesystem where to find your intro file. Inside the AzuraCast directory on your host (by default, `/var/azuracast`), create a file named `docker-compose.override.yml` with the following contents:
@@ -345,6 +351,9 @@ Return to the AzuraCast web interface, visit the "Mount Points" page for your st
 For more information, see the [IceCast documentation.](https://www.icecast.org/docs/)
 
 # Custom Favicon
+
+> Updated AzuraCast installations using the Rolling Release channel can now directly upload a custom favicon via the `Custom Branding` page.
+{.is-info}
 
 To override the favicon and other browser icons used by AzuraCast, you should follow these steps:
 
