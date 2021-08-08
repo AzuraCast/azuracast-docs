@@ -2,7 +2,7 @@
 title: Getting Started
 description: Developing with AzuraCast
 published: true
-date: 2021-07-27T21:48:30.339Z
+date: 2021-08-08T23:07:21.890Z
 tags: development
 editor: markdown
 dateCreated: 2021-02-06T07:31:58.854Z
@@ -112,7 +112,13 @@ AzuraCast uses a special Docker container containing the full static asset build
 To access the static container, run:
 
 ```bash
-bash docker.sh static npm run build
+bash docker.sh static
+```
+
+When inside the container run the following command to build the assets:
+
+```bash
+npm run build
 ```
 
 By default, this will clean up the existing asset manifests and build new CSS and JS files. 
