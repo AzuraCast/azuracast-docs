@@ -2,7 +2,7 @@
 title: Installation
 description: How to install AzuraCast on your server
 published: true
-date: 2021-09-02T02:18:10.236Z
+date: 2021-09-02T02:24:33.329Z
 tags: getting started
 editor: markdown
 dateCreated: 2021-02-05T19:10:58.100Z
@@ -36,28 +36,37 @@ Deploy a new Linode instance with the AzuraCast one-click installer in the Linod
 > Installing AzuraCast yourself requires a basic understanding of the Linux shell/terminal environment, as well as root (or "sudo") access to the computer you're installing AzuraCast on.
 {.is-info}
 
-## :whale: Docker (Recommended)
+> **Want professional help?** AzuraCast offers paid [professional services](/en/professional-services) to help with installing, updating, migrating or maintaining your AzuraCast installation.
+{.is-info}
 
-> For a majority of users, our Docker installation method is the preferred way of installing and using AzuraCast.
-{.is-success}
+## Installation Methods {.tabset}
+### :whale: Docker (Recommended)
 
-Click the link below for Docker installation instructions.
+For a majority of users, our Docker installation method is the preferred way of installing and using AzuraCast. Click the link below for Docker installation instructions.
 
 - [Installing AzuraCast with Docker](/en/getting-started/installation/docker)
 {.links-list}
 
-## Device-Specific Installation Guides
 
-- [Installing AzuraCast on a Synology NAS](/en/getting-started/installation/synology)
-- [Installing AzuraCast on a Raspberry Pi 3B or 4 Series](/en/getting-started/installation/raspberry-pi)
-{.links-list}
+### Ansible
 
-## Other Methods
-
-> Ansible installations are intended for seasoned Linux server administrators and are not recommended or officially supported for most users; we strongly recommend Docker installations in a majority of cases. The software we install via Ansible can conflict with other software installed on your server and cause problems which are difficult to diagnose and support. You should be familiar with the Linux terminal and with basic troubleshooting and diagnostic steps if you choose this installation method.
-{.is-warning}
-
-Most servers and hosting providers support Docker without any issues. If your provider does not, or if you are using unique hardware, see the other guides below:
+Ansible installations are intended for seasoned Linux server administrators and are not recommended or officially supported for most users; we strongly recommend Docker installations in a majority of cases. The software we install via Ansible can conflict with other software installed on your server and cause problems which are difficult to diagnose and support. You should be familiar with the Linux terminal and with basic troubleshooting and diagnostic steps if you choose this installation method.
 
 - [Installing AzuraCast with Ansible](/en/getting-started/installation/ansible)
+{.links-list}
+
+### Synology NAS
+
+Installing AzuraCast on a Synology NAS involves specific steps, so we've created a unique guide for installation on this platform.
+
+Note: This guide is intended for X86/AMD64-based Synology NAS devices only. Devices running ARM processors are not officially supported.
+
+- [Installing AzuraCast on a Synology NAS](/en/getting-started/installation/synology)
+{.links-list}
+
+### Raspberry Pi
+
+Because Raspberry Pi devices use ARM processors, they currently cannot take advantage of our primary Docker installation method, and require specific setup steps to ensure successful operation. See the guide below for instructions on how to install AzuraCast on a Raspberry Pi 3B or 4 series.
+
+- [Installing AzuraCast on a Raspberry Pi 3B or 4 Series](/en/getting-started/installation/raspberry-pi)
 {.links-list}
