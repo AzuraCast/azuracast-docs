@@ -2,7 +2,7 @@
 title: Installation
 description: How to install AzuraCast on your server
 published: true
-date: 2021-08-21T00:55:52.547Z
+date: 2021-09-02T02:18:10.236Z
 tags: getting started
 editor: markdown
 dateCreated: 2021-02-05T19:10:58.100Z
@@ -16,9 +16,20 @@ You can also install AzuraCast yourself on most server hardware and many compute
 
 The easiest way to get started with AzuraCast is to create a new VPS with one of our supported partners via the options below.
 
-- **DigitalOcean:** Create a new droplet based on our one-click installer from the [AzuraCast listing on the DigitalOcean Marketplace](https://marketplace.digitalocean.com/apps/azuracast?refcode=21612b90440f).
+## One-Click Installers {.tabset}
+### DigitalOcean
 
-- **Linode:** Deploy a new Linode instance with the [AzuraCast one-click installer in the Linode Marketplace](https://www.linode.com/marketplace/apps/linode/azuracast/?r=68daf2976efcb77d2e3d4ced67a02b031edc3ba1).
+Create a new droplet based on our one-click installer from the AzuraCast listing on the DigitalOcean Marketplace.
+
+- [DigitalOcean AzuraCast One-Click Image](https://marketplace.digitalocean.com/apps/azuracast?refcode=21612b90440f)
+{.links-list}
+
+### Linode
+
+Deploy a new Linode instance with the AzuraCast one-click installer in the Linode Marketplace.
+
+- [Linode AzuraCast One-Click Image](https://www.linode.com/marketplace/apps/linode/azuracast/?r=68daf2976efcb77d2e3d4ced67a02b031edc3ba1)
+{.links-list}
 
 # Self-Hosted Installation
 
