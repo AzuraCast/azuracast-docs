@@ -2,7 +2,7 @@
 title: Donate
 description: Support AzuraCast and it's developers by donating
 published: true
-date: 2021-02-23T21:01:45.352Z
+date: 2021-09-08T10:19:36.746Z
 tags: 
 editor: markdown
 dateCreated: 2021-02-06T02:56:39.033Z
@@ -36,9 +36,10 @@ Supporting our patreon is another great way to provide ongoing support for the p
 - [Become a Patron](https://www.patreon.com/bePatron?u=232463)
 {.links-list}
 
-### Ko-Fi (PayPal/Stripe)
+### Other Methods (PayPal/Stripe)
 
 If you'd like to make a one-time donation, you can do so at the Ko-Fi page below. Payments via both Paypal and Stripe are supported.
 
 - [:coffee: Buy Me a Coffee at ko-fi.com](https://ko-fi.com/A736ATQ)
+- [LiberaPay](https://liberapay.com/SilverEagleDev/donate)
 {.links-list}
