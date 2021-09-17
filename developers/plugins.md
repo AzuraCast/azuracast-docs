@@ -2,7 +2,7 @@
 title: Plugins
 description: 
 published: true
-date: 2021-03-27T20:15:23.725Z
+date: 2021-09-17T03:12:08.279Z
 tags: development, plugin
 editor: markdown
 dateCreated: 2021-02-06T20:06:57.052Z
@@ -77,13 +77,13 @@ For example, `/plugins/example-plugin/src` will autoload classes in the `\Plugin
 
 # Event Dispatcher
 
-Most of the extensibility of plugins comes from events that use the EventDispatcher in AzuraCast. Both classes from inside AzuraCast and plugins are registered as "listeners" to common events that are dispatched by the system, so you can override or modify the core application's responses simply by adding your own listeners in the right order.
+Most of the extensibility of plugins comes from events that use the [SlimCallableEventDispatcher](https://github.com/AzuraCast/slim-callable-eventdispatcher) in AzuraCast. Both classes from inside AzuraCast and plugins are registered as "listeners" to common events that are dispatched by the system, so you can override or modify the core application's responses simply by adding your own listeners in the right order.
 
 Here is an example of a basic `events.php` file for handling an event:
 
 ```php
 <?php
-return function (\App\EventDispatcher $dispatcher)
+return function (\Azura\SlimCallableEventDispatcher\SlimCallableEventDispatcher $dispatcher)
 {
     $dispatcher->addListener(\App\Event\BuildRoutes::class, function(\App\Event\BuildRoutes $event) {
         $app = $event->getApp();
