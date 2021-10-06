@@ -2,7 +2,7 @@
 title: Backup & Restore
 description: Creating backups and restoring your AzuraCast installation from them
 published: true
-date: 2021-06-04T20:41:56.520Z
+date: 2021-10-06T01:34:34.977Z
 tags: administration
 editor: markdown
 dateCreated: 2021-02-06T07:01:08.655Z
@@ -41,6 +41,10 @@ Both .zip and .tar.gz formats are supported for backups. The correct format will
 # Restoring a Backup
 
 These are the general steps for restoring a backup of AzuraCast:
+
+> Large backups (100GB+) can take a considerably long time to fully restore onto the server and *may use* large amounts of CPU and or Memory.
+{.is-warning}
+
 
 1. Install AzuraCast ([see our guide](/en/getting-started/installation))
     - If you have an older backup file and encounter issues with restoring, install AzuraCast on `stable` by answering `Y` to the question "Prefer stable release versions of AzuraCast?"
