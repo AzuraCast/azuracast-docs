@@ -2,7 +2,7 @@
 title: Scaling AzuraCast
 description: Expectations on what resources are required to host an AzuraCast instance, and tips on how to scale up as your station grows.
 published: true
-date: 2021-10-09T00:08:38.029Z
+date: 2021-10-09T01:29:31.558Z
 tags: 
 editor: markdown
 dateCreated: 2021-10-08T23:42:49.762Z
@@ -54,8 +54,22 @@ In our experience with AzuraCast, the amount of RAM being used does not scale li
 
 A typical AzuraCast installation, whether on Docker or Ansible, requires about 2GB of available space to store its own internal software images. You should have at least 5GB of free space available on the server to allow for upgrades to run without any issues.
 
-The amount of storage you need is largely determined by the size of your stations' media libraries. 
+The amount of storage you need is largely determined by the size of your stations' media libraries. Many stations upload lossless versions of their media, but if your listeners are only connecting at standard web radio bitrates (128kbps MP3, for example), this may not always be necessary. It can be helpful to transcode media to a lower bitrate before uploading.
 
+#### A Note on Backups
+
+If you're backing up your AzuraCast installation and including media in the backup, you should have the same amount of available space as your current media collection. You can exclude media from your regular backups to save space on the server if necessary.
 
 ## Tips for Overcoming Limits
 
+### Expanding Listener Capacity
+
+One of the easiest ways to expand your listener capacity with very little modification needed is to install [AzuraRelay](https://github.com/AzuraCast/AzuraRelay) on a second server. AzuraRelay connects to your main AzuraCast listeners, relays its streams in a way that doesn't consume extra CPU on the main server, and reports its statistics back to AzuraCast automatically.
+
+This second server can be located anywhere in the world, so it can also be used to create a relay that's closer to some listeners than your main server.
+
+### Expanding Storage
+
+Some virtual hosting providers offer "block storage" that lets you add a separate block of storage space to your virtual environment. You can then follow our [instructions](/en/administration/docker#storing-your-station-data-on-the-host-machine) for mounting this additional storage space to your station's media directory.
+
+Alternatively, if you need large volumes of storage, or want to store things like backups remotely, you can take advantage of S3-compatible storage options. If you're using S3 storage for your station media library, it is strongly recommended to use a service with no egress fees, like [Wasabi](https://wasabi.com/) or [CloudFlare R2](https://blog.cloudflare.com/introducing-r2-object-storage/).
