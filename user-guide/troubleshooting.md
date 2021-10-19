@@ -2,7 +2,7 @@
 title: Troubleshooting
 description: Having trouble with AzuraCast? This page has several resources that can help you solve your problem and be back up and running.
 published: true
-date: 2021-02-08T05:00:16.386Z
+date: 2021-10-19T23:22:35.156Z
 tags: getting started, debugging
 editor: markdown
 dateCreated: 2021-02-05T21:17:05.327Z
@@ -54,6 +54,18 @@ Common services that listen on ports 80 and 443 include web servers like Apache 
 ## "WARNING: The LETSENCRYPT_X variable is not set. Defaulting to a blank string."
 
 This message doesn't indicate anything is wrong with your installation; it is simply Docker Compose letting you know that it defaults to an empty string if a certain environment variable isn't present. You will see these messages if you don't have LetsEncrypt configured on your server, and you can safely disregard them.
+
+<br>
+
+## InnoDB: Upgrade after a crash is not supported.
+
+The DB crashed while using MariaDB 10.4 and was then not restarted with the same MariaDB version so that it can recover from the redo log files but was updated to 10.5 which now is not able to handle the old redo log format (in 10.5 they changed that format).
+
+Renaming the `ib_logfile0` (and if there are more `ib_logfile*` files those too) and then starting the db again should work.
+
+You can find those files here: `/var/lib/docker/volumes/azuracast_db_data/_data`
+
+Stop your AzuraCast via `docker-compose down`, then try renaming them via `mv ib_logfile0 ib_logfile0.old` and after that run the update again.
 
 # Submitting an Issue
 
