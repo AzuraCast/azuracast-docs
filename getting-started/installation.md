@@ -2,7 +2,7 @@
 title: Installation
 description: How to install AzuraCast on your server
 published: true
-date: 2021-09-02T02:25:42.934Z
+date: 2021-10-21T16:14:12.332Z
 tags: getting started
 editor: markdown
 dateCreated: 2021-02-05T19:10:58.100Z
@@ -34,10 +34,6 @@ Deploy a new Linode instance with the AzuraCast one-click installer in the Linod
 # Self-Hosted Installation
 
 > Installing AzuraCast yourself requires a basic understanding of the Linux shell/terminal environment, as well as root (or "sudo") access to the computer you're installing AzuraCast on.
-{.is-info}
-
-> **Want professional help?** 
-> AzuraCast offers paid [professional services](/en/professional-services) to help with installing, updating, migrating or maintaining your AzuraCast installation.
 {.is-info}
 
 ## Installation Methods {.tabset}
