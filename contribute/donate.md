@@ -2,7 +2,7 @@
 title: Donate
 description: Support AzuraCast and it's developers by donating
 published: true
-date: 2021-11-05T07:51:49.765Z
+date: 2021-11-05T08:01:17.880Z
 tags: 
 editor: markdown
 dateCreated: 2021-02-06T02:56:39.033Z
@@ -48,7 +48,7 @@ Supporting our patreon is another great way to provide ongoing support for the p
 - [Become a Patron](https://www.patreon.com/bePatron?u=232463)
 {.links-list}
 
-### LiberaPay
+### Other Options
 
 - [LiberaPay](https://liberapay.com/SilverEagleDev/donate)
 {.links-list}
