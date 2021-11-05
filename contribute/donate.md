@@ -2,7 +2,7 @@
 title: Donate
 description: Support AzuraCast and it's developers by donating
 published: true
-date: 2021-09-08T10:19:36.746Z
+date: 2021-11-05T07:51:49.765Z
 tags: 
 editor: markdown
 dateCreated: 2021-02-06T02:56:39.033Z
@@ -15,11 +15,23 @@ Although the AzuraCast community has contributed in many ways to the project, mu
 Not only are donations to AzuraCast going to good use, but they help us devote the time we need to keep the application new and updated. Almost every day for years now, we've updated the application to fix a bug, add a new feature or improve the user experience. We never stop working to serve our audience, and your donations help make that possible.
 
 ## How to Donate {.tabset}
+
+### Ko-Fi / PayPal
+
+This is the most preferred and direct method of supporting our project's lead developer. Payments on Ko-fi can be made via Stripe or PayPal.
+
+- [:coffee: Buy Me a Coffee at ko-fi.com](https://ko-fi.com/A736ATQ)
+- [Pay Me on PayPal](https://paypal.me/SlvrEagle23)
+{.links-list}
+
 ### GitHub Sponsors
 
 If you're a GitHub user, supporting through GitHub Sponsors is one of the best ways to show your support for AzuraCast's development. You can manage your pledge at any time through the Sponsors dashboard.
 
-- [GitHub Sponsors Page](https://github.com/sponsors/AzuraCast)
+You can sponsor our lead developer directly or sponsor the AzuraCast organization, where your donation will be transferred to the project's OpenCollective.
+
+- [Sponsor Buster "Silver Eagle" Neece on GitHub Sponsors](https://github.com/sponsors/SlvrEagle23)
+- [Sponsor AzuraCast on GitHub Sponsors](https://github.com/sponsors/AzuraCast)
 {.links-list}
 
 ### OpenCollective
@@ -36,10 +48,7 @@ Supporting our patreon is another great way to provide ongoing support for the p
 - [Become a Patron](https://www.patreon.com/bePatron?u=232463)
 {.links-list}
 
-### Other Methods (PayPal/Stripe)
+### LiberaPay
 
-If you'd like to make a one-time donation, you can do so at the Ko-Fi page below. Payments via both Paypal and Stripe are supported.
-
-- [:coffee: Buy Me a Coffee at ko-fi.com](https://ko-fi.com/A736ATQ)
 - [LiberaPay](https://liberapay.com/SilverEagleDev/donate)
 {.links-list}
