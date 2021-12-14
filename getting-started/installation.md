@@ -2,7 +2,7 @@
 title: Installation
 description: How to install AzuraCast on your server
 published: true
-date: 2021-10-21T16:14:12.332Z
+date: 2021-12-14T07:43:20.679Z
 tags: getting started
 editor: markdown
 dateCreated: 2021-02-05T19:10:58.100Z
@@ -52,6 +52,20 @@ Ansible installations are intended for seasoned Linux server administrators and 
 - [Installing AzuraCast with Ansible](/en/getting-started/installation/ansible)
 {.links-list}
 
+### Raspberry Pi/ARM64 Devices
+
+We have created a specialized guide with installation instructions for users of the Raspberry Pi device series or other similar ARM64-based computers.
+
+- [Installing AzuraCast on an ARM64 Computer](/en/getting-started/installation/arm64)
+{.links-list}
+
+### Windows 10/11 (WSL2)
+
+If you're looking to install AzuraCast on your Windows installation, this is now possible thanks to the Windows Subsystem for Linux (WSL2). Follow our Windows-specific guide for tips on how to get AzuraCast up and running easily on a Windows computer.
+
+- [Installing AzuraCast on Windows](/en/getting-started/installation/windows)
+{.links-list}
+
 ### Synology NAS
 
 Installing AzuraCast on a Synology NAS involves specific steps, so we've created a unique guide for installation on this platform.
@@ -59,11 +73,4 @@ Installing AzuraCast on a Synology NAS involves specific steps, so we've created
 Note: This guide is intended for X86/AMD64-based Synology NAS devices only. Devices running ARM processors are not officially supported.
 
 - [Installing AzuraCast on a Synology NAS](/en/getting-started/installation/synology)
-{.links-list}
-
-### Raspberry Pi
-
-Because Raspberry Pi devices use ARM processors, they currently cannot take advantage of our primary Docker installation method, and require specific setup steps to ensure successful operation. See the guide below for instructions on how to install AzuraCast on a Raspberry Pi 3B or 4 series.
-
-- [Installing AzuraCast on a Raspberry Pi 3B or 4 Series](/en/getting-started/installation/raspberry-pi)
 {.links-list}
