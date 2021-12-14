@@ -2,7 +2,7 @@
 title: Requirements
 description: This page tells you what is required to run AzuraCast
 published: true
-date: 2021-12-11T17:35:35.786Z
+date: 2021-12-14T06:58:45.854Z
 tags: getting started
 editor: markdown
 dateCreated: 2021-02-05T18:58:13.221Z
@@ -19,7 +19,7 @@ AzuraCast is powered by Docker and uses pre-built images that contain every comp
 # :computer: System Requirements
 
 ### Minimum Requirements
-- A 64-bit x86 (x86_64) CPU
+- A 64-bit x86 (x86_64/amd64) or ARM64 CPU
 - at least 2GB of RAM
 - 20GB or greater of hard drive space
 - A computer/server capable of running Docker
@@ -49,8 +49,9 @@ We strongly recommend one of the following distributions and versions for your A
 - Ubuntu 16.04 LTS (Compatible, but updating is recommended)
 - Debian 10 "Buster"
 - Debian 9 "Stretch"
-- Windows 10 - *Development builds only*
-- Windows 11 - *Development builds only*
+- MacOS - Using Docker Desktop
+- Windows 10 - Using Docker Desktop + WSL2
+- Windows 11 - Using Docker Desktop + WSL2
 
 ## :warning: Known Incompatibilities
 
@@ -62,9 +63,6 @@ We strongly recommend one of the following distributions and versions for your A
 
 - **CentOS:**
   - Recent versions of CentOS are moving away from supporting Docker and instead supporting Podman, a different container-based solution. AzuraCast does not currently support being deployed on Podman. If you are selecting a Linux OS for your server, the LTS distributions of Ubuntu and Debian are strongly recommended.
-
-- **Windows Systems**
-  - While AzuraCast can run on Windows based systems, its primarily used by our development team to develop  the software. We will not provide assistance on getting a production instance for AzuraCast setup on Windows via the Docket Desktop.
   
 # :bar_chart: Resource Usage
 
