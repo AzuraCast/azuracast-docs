@@ -2,7 +2,7 @@
 title: Installation
 description: How to install AzuraCast on your server
 published: true
-date: 2021-12-14T07:43:20.679Z
+date: 2021-12-14T07:43:44.802Z
 tags: getting started
 editor: markdown
 dateCreated: 2021-02-05T19:10:58.100Z
@@ -44,14 +44,6 @@ For a majority of users, our Docker installation method is the preferred way of 
 - [Installing AzuraCast with Docker](/en/getting-started/installation/docker)
 {.links-list}
 
-
-### Ansible
-
-Ansible installations are intended for seasoned Linux server administrators and are not recommended or officially supported for most users; we strongly recommend Docker installations in a majority of cases. The software we install via Ansible can conflict with other software installed on your server and cause problems which are difficult to diagnose and support. You should be familiar with the Linux terminal and with basic troubleshooting and diagnostic steps if you choose this installation method.
-
-- [Installing AzuraCast with Ansible](/en/getting-started/installation/ansible)
-{.links-list}
-
 ### Raspberry Pi/ARM64 Devices
 
 We have created a specialized guide with installation instructions for users of the Raspberry Pi device series or other similar ARM64-based computers.
@@ -64,6 +56,13 @@ We have created a specialized guide with installation instructions for users of 
 If you're looking to install AzuraCast on your Windows installation, this is now possible thanks to the Windows Subsystem for Linux (WSL2). Follow our Windows-specific guide for tips on how to get AzuraCast up and running easily on a Windows computer.
 
 - [Installing AzuraCast on Windows](/en/getting-started/installation/windows)
+{.links-list}
+
+### Ansible
+
+Ansible installations are intended for seasoned Linux server administrators and are not recommended or officially supported for most users; we strongly recommend Docker installations in a majority of cases. The software we install via Ansible can conflict with other software installed on your server and cause problems which are difficult to diagnose and support. You should be familiar with the Linux terminal and with basic troubleshooting and diagnostic steps if you choose this installation method.
+
+- [Installing AzuraCast with Ansible](/en/getting-started/installation/ansible)
 {.links-list}
 
 ### Synology NAS
