@@ -2,11 +2,16 @@
 title: CloudFlare
 description: Using CloudFlare as proxy for your AzuraCast installation
 published: true
-date: 2021-02-09T03:31:39.980Z
+date: 2021-12-16T15:39:33.907Z
 tags: administration
 editor: markdown
 dateCreated: 2021-02-06T07:13:38.279Z
 ---
+
+> Please note that due to CloudFlare's Terms of Service, specifically *[2.8 Limitation on Serving Non-HTML Content](https://www.cloudflare.com/terms/)*, you cannot run on ports: 80/443.
+This documentation page may be inaccurate. Changes will be made soon. 
+{.is-danger}
+
 
 [CloudFlare](https://cloudflare.com/) is a leading provider of reverse proxying and CDN services for the web. Their free tier offers huge benefits in performance and protection that you can take advantage of while using AzuraCast, with a few important caveats. This document details how to use CloudFlare with AzuraCast.
 
