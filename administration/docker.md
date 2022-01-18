@@ -2,7 +2,7 @@
 title: Docker
 description: All about Docker installations of AzuraCast
 published: true
-date: 2021-08-01T23:49:32.375Z
+date: 2022-01-18T08:36:51.739Z
 tags: administration, docker
 editor: markdown
 dateCreated: 2021-02-06T06:41:47.092Z
@@ -422,6 +422,4 @@ All config files placed in the `/etc/nginx/azuracast.conf.d/` are automatically 
 
 # Multi-Site Installation
 
-AzuraCast includes support for hosting multiple sites directly in the core AzuraCast installation. No additional modification is required.
-
-Check out our [Multi-Site Docker Installation guide](/en/administration/docker/multi-site-installation) for more information.
+AzuraCast can exist on a server with other web sites hosted at different URLs. Check out our [Multi-Site Docker Installation guide](/en/administration/docker/multi-site-installation) for more information.
