@@ -2,43 +2,114 @@
 title: Multi-Site Docker Installation
 description: 
 published: true
-date: 2021-02-08T05:09:51.919Z
+date: 2022-01-18T08:47:34.360Z
 tags: advanced feature, administration, docker
 editor: markdown
 dateCreated: 2021-02-06T23:21:29.359Z
 ---
 
-AzuraCast's Docker installation now includes a built-in reverse proxy powered by [jwilder's nginx-proxy](https://github.com/jwilder/nginx-proxy). This reverse proxy is what listens on the public web ports (80 for HTTP and 443 for HTTPS) and also manages LetsEncrypt for the installation. By default, it is configured to send all traffic to the AzuraCast container.
+# AzuraCast Multi-Site Docker Installation
 
-The proxy service will automatically detect new Docker containers that are started and can serve them via different domain names than your AzuraCast installation. This allows you to add other containers to serve, for example, your station's homepage from the same server.
+If you use the recommended Docker installation method for AzuraCast, you can configure your installation to sit behind a nginx proxy that can also handle other web sites on the same host. This allows you to host, for example, your station's web site on the same server as your AzuraCast installation.
 
-One big requirement of our Multi-site setup is that **all sites must be served via Docker**. You can't serve any sites directly from the host computer, since the Docker proxy won't be aware of it. Many popular services are already Docker-compatible and have examples for setting them up inside Docker.
+Follow the steps below to configure your installation for multisite support.
 
-The multi-site setup is an advanced use of AzuraCast and we don't provide official support if something goes wrong with the other hosted web sites, so only use this feature if you're confident in creating and modifying Docker Compose files.
+[[toc]]
 
-# Adding Other Sites
+## Enter AzuraCast Base Directory
+
+Connect to your server via SSH and change to the base directory where your AzuraCast installation is located. If you followed the recommended installation instructions (or used a prebuilt image) you can run:
+
+```bash
+cd /var/azuracast
+```
 
 <br>
 
-## Example: Wordpress Site
+## Turn Off Existing Services
+
+While you're making these configuration changes, your Docker containers should be turned off. Turn off your existing Docker containers by running:
+
+```bash
+docker-compose down
+```
+
+This will disconnect your listeners and stop your station from broadcasting. You will not lose any data or statistics during the upgrade.
+
+<br>
+
+## Edit AzuraCast Web Serving Ports
+
+The first step is to prevent AzuraCast's own `web` container from trying to listen on ports 80 and 443, as a proxy will now be doing that job instead.
+
+There is a file in the AzuraCast installation directory named `.env` which has two values set by default:
+
+```
+AZURACAST_HTTP_PORT=80
+AZURACAST_HTTPS_PORT=443
+```
+
+**Edit the `.env` file** in your editor of choice to change those values to an unused public-facing port. A good option would be the examples below:
+
+```
+AZURACAST_HTTP_PORT=10080
+AZURACAST_HTTPS_PORT=10443
+```
+
+Save your changes and return to the shell.
+
+<br>
+
+## Download Custom Override File
+
+We have set up a custom override file that configures both the nginx proxy and its own automated LetsEncrypt support (which is slightly different from our own).
+
+You can download our custom override file by running the command below:
+
+```bash
+cp docker-compose.override.yml docker-compose.override.bak.yml
+curl -fsSL https://raw.githubusercontent.com/AzuraCast/AzuraCast/master/docker-compose.multisite.yml > docker-compose.override.yml
+```
+
+Note that if you've already set up an override file with other modifications, you should make sure to apply the same changes that are now located in `docker-compose.override.bak.yml` to the newly downloaded `docker-compose.override.yml` file.
+
+<br>
+
+## Optional: Configure LetsEncrypt
+
+You can enable LetsEncrypt on the multisite setup the same way as normal LetsEncrypt setup:
+
+```bash
+./docker.sh letsencrypt-create
+```
+
+If these values are configured and the domain name you specify resolves to your server, LetsEncrypt will automatically set up your SSL certificates and keep them renewed behind the scenes.
+
+<br>
+
+## Start Docker Services
+
+Turn the Docker AzuraCast containers back on to resume broadcasting with the new setup:
+
+```bash
+docker-compose up -d
+```
+
+## Adding Other Containers
+
+Once you've set up the nginx proxy container, any other Docker container that is spun up on the server and has the `VIRTUAL_HOST` environment variable set will be served by the same proxy service.
+
+For more information, you can visit the [nginx-proxy repository documentation](https://github.com/jwilder/nginx-proxy).
+
+<br>
+
+### Example: Wordpress Site
 
 A common scenario our users encounter is wanting to host their station's homepage on the same server as their AzuraCast instance. This example will walk you through one way of accomplishing this using the official Wordpress Docker image.
 
 <br>
 
-### Update AzuraCast Instance
-
-First, make sure your AzuraCast instance is up-to-date and is already running. You can do this by running:
-
-```bash
-cd /var/azuracast
-./docker.sh update-self
-./docker.sh update
-```
-
-<br>
-
-### Create New Directory
+#### Create New Directory
 
 You should begin by creating a new directory that's separate from the main AzuraCast directory. In our example, we're using `/var/wordpress` for ease of explanation.
 
@@ -49,13 +120,11 @@ cd /var/wordpress
 
 <br>
 
-### Create `docker-compose.yml` File
+#### Create `docker-compose.yml` File
 
 Inside the new directory, create a new file named `docker-compose.yml` based on the format below. Note the areas highlighted with comments, which indicate things you should change:
 
 ```yml
-version: '2.2'
-
 services:
     wordpress:
         image: wordpress:latest
