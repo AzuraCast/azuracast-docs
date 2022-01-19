@@ -2,7 +2,7 @@
 title: Docker
 description: All about Docker installations of AzuraCast
 published: true
-date: 2022-01-19T23:22:07.129Z
+date: 2022-01-19T23:23:05.535Z
 tags: administration, docker
 editor: markdown
 dateCreated: 2021-02-06T06:41:47.092Z
@@ -186,8 +186,6 @@ Rather than modifying `docker-compose.yml` directly, it is strongly recommended 
 There are some considerations when creating your own `docker-compose.override.yml`:
 
 - The file must be valid YAML using the standard [Docker Compose format](https://docs.docker.com/compose/compose-file/compose-file-v2/).
-
-- The file must use the same "version" header as the main `docker-compose.yml` file, currently `2.2`.
 
 - When modifying ports or other lists, you can only add new items, not remove existing ones.
 
