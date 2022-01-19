@@ -2,7 +2,7 @@
 title: Docker
 description: All about Docker installations of AzuraCast
 published: true
-date: 2022-01-18T08:36:51.739Z
+date: 2022-01-19T23:19:13.300Z
 tags: administration, docker
 editor: markdown
 dateCreated: 2021-02-06T06:41:47.092Z
@@ -228,8 +228,6 @@ In the same folder where your Docker installation is (if using recommended instr
 In this file, paste the following contents:
 
 ```yaml
-version: '2.2'
-
 services:
   stations:
     ports:
@@ -256,8 +254,6 @@ In the same folder where your Docker installation is (if using recommended instr
 In this file, paste the following contents:
 
 ```yaml
-version: '2.2'
-
 services:
   web:
     volumes:
@@ -281,8 +277,6 @@ In the same folder where your Docker installation is (if using recommended instr
 In this file, paste the following contents:
 
 ```yaml
-version: '2.2'
-
 services:
   web:
     volumes:
@@ -306,8 +300,6 @@ In the same folder where your Docker installation is (if using recommended instr
 In this file, paste the following contents:
 
 ```yaml
-version: '2.2'
-
 services:
     stations:
         volumes:
@@ -333,7 +325,6 @@ You can add a music file to play when someone initially connects to your stream.
 First, tell the Docker filesystem where to find your intro file. Inside the AzuraCast directory on your host (by default, `/var/azuracast`), create a file named `docker-compose.override.yml` with the following contents:
 
 ```yaml
-version: '2.2'
 services:
     stations:
         volumes:
@@ -364,7 +355,6 @@ To override the favicon and other browser icons used by AzuraCast, you should fo
 3. Inside the AzuraCast directory on your host (by default, `/var/azuracast`), create a file named `docker-compose.override.yml` with the following contents:
 
 ```yaml
-version: '2.2'
 services:
     web:
         volumes:
@@ -409,9 +399,7 @@ After you have changed this setting you need to restart AzuraCast via `docker-co
 
 If you need to add some custom configurations to NGINX you can do this by your `custom.conf` file into the `web` container via the `docker-compose.override.yml` like this:
 
-```
-version: '2.2'
-
+```yaml
 services:
   web:
     volumes:
