@@ -2,7 +2,7 @@
 title: Troubleshooting
 description: Having trouble with AzuraCast? This page has several resources that can help you solve your problem and be back up and running.
 published: true
-date: 2021-10-19T23:22:35.156Z
+date: 2022-01-19T23:00:10.206Z
 tags: getting started, debugging
 editor: markdown
 dateCreated: 2021-02-05T21:17:05.327Z
@@ -43,7 +43,7 @@ If you get this error when starting the Docker AzuraCast instance, it means that
 
 There are generally two ways to resolve this:
 - Find the process that's currently listening on the port (commands like `netstat -tulpn` can help you with this) and either disable the program that's currently listening, edit its configuration to change the port it listens on, or uninstall it from the server completely.
-- Switch the port AzuraCast uses for its own traffic to an unused one. [See instructions](#use-non-standard-ports)
+- Switch the port AzuraCast uses for its own traffic to an unused one. [See instructions](/en/administration/docker)
 
 Since this error is caused by the interaction of some piece of software on your host computer and the Docker daemon, we can't automatically resolve it for you, and the best way to resolve it will depend on how your server is configured and what else is running on it.
 
