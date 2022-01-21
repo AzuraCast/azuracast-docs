@@ -2,7 +2,7 @@
 title: Release Channels
 description: How to change the release channel for your installation
 published: true
-date: 2021-02-08T05:05:32.733Z
+date: 2022-01-21T12:51:02.126Z
 tags: docker, getting started
 editor: markdown
 dateCreated: 2021-02-05T20:17:15.010Z
@@ -41,6 +41,8 @@ As an important note, though, if you have mistakenly switched to the "Stable" ch
 
 # Setting AzuraCast to Use a Different Channel
 
+## Docker Installations
+
 You can switch release channels by logging in to your host computer (the server running AzuraCast) via SSH and executing:
 
 ```
@@ -52,3 +54,23 @@ cd /var/azuracast
 You will be prompted whether to prefer stable release builds. If you answer "N", you will be placed on the "Rolling Release" channel.
 
 You can then run the update script (`./docker.sh update`) and your installation will switch its active release channel.
+
+## Ansible Installations
+
+Ansible installations are directly tied to the Git repository, so switching channels is a matter of switching the branch that's checked out.
+
+#### Switching to Rolling Release
+
+```bash
+git reset --hard
+git checkout main
+git pull
+```
+
+#### Switching to Stable
+
+```bash
+git reset --hard
+git checkout stable
+git pull
+```
