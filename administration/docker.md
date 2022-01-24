@@ -2,7 +2,7 @@
 title: Docker
 description: All about Docker installations of AzuraCast
 published: true
-date: 2022-01-19T23:23:05.535Z
+date: 2022-01-24T11:01:02.806Z
 tags: administration, docker
 editor: markdown
 dateCreated: 2021-02-06T06:41:47.092Z
@@ -145,11 +145,7 @@ The AzuraCast Docker installation is built to serve the needs of the vast majori
 
 We have created a simple diagram to explain how our Docker infrastructure is separated into individual containers that handle each major component of the installation:
 
-![docker_infrastructure.png](/images/docker/docker_infrastructure.png)
-
-> InfluxDB is not used for time series and analytics data in AzuraCast anymore. This task is handled with MariaDB now.
-{.is-info}
-
+![appinfrastructure.png](/images/docker/appinfrastructure.png)
 
 In summary, AzuraCast has five major containers that handle the application's functionality:
 
