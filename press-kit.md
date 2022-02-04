@@ -2,7 +2,7 @@
 title: Press Kit
 description: Press Kit for the media and journalists
 published: false
-date: 2022-02-04T02:53:30.025Z
+date: 2022-02-04T13:42:59.543Z
 tags: press, media, pr, journalists, journalism
 editor: markdown
 dateCreated: 2022-02-04T02:53:30.025Z
@@ -16,8 +16,13 @@ dateCreated: 2022-02-04T02:53:30.025Z
 AzuraCast welcomes any and all respective media agencies and freelance journalists to utilize our branding in a upcoming publication and/or article. This page will provide our images, audio and files that you may wish to include. 
 
 ## About Us
-TBA 
+The history about AzuraCast is a long and storied one, starting back in early 2015 with our first entrance into the first version of our project, which would later turn into AzuraCast. The project was ran by Buster "Silver Eagle" Neece, who remains as lead developer of AzuraCast. 
 
+We have a small team of three people, two developers and one community moderator. 
+
+We have done a public talk with our partners at Liquidsoap where we discuss AzuraCast, the problems we face in the FOSS (Free and Open Source Software) ecosystem and our beginging roots. 
+
+https://www.youtube.com/watch?v=rApEODLKY0w&feature=emb_title
 ## Press Kit
 The Press Kit contains the following: 
 - Promotional Audio Files along with a License Certificate
@@ -26,7 +31,7 @@ The Press Kit contains the following:
 - Hexagon Logos
 - Discord Emoticons
 
-Download the Press Kit [Here](Provide Url Here) 
+Download the Press Kit [Here](https://www.azuracast.com/resources/press_kit.zip) 
 
 ## Press Kit Rules
 When a member of the Press utilizes our Press Kit, we ask these rules are followed: 
