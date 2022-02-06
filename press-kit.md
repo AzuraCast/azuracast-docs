@@ -2,28 +2,34 @@
 title: Press Kit
 description: Press Kit for the media and journalists
 published: false
-date: 2022-02-04T13:42:59.543Z
+date: 2022-02-06T02:46:08.916Z
 tags: press, media, pr, journalists, journalism
 editor: markdown
 dateCreated: 2022-02-04T02:53:30.025Z
 ---
 
-> This area is only to be used by members of the media and freelance journalists. We will not provide support through our PR email address. 
+> This area is only to be used by maintainers of related projects, partnered hosting services, and members of the media and freelance journalists. We will not provide support through our PR email address. 
 {.is-info}
 
 
 # Press Kit 
-AzuraCast welcomes any and all respective media agencies and freelance journalists to utilize our branding in a upcoming publication and/or article. This page will provide our images, audio and files that you may wish to include. 
+
+AzuraCast welcomes any related code projects, hosting partners, media agencies and freelance journalists to utilize our branding as needed to refer to our software.
+
+This page will provide our images, audio and files that you may wish to include. 
 
 ## About Us
-The history about AzuraCast is a long and storied one, starting back in early 2015 with our first entrance into the first version of our project, which would later turn into AzuraCast. The project was ran by Buster "Silver Eagle" Neece, who remains as lead developer of AzuraCast. 
 
-We have a small team of three people, two developers and one community moderator. 
+AzuraCast is a free and open-source, self-hosted, all-in-one web radio management suite. We like to refer to it as a "web radio station in a box", as it includes the full stack of open-source software needed to start up a new radio station, broadcast to listeners and manage everything via a web interface.
 
-We have done a public talk with our partners at Liquidsoap where we discuss AzuraCast, the problems we face in the FOSS (Free and Open Source Software) ecosystem and our beginging roots. 
+AzuraCast's history dates back to late 2012 in the form of our predecessor project [Ponyville Live](https://github.com/slvreagle23/ponyville-live). In spring 2016, the project was rebuilt as the self-hosted web radio management suite it is today. Our branding and marketing still heavily features our unicorn mascot (designed by [Tyson-Tan](https://tysontan.com/)) as a tribute to our fandom roots.
 
-https://www.youtube.com/watch?v=rApEODLKY0w&feature=emb_title
+AzuraCast was created by [Buster "Silver Eagle" Neece](https://github.com/slvreagle23), who remains the project's lead developer. He is supported by a second developer and a community moderator.
+
+Today, AzuraCast powers thousands of installations and continues to be actively maintained on a daily basis.
+
 ## Press Kit
+
 The Press Kit contains the following: 
 - Promotional Audio Files along with a License Certificate
 - The AzuraCast Mascot, known as the Azura Ruisselante, created by Tyson Tan
@@ -33,11 +39,24 @@ The Press Kit contains the following:
 
 Download the Press Kit [Here](https://www.azuracast.com/resources/press_kit.zip) 
 
-## Press Kit Rules
-When a member of the Press utilizes our Press Kit, we ask these rules are followed: 
+### Press Kit Guidelines
+
+As a courtesy, we ask that the following rules be applied:
 
 - Do not modify and/or alter the AzuraCast Logo, Mascot (Azura Ruisselante), or our Hexagon Logo
 - Do not modify the sound files we provide in any shape or form
+
+AzuraCast is licensed under the Apache 2.0 software license, which expressly protects its name and branding while allowing the source code to be fully free and open. This means that you are free to use our branding to refer to AzuraCast itself (specifically, the version we maintain and distribute), but you are not permitted to call your own fork or code AzuraCast,  or use our branding as your company's own logo when offering services related to AzuraCast, such as managed hosting.
+
+## AzuraCast in Media
+
+We have had many opportunities to speak about AzuraCast in public; these talks have answered many popular questions and can help to share insights about our history and our development process.
+
+- **FLOSS Weekly**: Buster Neece was interviewed on FLOSS Weekly episode 637, on July 7, 2021: https://www.youtube.com/watch?v=_V6ree6cwZ4
+
+- **Liquidshop**: Buster Neece presented a talk entitled "AzuraCast, Liquidsoap and the Open Radio Ecosystem" at Liquidsoap's 2022 Liquidshop event on January 23, 2022: https://www.youtube.com/watch?v=rApEODLKY0w
+
+- **Linode**: One of our hosting partners, Linode, published a video guide showing how to get started with AzuraCast on Linode: https://www.youtube.com/watch?v=lEElFHUdFd4
 
 ## Official Statements, Comments and More. 
 If you're a member of a media agency and or a a freelance journalist who seeks a comment, clarification or some more information, reach out to us at pr@azuracast.com and a member of our team will reach out to you. We expect to get back to you within 5 working days. 
