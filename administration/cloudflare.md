@@ -2,7 +2,7 @@
 title: CloudFlare
 description: Using CloudFlare as proxy for your AzuraCast installation
 published: true
-date: 2021-12-16T15:39:33.907Z
+date: 2022-02-08T20:20:43.068Z
 tags: administration
 editor: markdown
 dateCreated: 2021-02-06T07:13:38.279Z
@@ -69,3 +69,16 @@ We recommend instructing your streamers/DJs to connect to your server using its 
 ## AzuraRelay Instances
 
 If you use AzuraRelay instances that should relay a CloudFlare-protected installation, you should use the IP address of the installation as the base URL for the relay (in a format like http://127.0.0.1), rather than the public-facing CloudFlare-protected address. Otherwise, no changes are needed.
+
+<br>
+
+## Cloudflare Rocket Launcher
+
+Users may run into this following error: 
+
+> `Refused to execute inline script because it violates the following Content Security Policy directive`
+
+In order to resolve this  error, you must go to your CloudFlare Dashboard and disable the Rocket Launcher settings. 
+![](https://aws1.discourse-cdn.com/cloudflare/original/3X/5/7/57001bbc0803f75f68d7699b3c76ba83e039cedb.png)
+
+![](https://aws1.discourse-cdn.com/cloudflare/original/3X/f/0/f057f97a3f79811e68d51e6bf86212fb0619659c.png)
