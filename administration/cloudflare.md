@@ -2,16 +2,11 @@
 title: CloudFlare
 description: Using CloudFlare as proxy for your AzuraCast installation
 published: true
-date: 2022-02-08T20:20:43.068Z
+date: 2022-02-11T18:27:35.112Z
 tags: administration
 editor: markdown
 dateCreated: 2021-02-06T07:13:38.279Z
 ---
-
-> Please note that due to CloudFlare's Terms of Service, specifically *[2.8 Limitation on Serving Non-HTML Content](https://www.cloudflare.com/terms/)*, you cannot run on ports: 80/443.
-This documentation page may be inaccurate. Changes will be made soon. 
-{.is-danger}
-
 
 [CloudFlare](https://cloudflare.com/) is a leading provider of reverse proxying and CDN services for the web. Their free tier offers huge benefits in performance and protection that you can take advantage of while using AzuraCast, with a few important caveats. This document details how to use CloudFlare with AzuraCast.
 
@@ -36,7 +31,13 @@ Fortunately, we've already built a solution to this problem! In AzuraCast's syst
 
 # Important Notes
 
-<br>
+## Changes to Port 80/443
+Due to CloudFlare's Terms of Service changes, they no longer allow for Port 80 and 443 to be used for non HTML content. Because of the change, we cannot support this any longer as it risks users CloudFlare accounts being permanently terminated for violating the CloudFlare Terms of Service. Please review the entire section of 2.8 below
+
+> **2.8 Limitation on Serving Non-HTML Content**
+The Services are offered primarily as a platform to cache and serve web pages and websites. Unless explicitly included as part of a Paid Service purchased by you, you agree to use the Services solely for the purpose of (i) serving web pages as viewed through a web browser or other functionally equivalent applications, including rendering Hypertext Markup Language (HTML) or other functional equivalents, and (ii) serving web APIs subject to the restrictions set forth in this Section 2.8. Use of the Services for serving video or a disproportionate percentage of pictures, audio files, or other non-HTML content is prohibited, unless purchased separately as part of a Paid Service or expressly allowed under our Supplemental Terms for a specific Service. If we determine you have breached this Section 2.8, we may immediately suspend or restrict your use of the Services, or limit End User access to certain of your resources through the Services.
+{.is-info}
+
 
 ## Incompatibility with Rocket Loader
 Due to the strict Content Security Policy in AzuraCast you will have to disable CloudFlare's Rocket Loader or your AzuraCast interface will break.
