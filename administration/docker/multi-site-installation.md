@@ -2,7 +2,7 @@
 title: Multi-Site Docker Installation
 description: 
 published: true
-date: 2022-02-14T15:16:02.882Z
+date: 2022-02-14T15:18:50.180Z
 tags: advanced feature, administration, docker
 editor: markdown
 dateCreated: 2021-02-06T23:21:29.359Z
@@ -70,6 +70,8 @@ Turn the Docker AzuraCast containers back on to resume broadcasting with the new
 docker-compose up -d
 ```
 
+<br>
+
 ## Setup Nginx Proxy Manager
 
 Create a new directory for the Nginx Proxy Manager and enter it via the following commands:
@@ -87,6 +89,8 @@ nano docker-compose.yml
 
 Now follow the [Quick Setup](https://nginxproxymanager.com/guide/#quick-setup) for the Nginx Proxy Manager starting with step `2`.
 
+<br>
+
 ## Create Proxy Host for AzuraCast
 
 When you have successfully setup the Nginx Proxy Manager and have access to the GUI you can start creating a proxy for AzuraCast via the `Proxy Hosts` page.
@@ -100,6 +104,8 @@ Enable the `Websockets Support` option.
 Switch to the `SSL` tab and select `Request a new SSL Certificate` in the `SSL Certificate` dropdown.
 
 Enable the `Force SSL` as well as the `HTTP/2 Support` options, enter your e-mail address, aggree to the Let's Encrypt Terms of Service and click on the `Save` button.
+
+<br>
 
 # AzuraCast Multi-Site Feature
 
