@@ -2,7 +2,7 @@
 title: AzuraCast Docs
 description: Documentation for AzuraCast
 published: true
-date: 2021-05-06T21:05:57.779Z
+date: 2022-02-14T22:50:18.012Z
 tags: 
 editor: markdown
 dateCreated: 2021-02-05T06:09:43.264Z
@@ -54,8 +54,7 @@ AzuraCast will automatically retrieve and install these components for you:
 * **[Liquidsoap](https://www.liquidsoap.info/)** as the always-playing "AutoDJ"
 * **[Icecast 2.4](https://icecast.org/)** as a radio broadcasting frontend (Icecast-KH installed on supported platforms)
 
-For x86/x64 installations, [SHOUTcast 2 DNAS](http://wiki.shoutcast.com/wiki/SHOUTcast_DNAS_Server_2) can also be used
-as a broadcasting frontend. SHOUTcast is non-free software and does not come bundled with AzuraCast, but can be installed via the administration panel after AzuraCast has been installed.
+For x86/x64 installations, [SHOUTcast 2 DNAS](http://wiki.shoutcast.com/wiki/SHOUTcast_DNAS_Server_2) can also be used as a broadcasting frontend. SHOUTcast is non-free software and does not come bundled with AzuraCast, but can be installed via the administration panel after AzuraCast has been installed.
 
 #### Supporting Software
 
@@ -80,6 +79,7 @@ We would like to thank the following organizations for their support of AzuraCas
 - [JetBrains](https://www.jetbrains.com/) For making our development faster, easier and more productive with tools like PhpStorm
 - [CrowdIn](https://crowdin.com/) For giving us a simple and powerful tool to help translate our application for users around the world
 - [Netlify](https://www.netlify.com/) For supporting open-source software like ours and for serving as the host of our web site!
+- [BrowserStack](https://www.browserstack.com/) For providing us cross-browsers in for us to debug and test new features across a range of browsers
 {.links-list}
 
 The creators and maintainers of the many free and open-source tools that AzuraCast is built on, who have done so much to help move FOSS forward
