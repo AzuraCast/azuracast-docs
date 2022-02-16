@@ -2,7 +2,7 @@
 title: Plugins
 description: 
 published: true
-date: 2021-09-17T03:12:08.279Z
+date: 2022-02-16T16:59:09.389Z
 tags: development, plugin
 editor: markdown
 dateCreated: 2021-02-06T20:06:57.052Z
@@ -27,8 +27,6 @@ Plugins are automatically discovered if they're located in the `/plugins` direct
 You can clone the plugin directory anywhere you want on the host machine, then create a `docker-compose.override.yml` in your `/var/azuracast` directory to mount the plugin as a volume in the correct location, like so:
 
 ```yaml
-version: '2.2'
-
 services:
   web:
     volumes:
