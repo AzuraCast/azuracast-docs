@@ -2,7 +2,7 @@
 title: Troubleshooting
 description: Having trouble with AzuraCast? This page has several resources that can help you solve your problem and be back up and running.
 published: true
-date: 2022-01-19T23:00:10.206Z
+date: 2022-02-17T21:07:30.113Z
 tags: getting started, debugging
 editor: markdown
 dateCreated: 2021-02-05T21:17:05.327Z
@@ -35,7 +35,17 @@ php /var/azuracast/www/bin/console cache:clear
 
 # Common Docker Errors
 
-<br>
+## "Invalid interpolation format" related errors. 
+This issue is related to an out of date docker-compose version, since we use a more up to date docker-compose version it'll return these types of errors. 
+
+- `ERROR: Invalid interpolation format for "installer" option in service "services": "ghcr.io/azuracast/web:${AZURACAST_VERSION:-latest}"`
+- `ERROR: Invalid interpolation format for "nginx_proxy" option in service "services": "ghcr.io/azuracast/nginx_proxy:${AZURACAST_VERSION:-latest}"`
+
+
+Solution is simple, run this command. You may need to run it with `sudo` permissions. 
+
+- `./docker.sh install-docker-compose`
+- Run the command `./docker.sh install`
 
 ## "bind: address already in use"
 
