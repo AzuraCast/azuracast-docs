@@ -2,7 +2,7 @@
 title: Docker
 description: All about Docker installations of AzuraCast
 published: true
-date: 2022-01-24T11:01:02.806Z
+date: 2022-02-20T13:59:19.352Z
 tags: administration, docker
 editor: markdown
 dateCreated: 2021-02-06T06:41:47.092Z
@@ -337,25 +337,21 @@ For more information, see the [IceCast documentation.](https://www.icecast.org/d
 
 # Custom Favicon
 
-> Updated AzuraCast installations using the Rolling Release channel can now directly upload a custom favicon via the `Custom Branding` page.
+> This feature is now available on AzuraCast stable release 0.15.0 and higher. Update your installation to get this feature.
 {.is-info}
 
 To override the favicon and other browser icons used by AzuraCast, you should follow these steps:
 
-1. Upload your icon to [favicon-generator.org](http://www.favicon-generator.org/). Be sure to leave "Generate icons for Web, Android, Microsoft, and iOS (iPhone and iPad) Apps" checked.
-
-2. Once your icon set is downloaded, it will be in a `.zip` file format; extract that file and copy it to the host server where AzuraCast is hosted.
-
-3. Inside the AzuraCast directory on your host (by default, `/var/azuracast`), create a file named `docker-compose.override.yml` with the following contents:
-
-```yaml
-services:
+1. - Upload your icon to favicon-generator.org. Be sure to leave "Generate icons for Web, Android, Microsoft, and iOS (iPhone and iPad) Apps" checked.
+1. - Once your icon set is downloaded, it will be in a .zip file format; extract that file and copy it to the host server where AzuraCast is hosted.
+1. - Inside the AzuraCast directory on your host (by default, /var/azuracast), create a file named docker-compose.override.yml with the following contents:
+```services:
     web:
         volumes:
             - /path/to/your/favicon/folder:/var/azuracast/www/static/icons/production
 ```
+Restart AzuraCast via `docker-compose down && docker-compose up -d`.
 
-4. Restart AzuraCast via `docker-compose down && docker-compose up -d`.
 
 # Increase PHP Allowed Memory
 
