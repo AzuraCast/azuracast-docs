@@ -2,7 +2,7 @@
 title: AzuraCast Settings
 description: Tuning AzuraCasts settings and performance
 published: true
-date: 2021-04-10T01:57:54.653Z
+date: 2022-02-22T20:55:14.550Z
 tags: getting started
 editor: markdown
 dateCreated: 2021-02-06T01:26:40.798Z
@@ -35,6 +35,9 @@ Variable | Default Value | Description
 `AZURACAST_HTTPS_PORT` | 443 | The port used to serve secure HTTPS web traffic.
 `AZURACAST_SFTP_PORT` | 2022 | The port used to listen for incoming SFTP connections (used for bulk file management).
 `NGINX_TIMEOUT` | 1800 | The time limit (in seconds) that nginx will wait for a response from the PHP application. Corresponds with `proxy_read_timeout` on the proxy and `fastcgi_read_timeout` on the web container. This should match your longest timeout value in `azuracast.env`.
+`AZURACAST_PUID` | 1000 | The effective User ID (UID) of the user inside Docker. Matching this to your host UID (`id -u`) can fix permission issues.
+`AZURACAST_PGID` | 1000 | The effective Group ID (GID) of the user inside Docker. Matching this to your host GID (`id -g`) can fix permission issues.
+`AZURACAST_COMPOSE_PRIVILEGED` | true | Use privileged Docker settings that may not work in nested virtualization environments.
 
 If you don't want to manually edit this file, you can also change the HTTP, HTTPS and SFTP ports by running `./docker.sh change-ports`.
 
@@ -96,4 +99,4 @@ Variable | Default Value | Description
 `SYNC_LONG_EXECUTION_TIME` | 1800 | The maximum execution time (and lock timeout) for the 1-hour synchronization task.
 `PHP_FPM_MAX_CHILDREN` | 5 | Maximum number of PHP-FPM worker processes to spawn.
 `ADDITIONAL_MEDIA_SYNC_WORKER_COUNT` | 0 | Create additional media sync worker processes. This setting can be used to increase the performance of the media sync process by creating additional worker processes to consume messages
-
+`PROFILING_EXTENSION_ENABLED` | 0 | Enable the SPX profiling extension in the Docker container, allowing for performance analysis of each page load.
