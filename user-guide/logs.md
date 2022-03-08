@@ -2,7 +2,7 @@
 title: Logs
 description: How to get logs and what logs are available
 published: true
-date: 2021-04-22T20:52:29.021Z
+date: 2022-03-08T22:43:29.586Z
 tags: getting started, debugging
 editor: markdown
 dateCreated: 2021-02-05T22:33:04.885Z
@@ -53,6 +53,10 @@ If you encounter any problems with accessing the streams or your mount points th
 
 # Docker Container Logs
 
+> We plan on changing the below containers into one `azuracast` container in the coming weeks, this container will include the following: `web`, `mariadb`, `redis` and `stations`. This is currently being tested and docs will be updated to reflect this. 
+{.is-danger}
+
+
 Some system logs can only be accessed from a shell session on the host computer. You can run `docker-compose logs -f <container_name>` to access container logs from the terminal. Replace `<container_name>` with one of the following container names.
 
 > In order to run this command you need to be in the installation directory of your AzuraCast installation. By default this should be `/var/azuracast/`
@@ -62,8 +66,8 @@ Some system logs can only be accessed from a shell session on the host computer.
 
 Container Name | Description
 - | - 
-`nginx_proxy` | This is the container with the NGINX web server proxy that is responsible for making the AzuraCast application available to browsers. This container is also providing the [Let's Encrypt](/en/administration/ssl-and-lets-encrypt) integration for AzuraCast and Multi-Site installtions.
-`nginx_proxy_letsencrypt` | This container is responsible for retrieving and updating the Let's Encrypt certificates for SSL. <br><br> If you encounter any issues with the Let's Encrypt setup you should look into the logs of this container.
+`nginx_proxy` | This is the container with the NGINX web server proxy that is responsible for making the AzuraCast application available to browsers. This container is also providing the [Let's Encrypt](/en/administration/ssl-and-lets-encrypt) integration for AzuraCast and Multi-Site installtions. <br><br> **We don't use this container unless you're using Multi-Site**
+`nginx_proxy_letsencrypt` | This container is responsible for retrieving and updating the Let's Encrypt certificates for SSL. <br><br> If you encounter any issues with the Let's Encrypt setup you should look into the logs of this container. 
 `web` | This container is hosting the main AzuraCast PHP application that controls the stations and provides the web interface. <br><br> If you encounter any server 500 errors or have issues with your sync tasks you should look into the logs of this container.
 `mariadb` | This container is providing AzuraCast with the MariaDB database. <br><br> If you encounter any database related issues you should look into the logs of this container.
 `redis` | This container is providing the AzuraCast application with a Redis server for caching. This is mainly used for caching the filesystem.
