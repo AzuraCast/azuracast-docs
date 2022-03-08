@@ -2,7 +2,7 @@
 title: Docker
 description: All about Docker installations of AzuraCast
 published: true
-date: 2022-02-20T13:59:19.352Z
+date: 2022-03-08T22:49:46.360Z
 tags: administration, docker
 editor: markdown
 dateCreated: 2021-02-06T06:41:47.092Z
@@ -142,6 +142,9 @@ The AzuraCast Docker installation is built to serve the needs of the vast majori
 <br>
 
 ## The Overall Infrastructure
+> We plan on changing the below containers into one `azuracast` container in the coming weeks, this container will include the following: `web`, `mariadb`, `redis` and `stations`. This is currently being tested and docs will be updated to reflect this. 
+{.is-danger}
+
 
 We have created a simple diagram to explain how our Docker infrastructure is separated into individual containers that handle each major component of the installation:
 
