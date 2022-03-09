@@ -2,7 +2,7 @@
 title: Docker
 description: All about Docker installations of AzuraCast
 published: true
-date: 2022-03-08T23:09:43.316Z
+date: 2022-03-09T00:30:13.837Z
 tags: administration, docker
 editor: markdown
 dateCreated: 2021-02-06T06:41:47.092Z
@@ -142,15 +142,16 @@ The AzuraCast Docker installation is built to serve the needs of the vast majori
 <br>
 
 ## The Overall Infrastructure
-> [ROLLING RELEASE ONLY] We plan on changing the below containers into one `azuracast` container in the coming weeks, this container will include the following: `web`, `mariadb`, `redis` and `stations`. This is currently being tested and docs will be updated to reflect this. 
-{.is-danger}
 
+### Latest Rolling Release Version
 
-We have created a simple diagram to explain how our Docker infrastructure is separated into individual containers that handle each major component of the installation:
+We have united our Docker infrastructure into a single container that contains the whole application, its databases and caches, and broadcasting controls.
 
 ![appinfrastructure.png](/images/docker/appinfrastructure.png)
 
-In summary, AzuraCast has five major containers that handle the application's functionality:
+### Version 0.15.2 and Older
+
+Previously, AzuraCast has depended on five major containers that handle the application's functionality:
 
 - `web`, which contains the main web server (nginx), the application language (PHP), and the built-in SFTP service,
 
