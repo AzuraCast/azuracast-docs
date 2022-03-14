@@ -2,7 +2,7 @@
 title: SSL & Let's Encrypt
 description: Securing your AzuraCast installation with SSL / HTTPS
 published: true
-date: 2022-03-14T17:50:16.743Z
+date: 2022-03-14T17:52:51.858Z
 tags: administration, docker
 editor: markdown
 dateCreated: 2021-02-05T19:28:14.682Z
@@ -68,9 +68,24 @@ docker-compose logs -f web
 
 If you have a custom SSL certificate on your host, you should create a `docker-compose.override.yml` file in your `/var/azuracast` directory on the host server with the contents below, modified to reflect your domain name and the path to your SSL certificate and key:
 
+For current **Rolling-Release**:
 ```
 services:
   web:
+    volumes:
+      - /path/on/host/to/ssl.crt:/etc/nginx/certs/ssl.crt:ro
+      - /path/on/host/to/ssl.key:/etc/nginx/certs/ssl.key:ro
+```
+
+For **Stable** Version:
+```
+services:
+  web:
+    volumes:
+      - /path/on/host/to/ssl.crt:/etc/nginx/certs/ssl.crt:ro
+      - /path/on/host/to/ssl.key:/etc/nginx/certs/ssl.key:ro
+      
+  stations:
     volumes:
       - /path/on/host/to/ssl.crt:/etc/nginx/certs/ssl.crt:ro
       - /path/on/host/to/ssl.key:/etc/nginx/certs/ssl.key:ro
