@@ -2,7 +2,7 @@
 title: SSL & Let's Encrypt
 description: Securing your AzuraCast installation with SSL / HTTPS
 published: true
-date: 2022-01-25T19:43:19.626Z
+date: 2022-03-14T17:50:16.743Z
 tags: administration, docker
 editor: markdown
 dateCreated: 2021-02-05T19:28:14.682Z
@@ -71,11 +71,6 @@ If you have a custom SSL certificate on your host, you should create a `docker-c
 ```
 services:
   web:
-    volumes:
-      - /path/on/host/to/ssl.crt:/etc/nginx/certs/ssl.crt:ro
-      - /path/on/host/to/ssl.key:/etc/nginx/certs/ssl.key:ro
-
-  stations:
     volumes:
       - /path/on/host/to/ssl.crt:/etc/nginx/certs/ssl.crt:ro
       - /path/on/host/to/ssl.key:/etc/nginx/certs/ssl.key:ro
