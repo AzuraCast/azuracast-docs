@@ -2,7 +2,7 @@
 title: Docker
 description: All about Docker installations of AzuraCast
 published: true
-date: 2022-03-09T00:30:13.837Z
+date: 2022-03-16T03:09:11.344Z
 tags: administration, docker
 editor: markdown
 dateCreated: 2021-02-06T06:41:47.092Z
@@ -108,8 +108,11 @@ Extracts a .tar.gz file previously created by this same script's backup command,
 
 ## Set Up LetsEncrypt
 
+> As of newer Rolling Release versions, you can simply set up LetsEncrypt by following the installer and selecting "Yes" when prompted to change installation settings.
+{.is-info}
+
 ```
-./docker.sh letsencrypt-create mydomain.example.com
+./docker.sh letsencrypt-create
 ```
 
 If you want your AzuraCast installation to support HTTPS, one of the easiest ways of accomplishing this is with Let's Encrypt, a free provider of SSL certificates.
@@ -200,6 +203,9 @@ Note that this will temporarily shut down your AzuraCast installation and will b
 
 # Using Non-standard Ports
 
+> In newer versions, you no longer need to manually do this; you can instead use the installer by answering "Yes" when prompted to customize settings.
+{.is-info}
+
 You may want to serve the AzuraCast web application itself on a different port, or host your radio station on a port that isn't within the default range AzuraCast serves (8000-8999).
 
 You can use a helper tool in the Docker Utility Script to easily change the ports used by AzuraCast:
@@ -249,6 +255,19 @@ You may want to add music to a station from a directory on your host machine wit
 
 In the same folder where your Docker installation is (if using recommended instructions, this is `/var/azuracast`), create a new file named `docker-compose.override.yml`.
 
+## Latest Rolling Release Version
+
+In this file, paste the following contents:
+
+```yaml
+services:
+  web:
+    volumes:
+      - /path/on/host/computer:/var/azuracast/stations/<STATION_NAME>/media/
+```
+
+## Version 0.15.2 Stable and Older
+
 In this file, paste the following contents:
 
 ```yaml
@@ -272,6 +291,19 @@ You can store all of you station data in a directory on your host machine. This 
 
 In the same folder where your Docker installation is (if using recommended instructions, this is `/var/azuracast`), create a new file named `docker-compose.override.yml`.
 
+## Latest Rolling Release Version
+
+In this file, paste the following contents:
+
+```yaml
+services:
+  web:
+    volumes:
+      - /path/on/host/computer:/var/azuracast/stations
+```
+
+## Version 0.15.2 Stable and Older
+
 In this file, paste the following contents:
 
 ```yaml
@@ -291,9 +323,25 @@ You will need to restart your Docker containers using `docker-compose down`, the
 
 # Custom default track
 
+> As of the latest Rolling Release version, you no longer need to upload a custom default track this way; you can upload a unique "Custom Fallback Track" per-station using the web interface.
+{.is-info}
+
 When nothing is playing on your station you'll hear the default error.mp3 file of AzuraCast playing. You can replace this file by mounting your own .mp3 file via a `docker-compose.override.yml`.
 
 In the same folder where your Docker installation is (if using recommended instructions, this is `/var/azuracast`), create a new file named `docker-compose.override.yml`.
+
+## Latest Rolling Release Version
+
+In this file, paste the following contents:
+
+```yaml
+services:
+    web:
+        volumes:
+            - /path/to/your/file.mp3:/usr/local/share/icecast/web/error.mp3
+```
+
+## Version 0.15.2 Stable and Older
 
 In this file, paste the following contents:
 
