@@ -16,7 +16,7 @@ Follow the steps below to configure your installation for multisite support.
 
 # Nginx Proxy Manager
 
-Most users prefer to use a proxy manager that includes a GUI for easier management of the proxy. There are a lot of different tools for this one of which is the [Nginx Proxy Manager](/en/https://nginxproxymanager.com/) which uses NGINX and includes an easy to use GUI and automatic Let's Encrypt SSL which should be sufficient for most users.
+Most users prefer to use a proxy manager that includes a GUI for easier management of the proxy. There are a lot of different tools for this one of which is the [Nginx Proxy Manager](https://nginxproxymanager.com/) which uses NGINX and includes an easy to use GUI and automatic Let's Encrypt SSL which should be sufficient for most users.
 
 ## Enter AzuraCast Base Directory
 
