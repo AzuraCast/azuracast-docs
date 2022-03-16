@@ -2,7 +2,7 @@
 title: Docker
 description: All about Docker installations of AzuraCast
 published: true
-date: 2022-03-16T03:09:11.344Z
+date: 2022-03-16T03:14:44.229Z
 tags: administration, docker
 editor: markdown
 dateCreated: 2021-02-06T06:41:47.092Z
@@ -106,10 +106,12 @@ Extracts a .tar.gz file previously created by this same script's backup command,
 
 <br>
 
-## Set Up LetsEncrypt
+## Set Up LetsEncrypt {.tabset}
 
 > As of newer Rolling Release versions, you can simply set up LetsEncrypt by following the installer and selecting "Yes" when prompted to change installation settings.
 {.is-info}
+
+### All Versions
 
 ```
 ./docker.sh letsencrypt-create
@@ -119,8 +121,7 @@ If you want your AzuraCast installation to support HTTPS, one of the easiest way
 
 Once you have a domain name pointed to your AzuraCast installation, you can run the command above, specify your domain name, and AzuraCast will automatically verify your domain name and update the server with the SSL certificate.
 
-> Your LetsEncrypt certificate is valid for 3 months. The web service will automatically attempt to renew certificates every night.
-{.is-info}
+Your LetsEncrypt certificate is valid for 3 months. The web service will automatically attempt to renew certificates every night.
 
 # Customizing Docker Installations
 
@@ -144,7 +145,7 @@ The AzuraCast Docker installation is built to serve the needs of the vast majori
 
 <br>
 
-## The Overall Infrastructure
+## The Overall Infrastructure {.tabset}
 
 ### Latest Rolling Release Version
 
@@ -249,7 +250,7 @@ AUTO_ASSIGN_PORT_MAX=8999
 
 You will need to restart your Docker containers using `docker-compose down`, then `docker-compose up -d` to apply any changes made to these files.
 
-# Mounting a directory into a station
+# Mounting a Directory Into a Station {.tabset}
 
 You may want to add music to a station from a directory on your host machine without copying the data into AzuraCast. You can mount the directory into your stations and web container to make them available to AzuraCast by creating a `docker-compose.override.yml`.
 
@@ -265,6 +266,10 @@ services:
     volumes:
       - /path/on/host/computer:/var/azuracast/stations/<STATION_NAME>/media/
 ```
+
+Replace  the `<STATION_NAME>` with the name of the station directory found under the "Administration" section of the station's profile settings and modify the `/path/on/host/computer` with the path to the directory that you want to mount.
+
+You will need to restart your Docker containers using `docker-compose down`, then `docker-compose up -d` to apply any changes made to this file.
 
 ## Version 0.15.2 Stable and Older
 
@@ -285,7 +290,7 @@ Replace  the `<STATION_NAME>` with the name of the station directory found under
 
 You will need to restart your Docker containers using `docker-compose down`, then `docker-compose up -d` to apply any changes made to this file.
 
-# Storing your station data on the host machine
+# Storing Your Station Data on the Host Machine {.tabset}
 
 You can store all of you station data in a directory on your host machine. This can be useful if you want to have AzuraCast running on a small SSD and store the station data on a large HDD.
 
@@ -321,7 +326,7 @@ Modify the `/path/on/host/computer` with the path to the directory that you want
 
 You will need to restart your Docker containers using `docker-compose down`, then `docker-compose up -d` to apply any changes made to this file.
 
-# Custom default track
+# Custom Default Track {.tabset}
 
 > As of the latest Rolling Release version, you no longer need to upload a custom default track this way; you can upload a unique "Custom Fallback Track" per-station using the web interface.
 {.is-info}
@@ -329,6 +334,13 @@ You will need to restart your Docker containers using `docker-compose down`, the
 When nothing is playing on your station you'll hear the default error.mp3 file of AzuraCast playing. You can replace this file by mounting your own .mp3 file via a `docker-compose.override.yml`.
 
 In the same folder where your Docker installation is (if using recommended instructions, this is `/var/azuracast`), create a new file named `docker-compose.override.yml`.
+
+You can place your .mp3 file anywhere on your host machine. You just have to specify the path to it by replacing this part: `/path/to/your/file.mp3`
+
+We recommend to put that file inside the `/var/azuracast` directory though so that you have everything in the same place.
+
+> Make sure that the format of the file specified matches the streaming format exactly.
+{.is-warning}
 
 ## Latest Rolling Release Version
 
@@ -341,6 +353,8 @@ services:
             - /path/to/your/file.mp3:/usr/local/share/icecast/web/error.mp3
 ```
 
+You will need to restart your Docker containers using `docker-compose down`, then `docker-compose up -d` to apply any changes made to this file.
+
 ## Version 0.15.2 Stable and Older
 
 In this file, paste the following contents:
@@ -352,14 +366,7 @@ services:
             - /path/to/your/file.mp3:/usr/local/share/icecast/web/error.mp3
 ```
 
-You can place your .mp3 file anywhere on your host machine. You just have to specify the path to it by replacing this part: `/path/to/your/file.mp3`
-
-We recommend to put that file inside the `/var/azuracast` directory though so that you have everything in the same place.
-
 You will need to restart your Docker containers using `docker-compose down`, then `docker-compose up -d` to apply any changes made to this file.
-
-> Make sure that the format of the file specified matches the streaming format exactly.
-{.is-warning}
 
 # Stream Intro File
 
