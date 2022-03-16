@@ -2,7 +2,7 @@
 title: Docker
 description: All about Docker installations of AzuraCast
 published: true
-date: 2022-03-16T03:14:44.229Z
+date: 2022-03-16T03:17:31.722Z
 tags: administration, docker
 editor: markdown
 dateCreated: 2021-02-06T06:41:47.092Z
@@ -106,12 +106,10 @@ Extracts a .tar.gz file previously created by this same script's backup command,
 
 <br>
 
-## Set Up LetsEncrypt {.tabset}
+## Set Up LetsEncrypt
 
 > As of newer Rolling Release versions, you can simply set up LetsEncrypt by following the installer and selecting "Yes" when prompted to change installation settings.
 {.is-info}
-
-### All Versions
 
 ```
 ./docker.sh letsencrypt-create
@@ -145,15 +143,16 @@ The AzuraCast Docker installation is built to serve the needs of the vast majori
 
 <br>
 
-## The Overall Infrastructure {.tabset}
+## The Overall Infrastructure
 
-### Latest Rolling Release Version
+### By Version {.tabset}
+#### Latest Rolling Release Version
 
 We have united our Docker infrastructure into a single container that contains the whole application, its databases and caches, and broadcasting controls.
 
 ![appinfrastructure.png](/images/docker/appinfrastructure.png)
 
-### Version 0.15.2 and Older
+#### Version 0.15.2 and Older
 
 Previously, AzuraCast has depended on five major containers that handle the application's functionality:
 
@@ -250,13 +249,14 @@ AUTO_ASSIGN_PORT_MAX=8999
 
 You will need to restart your Docker containers using `docker-compose down`, then `docker-compose up -d` to apply any changes made to these files.
 
-# Mounting a Directory Into a Station {.tabset}
+# Mounting a Directory Into a Station
 
 You may want to add music to a station from a directory on your host machine without copying the data into AzuraCast. You can mount the directory into your stations and web container to make them available to AzuraCast by creating a `docker-compose.override.yml`.
 
 In the same folder where your Docker installation is (if using recommended instructions, this is `/var/azuracast`), create a new file named `docker-compose.override.yml`.
 
-## Latest Rolling Release Version
+## By Version {.tabset}
+### Latest Rolling Release Version
 
 In this file, paste the following contents:
 
@@ -271,7 +271,7 @@ Replace  the `<STATION_NAME>` with the name of the station directory found under
 
 You will need to restart your Docker containers using `docker-compose down`, then `docker-compose up -d` to apply any changes made to this file.
 
-## Version 0.15.2 Stable and Older
+### Version 0.15.2 Stable and Older
 
 In this file, paste the following contents:
 
@@ -290,13 +290,15 @@ Replace  the `<STATION_NAME>` with the name of the station directory found under
 
 You will need to restart your Docker containers using `docker-compose down`, then `docker-compose up -d` to apply any changes made to this file.
 
-# Storing Your Station Data on the Host Machine {.tabset}
+# Storing Your Station Data on the Host Machine
 
 You can store all of you station data in a directory on your host machine. This can be useful if you want to have AzuraCast running on a small SSD and store the station data on a large HDD.
 
 In the same folder where your Docker installation is (if using recommended instructions, this is `/var/azuracast`), create a new file named `docker-compose.override.yml`.
 
-## Latest Rolling Release Version
+## By Version {.tabset}
+
+### Latest Rolling Release Version
 
 In this file, paste the following contents:
 
@@ -307,7 +309,7 @@ services:
       - /path/on/host/computer:/var/azuracast/stations
 ```
 
-## Version 0.15.2 Stable and Older
+### Version 0.15.2 Stable and Older
 
 In this file, paste the following contents:
 
@@ -326,7 +328,7 @@ Modify the `/path/on/host/computer` with the path to the directory that you want
 
 You will need to restart your Docker containers using `docker-compose down`, then `docker-compose up -d` to apply any changes made to this file.
 
-# Custom Default Track {.tabset}
+# Custom Default Track
 
 > As of the latest Rolling Release version, you no longer need to upload a custom default track this way; you can upload a unique "Custom Fallback Track" per-station using the web interface.
 {.is-info}
@@ -342,7 +344,9 @@ We recommend to put that file inside the `/var/azuracast` directory though so th
 > Make sure that the format of the file specified matches the streaming format exactly.
 {.is-warning}
 
-## Latest Rolling Release Version
+## By Version {.tabset}
+
+### Latest Rolling Release Version
 
 In this file, paste the following contents:
 
@@ -355,7 +359,7 @@ services:
 
 You will need to restart your Docker containers using `docker-compose down`, then `docker-compose up -d` to apply any changes made to this file.
 
-## Version 0.15.2 Stable and Older
+### Version 0.15.2 Stable and Older
 
 In this file, paste the following contents:
 
