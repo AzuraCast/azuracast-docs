@@ -2,7 +2,7 @@
 title: Updates
 description: How to update your AzuraCast installation
 published: true
-date: 2021-04-15T12:38:02.241Z
+date: 2022-04-05T03:50:10.081Z
 tags: ansible, docker, getting started, debugging
 editor: markdown
 dateCreated: 2021-02-05T20:11:10.517Z
@@ -22,6 +22,21 @@ During the update process, your stations will be briefly offline to listeners, s
 
 # Docker Installations
 
+### Before Updating: Update Docker & Docker Compose
+
+If it's been quite some time since you last updated, your version of Docker and Docker Compose may be out of date, and updates may trigger errors as a result.
+
+You can update Docker and Docker Compose using the utility script by running:
+
+```bash
+cd /var/azuracast
+./docker.sh update-self
+./docker.sh install-docker
+./docker.sh install-docker-compose
+```
+
+### Interactive Updates (Recommended)
+
 Using the included Docker utility script, updating is as simple as running:
 
 ```
@@ -29,6 +44,8 @@ cd /var/azuracast
 ./docker.sh update-self
 ./docker.sh update
 ```
+
+### Automated Updates
 
 By default, the updater will prompt you to update your `docker-compose.yml` file. If you aren't making any changes to this file and want to automate the update process, you can use the command below to automatically answer "yes" to this question:
 
