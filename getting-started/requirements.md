@@ -2,7 +2,7 @@
 title: Requirements
 description: This page tells you what is required to run AzuraCast
 published: true
-date: 2021-12-14T06:58:45.854Z
+date: 2022-04-14T15:46:06.890Z
 tags: getting started
 editor: markdown
 dateCreated: 2021-02-05T18:58:13.221Z
@@ -50,6 +50,7 @@ We strongly recommend one of the following distributions and versions for your A
 - Debian 10 "Buster"
 - Debian 9 "Stretch"
 - MacOS - Using Docker Desktop
+
 - Windows 10 - Using Docker Desktop + WSL2
 - Windows 11 - Using Docker Desktop + WSL2
 
@@ -63,6 +64,9 @@ We strongly recommend one of the following distributions and versions for your A
 
 - **CentOS:**
   - Recent versions of CentOS are moving away from supporting Docker and instead supporting Podman, a different container-based solution. AzuraCast does not currently support being deployed on Podman. If you are selecting a Linux OS for your server, the LTS distributions of Ubuntu and Debian are strongly recommended.
+  
+- **MacOS incompatabilities with M1 CPUs:**
+  - Apple's flagship chip, the M1, is not fully compatable with AzuraCast and the Docker Desktop due to incompatabilities with  processor architecture. We'll review this in the future to see if there's any workarounds.
   
 # :bar_chart: Resource Usage
 
