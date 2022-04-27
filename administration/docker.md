@@ -2,7 +2,7 @@
 title: Docker
 description: All about Docker installations of AzuraCast
 published: true
-date: 2022-03-16T03:17:31.722Z
+date: 2022-04-27T18:07:58.913Z
 tags: administration, docker
 editor: markdown
 dateCreated: 2021-02-06T06:41:47.092Z
@@ -146,7 +146,7 @@ The AzuraCast Docker installation is built to serve the needs of the vast majori
 ## The Overall Infrastructure
 
 ### By Version {.tabset}
-#### Latest Rolling Release Version
+#### Stable Release Version (0.16.0) and newer
 
 We have united our Docker infrastructure into a single container that contains the whole application, its databases and caches, and broadcasting controls.
 
@@ -298,7 +298,8 @@ In the same folder where your Docker installation is (if using recommended instr
 
 ## By Version {.tabset}
 
-### Latest Rolling Release Version
+### Stable Release Version (0.16.0) and newer
+
 
 In this file, paste the following contents:
 
@@ -346,7 +347,7 @@ We recommend to put that file inside the `/var/azuracast` directory though so th
 
 ## By Version {.tabset}
 
-### Latest Rolling Release Version
+### Stable Release Version (0.16.0) and newer
 
 In this file, paste the following contents:
 
