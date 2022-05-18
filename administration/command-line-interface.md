@@ -51,7 +51,6 @@ AzuraCast User Accounts
   name@domain.com         Super Administrator   YYYY-MM-DD HH:MM
  ---------------- ------ --------------------- -------------------
 ```
-message here
 
 ## Create a unique login recovery URL for the specified account.
 ``` 
@@ -66,7 +65,6 @@ Generate Account Login Recovery URL
 
  Log in using this temporary URL and set a new password using the web interface.
 ```
-message here
 
 ## Reset the password of the specified account.
 ``` 
@@ -81,7 +79,6 @@ Reset Account Password
 
  Log in using this temporary password and set a new password using the web interface.
  ```
-message here
 
 ## Set the account specified as a global administrator.
 ``` 
@@ -91,8 +88,7 @@ Set Administrator
 =================
 
  The account associated with e-mail address "(email)" has been set as an administrator
-  ```
-message here
+```
 
 # API Related CLI Commands
 This section will cover our API related command(s), this'll be related to your AzuraCast's API. 
