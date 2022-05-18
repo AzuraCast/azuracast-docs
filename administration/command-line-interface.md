@@ -150,6 +150,25 @@ This command will return all the settings you can modify via the Command Line In
 ```
 The `setting-key` parameter can be collected from the `settings:list` CLI command, this command will allow you to modify almost all portions of AzuraCast's settings, this is useful should you be having issues with misconfigured settings. 
 
+## Manually Run AzuraCast Setup
+
+```bash
+(cli_command) azuracast:setup [--update]
+```
+
+Runs any necessary database updates to bring your AzuraCast installation to the latest version. This is normally run automatically as part of the installation and update processes, but can be run manually for troubleshooting or local development.
+
+> Running this command will disconnect all current active listeners to your radio stations.
+{.is-warning}
+
+## Clear All Caches
+
+```bash
+(cli_command) cache:clear
+```
+
+Clears all caches used internally by AzuraCast. This can be used as a troubleshooting step if you are encountering issues with out-of-date information appearing on dashboard pages. Note that some pages may take slightly longer to load after all caches are cleared.
+
 
 # Run Synchronization Tasks
 
@@ -164,7 +183,7 @@ Manually invoke the synchronized tasks ("cron jobs") that normally run automatic
 - **medium** corresponds to the every-5-minutes sync task
 - **long** corresponds to the every-hour sync task
 
-
+# Station Specific Commands
 ## Manually Reprocess All Media
 
 ```bash
@@ -172,19 +191,6 @@ Manually invoke the synchronized tasks ("cron jobs") that normally run automatic
 ```
 
 Iterates through all stations' media directories and manually reloads the metadata information stored inside AzuraCast with the latest data on the files themselves. This is useful for troubleshooting songs that are stuck in "Processing" status, or if you have recently uploaded multiple songs via SFTP.
-
-<br>
-
-## Manually Run AzuraCast Setup
-
-```bash
-(cli_command) azuracast:setup [--update]
-```
-
-Runs any necessary database updates to bring your AzuraCast installation to the latest version. This is normally run automatically as part of the installation and update processes, but can be run manually for troubleshooting or local development.
-
-> Running this command will disconnect all current active listeners to your radio stations.
-{.is-warning}
 
 <br>
 
@@ -201,22 +207,15 @@ Shuts down both the frontends (Icecast, SHOUTcast, etc) and backends (Liquidsoap
 
 <br>
 
-## Clear All Caches
-
-```bash
-(cli_command) cache:clear
-```
-
-Clears all caches used internally by AzuraCast. This can be used as a troubleshooting step if you are encountering issues with out-of-date information appearing on dashboard pages. Note that some pages may take slightly longer to load after all caches are cleared.
-
-<br>
-
 
 These tasks can also be invoked directly from the web interface via the Administration homepage.
 
 # Other Commands
 
-The AzuraCast CLI interface also exposes a number of other advanced commands. These commands are intended for developers to use when building the application, and often should not be run by station owners on production installations.
+>The AzuraCast CLI interface also exposes a number of other advanced commands. These commands are intended for developers to use when building the application, and often should not be run by station owners on production installations.
+{.is-info}
+
+For a full list of AzuraCast CLI commands, view them [here](https://github.com/AzuraCast/AzuraCast/blob/main/config/cli.php)
 
 For more information about the additional command line tools available, see their respective documentation pages below:
 - [Doctrine Command Line Reference](https://www.doctrine-project.org/projects/doctrine-orm/en/2.6/reference/tools.html#command-overview)

@@ -220,7 +220,7 @@ To override more complex functionality in your Docker installation, see the "Cus
 
 # Expanding the Station Port Range
 
-> Updated AzuraCast installations using the Rolling Release channel can now take advantage of the interactive installer script, which will automatically write any custom port ranges to the `docker-compose.yml` file for you.
+> Installations running version 0.16.0 or higher can now use our installation script to customizez ports via the terminal which will automatically write the changes into the `docker-compose.yml` file for you. 
 {.is-info}
 
 For performance reasons, by default Docker installations only open radio ports from port 8000 to 8500. This allows for 50 unique stations to operate.
@@ -230,14 +230,21 @@ Depending on your hardware, it may be possible to run more than 50 stations on o
 In the same folder where your Docker installation is (if using recommended instructions, this is `/var/azuracast`), create a new file named `docker-compose.override.yml`.
 
 In this file, paste the following contents:
-
+### By Version {.tabset}
+#### Stable Release Version (0.16.0) and newer
+```yaml
+services:
+  web:
+    ports:
+      - "8500-8999:8500-8999"
+```
+#### Version 0.15.2 and Older
 ```yaml
 services:
   stations:
     ports:
       - "8500-8999:8500-8999"
 ```
-
 You can modify the port range in this file to meet your needs, such as expanding it to port 8999 instead of 8500.
 
 When creating a new station, AzuraCast will attempt to automatically assign it an available port from the available port range. If you change this port range, you should let AzuraCast know by adding or updating the following values in your `azuracast.env` file:
