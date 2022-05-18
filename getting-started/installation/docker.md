@@ -42,6 +42,16 @@ On-screen prompts will show you how the installation is progressing.
 > You can also set up SSL with [Let's Encrypt](/en/administration/ssl-and-lets-encrypt) or make other changes to your installation using the Docker Utility Script that you've just downloaded
 {.is-info}
 
+## Troubleshooting
+
+Some Virtual Private Server (VPS) providers sometimes ship a old version of Docker or Docker-Compose with their systems and the version isn't fully compatable with our installation script. This can be resolved by running these commands then attempting the installation process again. 
+``` bash
+cd /var/azuracast
+./docker.sh install-docker
+./docker.sh install-docker-compose
+./docker.sh install
+```
+
 # Unattended Installation
 To automate the installation process for AzuraCast, you can run the following commands or place them into a `cloud-init` script. You can select between release channels when installing:
 

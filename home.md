@@ -79,7 +79,7 @@ We would like to thank the following organizations for their support of AzuraCas
 - [JetBrains](https://www.jetbrains.com/) For making our development faster, easier and more productive with tools like PhpStorm
 - [CrowdIn](https://crowdin.com/) For giving us a simple and powerful tool to help translate our application for users around the world
 - [Netlify](https://www.netlify.com/) For supporting open-source software like ours and for serving as the host of our web site!
-- [BrowserStack](https://www.browserstack.com/) For providing us cross-browsers in for us to debug and test new features across a range of browsers
+- [BrowserStack](https://www.browserstack.com/) For providing us a tool that allows us to test across multiple browsers in one place
 {.links-list}
 
 The creators and maintainers of the many free and open-source tools that AzuraCast is built on, who have done so much to help move FOSS forward

@@ -10,6 +10,10 @@ dateCreated: 2021-02-06T23:21:29.359Z
 
 # AzuraCast Multi-Site Docker Installation
 
+> This area is subject to updates in the future, it's not fully up to date with AzuraCast version 16.1. 
+{.is-warning}
+
+
 If you use the recommended Docker installation method for AzuraCast, you can configure your installation to sit behind a nginx proxy that can also handle other web sites on the same host. This allows you to host, for example, your station's web site on the same server as your AzuraCast installation.
 
 Follow the steps below to configure your installation for multisite support.

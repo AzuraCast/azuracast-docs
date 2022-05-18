@@ -12,6 +12,7 @@ AzuraCast features a powerful Command-Line Interface (CLI) tool that allows you 
 
 In order to use the AzuraCast CLI, you must have shell terminal access to the server running AzuraCast (to the host machine, if you're running Docker).
 
+Some of these commands are only intended for developers to debug or to resolve issues, use caution when executing these commands and only do them when told to, or you know what you're doing. 
 # Invoking the CLI
 
 **Using the Docker Utility Script:**
@@ -34,25 +35,135 @@ docker-compose run --rm cli azuracast_cli [command]
 php /var/azuracast/www/bin/console [command]
 ```
 
-# Command Reference
+# Account Related CLI Commands
+This section will cover all account related CLI commands and the response the CLI will provide.  
 
-<br>
+## List all accounts
+```
+(cli_command) azuracast:account:list 
 
-## List All Commands
+AzuraCast User Accounts
+=======================
 
-To see all commands available, run the appropriate CLI command for your installation type with no command specified.
+ ---------------- ------ --------------------- -------------------
+  E-mail Address   Name   Roles                 Created
+ ---------------- ------ --------------------- -------------------
+  name@domain.com         Super Administrator   YYYY-MM-DD HH:MM
+ ---------------- ------ --------------------- -------------------
+```
+message here
 
-<br>
+## Create a unique login recovery URL for the specified account.
+``` 
+(cli_command) azuracast:account:login-token (EMAIL)
 
-## Reset Administrator Password
+Generate Account Login Recovery URL
+===================================
 
-```bash
-(cli_command) azuracast:account:reset-password your@email.com
+ The account recovery URL is:
+
+     https://domain/recover/hash:hash
+
+ Log in using this temporary URL and set a new password using the web interface.
+```
+message here
+
+## Reset the password of the specified account.
+``` 
+(cli_command) azuracast:account:reset-password (EMAIL)
+
+Reset Account Password
+======================
+
+ The account password has been reset. The new temporary password is:
+
+     {Generated_Password}
+
+ Log in using this temporary password and set a new password using the web interface.
+ ```
+message here
+
+## Set the account specified as a global administrator.
+``` 
+(cli_command) azuracast:account:set-administrator (EMAIL)
+
+Set Administrator
+=================
+
+ The account associated with e-mail address "(email)" has been set as an administrator
+  ```
+message here
+
+# API Related CLI Commands
+This section will cover our API related command(s), this'll be related to your AzuraCast's API. 
+## Regenerate AzuraCast's API documentation.
+```
+(cli_command) azuracast:api:docs
+
+API documentation updated!
+```
+This command should be used when you're on a development, production or testing machine and you're making modifications to the API, this will update your API accordingly (domain/api)
+
+# Internal Related CLI Commands
+This section will cover our internal processes, such as Liquidsoap, SSL and SFTP authentication. 
+
+## Get the external IP address for this instance
+```
+(cli_command) azuracast:internal:ip
+
+{IP Address}
+```
+Running this command will return the IP of this machine. 
+
+##  Handle Liquidsoap API calls
+```
+(cli_command) azuracast:internal:liquidsoap (cp/auth/djon/djoff/feedback/nextsong) (station_id)
+```
+This command can run various Liquidsoap API calls, this is primarily used for debugging or development purposes.
+## Reload broadcast frontends when an SSL certificate changes
+```
+(cli_command) azuracast:internal:on-ssl-renewal
 ```
 
-Generate a temporary password for the user account with the specified e-mail address. This can help you recover an account you have lost access to. This method is used for security purposes instead of a typical "Forgot Password?" prompt on the login screen.
+## Attempt SFTP Authentication
+```
+(cli_command) azuracast:internal:sftp-auth
+```
 
-<br>
+## Send upcoming song feedback from the AutoDJ back to AzuraCast.
+```
+(cli_command) azuracast:internal:sftp-event
+```
+
+# AzuraCast Settings CLI Commands
+This section will cover our internal internal settings ranging from base URL to smtp. This can be used should you be locked out of the settings or unable to access AzuraCast directly from the browser.  
+
+## List all settings for AzuraCast
+```
+(cli_command) azuracast:settings:list
+```
+This command will return all the settings you can modify via the Command Line Interface, which will be shown in the next field. 
+
+## Modify settings for AzuraCast
+```
+(cli_command) azuracast:settings:set (setting-key) (setting-value)
+```
+The `setting-key` parameter can be collected from the `settings:list` CLI command, this command will allow you to modify almost all portions of AzuraCast's settings, this is useful should you be having issues with misconfigured settings. 
+
+
+# Run Synchronization Tasks
+
+```bash
+(cli_command) sync:run [nowplaying|short|medium|long]
+```
+
+Manually invoke the synchronized tasks ("cron jobs") that normally run automatically behind the scenes to keep AzuraCast updated.
+
+- **nowplaying** corresponds to the every-15-second check of all stations' currently playing song and listener metrics
+- **short** corresponds to the every-minute sync task
+- **medium** corresponds to the every-5-minutes sync task
+- **long** corresponds to the every-hour sync task
+
 
 ## Manually Reprocess All Media
 
@@ -100,18 +211,6 @@ Clears all caches used internally by AzuraCast. This can be used as a troublesho
 
 <br>
 
-## Run Synchronization Tasks
-
-```bash
-(cli_command) sync:run [nowplaying|short|medium|long]
-```
-
-Manually invoke the synchronized tasks ("cron jobs") that normally run automatically behind the scenes to keep AzuraCast updated.
-
-- **nowplaying** corresponds to the every-15-second check of all stations' currently playing song and listener metrics
-- **short** corresponds to the every-minute sync task
-- **medium** corresponds to the every-5-minutes sync task
-- **long** corresponds to the every-hour sync task
 
 These tasks can also be invoked directly from the web interface via the Administration homepage.
 

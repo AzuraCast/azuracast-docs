@@ -152,7 +152,7 @@ We have united our Docker infrastructure into a single container that contains t
 
 ![appinfrastructure.png](/images/docker/appinfrastructure.png)
 
-#### Version 0.15.2 and Older
+#### Stable Version 0.15.2 and Older
 
 Previously, AzuraCast has depended on five major containers that handle the application's functionality:
 
