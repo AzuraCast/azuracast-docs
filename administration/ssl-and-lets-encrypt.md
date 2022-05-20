@@ -71,7 +71,9 @@ docker-compose logs -f web
 
 If you have a custom SSL certificate on your host, you should create a `docker-compose.override.yml` file in your `/var/azuracast` directory on the host server with the contents below, modified to reflect your domain name and the path to your SSL certificate and key:
 
-For current **Rolling-Release**:
+
+### By Version {.tabset}
+#### Stable Release Version (0.16.0) and newer
 ```
 services:
   web:
@@ -80,7 +82,7 @@ services:
       - /path/on/host/to/ssl.key:/etc/nginx/certs/ssl.key:ro
 ```
 
-For **Stable** Version:
+#### Stable Version 0.15.2 and Older
 ```
 services:
   web:

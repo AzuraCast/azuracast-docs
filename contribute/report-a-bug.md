@@ -22,7 +22,7 @@ If there's already an open GitHub issue for the specific issue you're having, yo
 
 > When creating a new issue, you'll be presented with a template of questions to answer to help our team provide quick and accurate support. 
 >
-> **Please make sure to answer these questions!**
+> **Please make sure to answer these questions and provide as much detail as possible!**
 {.is-warning}
 
 

@@ -44,11 +44,11 @@ AzuraCast is powered by Docker and uses pre-built images that contain every comp
 
 We strongly recommend one of the following distributions and versions for your AzuraCast installation:
 
-- Ubuntu 20.04 LTS (Recommended)
-- Ubuntu 18.04 LTS
-- Ubuntu 16.04 LTS (Compatible, but updating is recommended)
-- Debian 10 "Buster"
-- Debian 9 "Stretch"
+- Ubuntu 22.04 LTS (Docker only)
+- Ubuntu 20.04 LTS (Ansible / Docker)
+- Ubuntu 18.04 LTS (Docker only) 
+- Debian 10 "Buster" (Ansible / Docker)
+- Debian 9 "Stretch" (Ansible / Docker)
 - MacOS - Using Docker Desktop
 
 - Windows 10 - Using Docker Desktop + WSL2

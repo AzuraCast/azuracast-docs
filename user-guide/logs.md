@@ -53,17 +53,20 @@ If you encounter any problems with accessing the streams or your mount points th
 
 # Docker Container Logs
 
-> We plan on changing the below containers into one `azuracast` container in the coming weeks, this container will include the following: `web`, `mariadb`, `redis` and `stations`. This is currently being tested and docs will be updated to reflect this. 
-{.is-danger}
-
 
 Some system logs can only be accessed from a shell session on the host computer. You can run `docker-compose logs -f <container_name>` to access container logs from the terminal. Replace `<container_name>` with one of the following container names.
 
 > In order to run this command you need to be in the installation directory of your AzuraCast installation. By default this should be `/var/azuracast/`
 {.is-info}
 
-## Available Containers
-
+### By Version {.tabset}
+#### Stable Release Version (0.16.0) and newer
+Container Name | Description
+- | - 
+`azuracast` | This is the only container we use for AzuraCast, it holds: 
+The main AzuraCast PHP application that controls the stations and provides the web
+interface, the **MariaDB** Database and the **Redis** server which is used for caching and the old Station container which contains IceCast, ShoutCast and Liquidsoap functionality.
+#### Stable Release Version (0.15.0) and older
 Container Name | Description
 - | - 
 `nginx_proxy` | This is the container with the NGINX web server proxy that is responsible for making the AzuraCast application available to browsers. This container is also providing the [Let's Encrypt](/en/administration/ssl-and-lets-encrypt) integration for AzuraCast and Multi-Site installtions. <br><br> **We don't use this container unless you're using Multi-Site**
