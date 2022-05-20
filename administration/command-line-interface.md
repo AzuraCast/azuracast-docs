@@ -54,7 +54,7 @@ AzuraCast User Accounts
 
 ## Create a unique login recovery URL for the specified account.
 ``` 
-(cli_command) azuracast:account:login-token (EMAIL)
+(cli_command) azuracast:account:login-token [example]
 
 Generate Account Login Recovery URL
 ===================================
@@ -68,26 +68,26 @@ Generate Account Login Recovery URL
 
 ## Reset the password of the specified account.
 ``` 
-(cli_command) azuracast:account:reset-password (EMAIL)
+(cli_command) azuracast:account:reset-password [example]
 
 Reset Account Password
 ======================
 
  The account password has been reset. The new temporary password is:
 
-     {Generated_Password}
+     [example]
 
  Log in using this temporary password and set a new password using the web interface.
  ```
 
 ## Set the account specified as a global administrator.
 ``` 
-(cli_command) azuracast:account:set-administrator (EMAIL)
+(cli_command) azuracast:account:set-administrator [example]
 
 Set Administrator
 =================
 
- The account associated with e-mail address "(email)" has been set as an administrator
+ The account associated with e-mail address "[example]" has been set as an administrator
 ```
 
 # API Related CLI Commands
@@ -107,13 +107,13 @@ This section will cover our internal processes, such as Liquidsoap, SSL and SFTP
 ```
 (cli_command) azuracast:internal:ip
 
-{IP Address}
+[example]
 ```
 Running this command will return the IP of this machine. 
 
 ##  Handle Liquidsoap API calls
 ```
-(cli_command) azuracast:internal:liquidsoap (cp/auth/djon/djoff/feedback/nextsong) (station_id)
+(cli_command) azuracast:internal:liquidsoap [example] [example]
 ```
 This command can run various Liquidsoap API calls, this is primarily used for debugging or development purposes.
 ## Reload broadcast frontends when an SSL certificate changes
@@ -142,7 +142,7 @@ This command will return all the settings you can modify via the Command Line In
 
 ## Modify settings for AzuraCast
 ```
-(cli_command) azuracast:settings:set (setting-key) (setting-value)
+(cli_command) azuracast:settings:set [example] [example]
 ```
 The `setting-key` parameter can be collected from the `settings:list` CLI command, this command will allow you to modify almost all portions of AzuraCast's settings, this is useful should you be having issues with misconfigured settings. 
 
