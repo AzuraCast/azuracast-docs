@@ -172,7 +172,7 @@ cp docker-compose.override.yml docker-compose.override.bak.yml
 curl -fsSL https://raw.githubusercontent.com/AzuraCast/AzuraCast/master/docker-compose.multisite.yml > docker-compose.override.yml
 ```
 
-Note that if you've already set up an override file with other modifications, you should make sure to apply the same changes that are now located in `docker-compose.override.bak.yml` to the newly downloaded `docker-compose.override.yml` file.
+Note that if you've already set up an override file with other modifications, you should make sure to apply the same changes that are now located in `docker-compose.override.bak.yml` to the newly downloaded `docker-compose.override.yml` file. Also, if you are using "Rolling-Release", you may need to remove "nginx_proxy" service from `docker-compose.override.yml` to avoid errors during next steps.
 
 <br>
 
