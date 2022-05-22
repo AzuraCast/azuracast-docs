@@ -270,5 +270,6 @@ networks:
 volumes:
     db_data: {}
 ```
-   
+_(Note, you might also need to change `azuracast_frontend` network to `azuracast_default` in newer Azuracast versions)_
+
 Once created and saved, you can spin up the new service by running `docker-compose up -d` in the same directory.
