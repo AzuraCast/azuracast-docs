@@ -235,6 +235,9 @@ services:
          - azuracast_frontend
          - backend
         restart: always
+        ports:
+        # Set any desired port for your wp service
+         - "8080:80"
         environment:
             # Change this to the domain your Wordpress site should be served on.
             VIRTUAL_HOST: wordpress.example.com
