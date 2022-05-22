@@ -237,7 +237,7 @@ services:
         restart: always
         ports:
         # Set any desired port for your wp service
-         - "8080:80"
+         - "8081:80"
         environment:
             # Change this to the domain your Wordpress site should be served on.
             VIRTUAL_HOST: wordpress.example.com
@@ -246,12 +246,12 @@ services:
             # LETSENCRYPT_EMAIL: youremail@example.com
             WORDPRESS_DB_HOST: db:3306
             # If you customize these values, make sure to customize them below also.
-            WORDPRESS_DB_USER: wordpress
-            WORDPRESS_DB_PASSWORD: wordpress
-            WORDPRESS_DB_NAME: wordpress
+            WORDPRESS_DB_USER: wordpress_user
+            WORDPRESS_DB_PASSWORD: wordpress_pass
+            WORDPRESS_DB_NAME: wordpress_db
 
     db:
-        image: mysql:5.7
+        image: mysql:8.0
         volumes:
          - db_data:/var/lib/mysql
         networks:
@@ -260,9 +260,9 @@ services:
         environment:
             # If you customize these values, make sure to customize them above also.
             MYSQL_ROOT_PASSWORD: somewordpress
-            MYSQL_DATABASE: wordpress
-            MYSQL_USER: wordpress
-            MYSQL_PASSWORD: wordpress
+            MYSQL_DATABASE: wordpress_db
+            MYSQL_USER: wordpress_user
+            MYSQL_PASSWORD: wordpress_pass
 
 networks:
     azuracast_frontend:
@@ -275,4 +275,4 @@ volumes:
 ```
 _(Note, you might also need to change `azuracast_frontend` network to `azuracast_default` in newer Azuracast versions)_
 
-Once created and saved, you can spin up the new service by running `docker-compose up -d` in the same directory.
+Once created and saved, you can spin up the new service by running `docker-compose up -d` in the same directory, and then in *Nginx Proxy Manager* map the example port `8081` to your sub/domain.
