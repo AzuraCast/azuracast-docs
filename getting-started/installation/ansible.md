@@ -2,7 +2,7 @@
 title: Installing AzuraCast with Ansible
 description: 
 published: true
-date: 2021-12-14T11:45:52.738Z
+date: 2022-05-26T23:57:07.740Z
 tags: advanced feature, ansible
 editor: markdown
 dateCreated: 2021-02-05T19:53:05.881Z
@@ -44,7 +44,6 @@ When evaluating which installation method to use, be aware of the following cons
 Currently, the following operating systems are supported:
 
 - **Ubuntu 20.04 "Focal" LTS (Recommended)**
-- Ubuntu 18.04 "Bionic" LTS
 
 Our support for LTS versions of Ubuntu follows the [Ubuntu support lifecycle](https://ubuntu.com/about/release-cycle). Typically, LTS versions are supported for a period of 5 years following their release.
 
