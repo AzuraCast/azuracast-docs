@@ -2,7 +2,7 @@
 title: SSL & Let's Encrypt
 description: Securing your AzuraCast installation with SSL / HTTPS
 published: true
-date: 2022-03-20T19:42:11.048Z
+date: 2022-06-02T13:15:01.021Z
 tags: administration, docker
 editor: markdown
 dateCreated: 2021-02-05T19:28:14.682Z
@@ -61,10 +61,10 @@ docker-compose up -d
 
 After starting AzuraCast, wait a few minutes just to be sure that everything has started up correctly then check if AzuraCast is still serving the self-signed certificate.
 
-If it is still serving the self-signed certificate, take a look into the logs of the `web` container to see if there are any errors related to retrieving or renewing the certificate:
+If it is still serving the self-signed certificate, take a look into the logs of the container to see if there are any errors related to retrieving or renewing the certificate:
 
 ```
-docker-compose logs -f web
+docker-compose logs -f
 ```
 
 # Using a Custom Certificate
