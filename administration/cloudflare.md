@@ -2,7 +2,7 @@
 title: CloudFlare
 description: Using CloudFlare as proxy for your AzuraCast installation
 published: true
-date: 2022-06-23T17:08:56.573Z
+date: 2022-06-23T17:09:07.823Z
 tags: administration
 editor: markdown
 dateCreated: 2021-02-06T07:13:38.279Z
@@ -39,7 +39,7 @@ To create a new Page Rule:
 
 1) Visit the CloudFlare control panel, then "Rules", then "Page Rules".
 2) Click "Create Page Rule".
-3) Enter the URL of your AzuraCast installation, followed by one of the patterns below. The finished pattern should look like "azuracast.example.com/radio/*"
+3) Enter the URL of your AzuraCast installation, followed by one of the patterns below. The finished pattern should look like `azuracast.example.com/radio/*`
 4) Pick the "Cache Level" setting, set it to "Bypass".
 5) Click "Save and Deploy Page Rule" at the bottom of the page.
 
