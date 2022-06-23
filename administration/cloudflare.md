@@ -2,7 +2,7 @@
 title: CloudFlare
 description: Using CloudFlare as proxy for your AzuraCast installation
 published: true
-date: 2022-02-11T18:27:35.112Z
+date: 2022-06-23T16:56:16.942Z
 tags: administration
 editor: markdown
 dateCreated: 2021-02-06T07:13:38.279Z
@@ -31,35 +31,38 @@ Fortunately, we've already built a solution to this problem! In AzuraCast's syst
 
 # Important Notes
 
-## Changes to Port 80/443
-Due to CloudFlare's Terms of Service changes, they no longer allow for Port 80 and 443 to be used for non HTML content. Because of the change, we cannot support this any longer as it risks users CloudFlare accounts being permanently terminated for violating the CloudFlare Terms of Service. Please review the entire section of 2.8 below
+## Do Not Cache Radio Content
 
-> **2.8 Limitation on Serving Non-HTML Content**
-The Services are offered primarily as a platform to cache and serve web pages and websites. Unless explicitly included as part of a Paid Service purchased by you, you agree to use the Services solely for the purpose of (i) serving web pages as viewed through a web browser or other functionally equivalent applications, including rendering Hypertext Markup Language (HTML) or other functional equivalents, and (ii) serving web APIs subject to the restrictions set forth in this Section 2.8. Use of the Services for serving video or a disproportionate percentage of pictures, audio files, or other non-HTML content is prohibited, unless purchased separately as part of a Paid Service or expressly allowed under our Supplemental Terms for a specific Service. If we determine you have breached this Section 2.8, we may immediately suspend or restrict your use of the Services, or limit End User access to certain of your resources through the Services.
-{.is-info}
+CloudFlare does not allow you to serve your web radio content via their cached CDN, as the content is a streaming audio file that isn't cacheable via their traditional services. The easiest way to instruct CloudFlare not to cache your radio broadcasts is via their Page Rules feature.
 
+To create a new Page Rule:
 
-## Incompatibility with Rocket Loader
-Due to the strict Content Security Policy in AzuraCast you will have to disable CloudFlare's Rocket Loader or your AzuraCast interface will break.
+1) Visit the CloudFlare control panel, then "Rules", then "Page Rules".
+2) Click "Create Page Rule".
+3) Enter the URL of your AzuraCast installation, followed by one of the patterns below.
+4) Pick the "Cache Level" setting, set it to "Bypass".
+5) Click "Save and Deploy Page Rule" at the bottom of the page.
 
-If you have enabled CloudFlare for your AzuraCast installation and your Dashboard shows up like this you should check if your browser's JavaScript console shows the following error and disable Rocket Loader.
-
-![cloudflare_rocket_loader_issue.png](/images/cloudflare/cloudflare_rocket_loader_issue.png)
-
-```
-Refused to load the script 'https://ajax.cloudflare.com/cdn-cgi/scripts/a2bd7673/cloudflare-static/rocket-loader.min.js' because it violates the following Content Security Policy directive: "script-src 'self' 'unsafe-eval' 'nonce-oRJ+doQCy3ixkj24VkvoznVv'". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback.
-```
+Repeat these steps for all of the following patterns:
+ - `/radio/*`
+ - `/listen/*`
+ - `/hls/*`
 
 <br>
 
-## Bandwidth Savings
-The nature of streaming radio means it's all but impossible for a service like CloudFlare to cache the radio signal itself using its servers; instead, it passes all of this traffic through to your server directly. This means that CloudFlare will not help you avoid hitting hosting provider bandwidth quotas for your radio service itself.
+## Always Disable Rocket Loader
 
-However, this doesn't mean that you won't see any bandwidth reduction by using CloudFlare; if you use the AzuraCast public pages or its "Now Playing" API, CloudFlare caches both very well and offers significant reductions in the bandwidth needed to serve those pages.
+AzuraCast is **not** compatible with the Rocket Loader optimization offered by CloudFlare. If Rocket Loader is enabled, you will encounter unexpected errors with AzuraCast.
+
+In order to resolve this  error, you must go to your CloudFlare Dashboard and disable the Rocket Launcher settings:
+
+![](https://aws1.discourse-cdn.com/cloudflare/original/3X/5/7/57001bbc0803f75f68d7699b3c76ba83e039cedb.png)
+
+![](https://aws1.discourse-cdn.com/cloudflare/original/3X/f/0/f057f97a3f79811e68d51e6bf86212fb0619659c.png)
 
 <br>
 
-## Incoming DJ Connections
+## About Incoming DJ Connections
 
 Because CloudFlare blocks any incoming connections that aren't on the standard web ports, it also blocks the incoming connections that your streamers/DJs would use to broadcast to your station. Unlike the experience we offer listeners through our radio proxy, we can't proxy the incoming broadcast in the same way for technical reasons.
 
@@ -67,19 +70,6 @@ We recommend instructing your streamers/DJs to connect to your server using its 
 
 <br>
 
-## AzuraRelay Instances
+## About AzuraRelay Instances
 
 If you use AzuraRelay instances that should relay a CloudFlare-protected installation, you should use the IP address of the installation as the base URL for the relay (in a format like http://127.0.0.1), rather than the public-facing CloudFlare-protected address. Otherwise, no changes are needed.
-
-<br>
-
-## Cloudflare Rocket Launcher
-
-Users may run into this following error: 
-
-> `Refused to execute inline script because it violates the following Content Security Policy directive`
-
-In order to resolve this  error, you must go to your CloudFlare Dashboard and disable the Rocket Launcher settings. 
-![](https://aws1.discourse-cdn.com/cloudflare/original/3X/5/7/57001bbc0803f75f68d7699b3c76ba83e039cedb.png)
-
-![](https://aws1.discourse-cdn.com/cloudflare/original/3X/f/0/f057f97a3f79811e68d51e6bf86212fb0619659c.png)
