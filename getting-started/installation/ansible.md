@@ -2,7 +2,7 @@
 title: Installing AzuraCast with Ansible
 description: 
 published: true
-date: 2022-05-28T05:01:15.018Z
+date: 2022-06-30T22:51:23.557Z
 tags: advanced feature, ansible
 editor: markdown
 dateCreated: 2021-02-05T19:53:05.881Z
@@ -34,8 +34,6 @@ When evaluating which installation method to use, be aware of the following cons
 - **Potential for Software Conflicts:** Because Ansible installs directly onto whatever version of Ubuntu you're running, it can't always take into account the specific configuration of your OS, or any bundled software that your hosting provider includes with it. This increases the likelihood that our installer may conflict with 
 
 - **Longer Update Times:** If you use Docker, you can take advantage of the fact that our automated systems build the images for you, and all you need to do is pull down the latest images when updating. With Ansible, you have to run every updated installation step on your own computer, which can (and often does) take much longer.
-
-- **No Built-in Automatic LetsEncrypt Support**
 
 ## Supported Operating Systems
 
