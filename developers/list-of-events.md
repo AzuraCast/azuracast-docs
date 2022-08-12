@@ -2,7 +2,7 @@
 title: List of Events
 description: A list of events available for event listeners through the EventDispatcher
 published: true
-date: 2022-02-14T15:26:43.663Z
+date: 2022-08-12T20:52:44.133Z
 tags: development, plugin
 editor: markdown
 dateCreated: 2021-02-06T20:12:02.133Z
@@ -18,13 +18,14 @@ This event allows you to customize and extend the Administration page menu.
 
 ```php
 $dispatcher->addListener(App\Event\BuildAdminMenu::class, function(App\Event\BuildAdminMenu $event) {
-    $router = $event->getRouter();
+    $request = $event->getRequest();
+    $router = $request->getRouter();
 
     $event->addItem('example', [
         'label' => __('Example'),
         'icon' => 'cast',
         'url' => $router->fromHere('example-plugin:admin:example:index'),
-        'permission' => Acl::GLOBAL_VIEW,
+        'permission' => App\Enums\GlobalPermissions::View,
     ]);
 });
 ```
@@ -149,13 +150,14 @@ This event allows you to customize and extend the station sidebar menu.
 
 ```php
 $dispatcher->addListener(App\Event\BuildStationMenu::class, function(App\Event\BuildStationMenu $event) {
-    $router = $event->getRouter();
+    $request = $event->getRequest();
+    $router = $request->getRouter();
 
     $event->addItem('example', [
         'label' => __('Example'),
         'icon' => 'cast',
         'url' => $router->fromHere('example-plugin:station:example:index'),
-        'permission' => App\Acl::STATION_VIEW,
+        'permission' => App\Enums\StationPermissions::View,
     ]);
 });
 ```
