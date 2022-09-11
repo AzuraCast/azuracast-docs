@@ -2,7 +2,7 @@
 title: Troubleshooting
 description: Having trouble with AzuraCast? This page has several resources that can help you solve your problem and be back up and running.
 published: true
-date: 2022-09-11T02:47:43.515Z
+date: 2022-09-11T02:48:37.973Z
 tags: getting started, debugging
 editor: markdown
 dateCreated: 2021-02-05T21:17:05.327Z
@@ -67,6 +67,8 @@ This message doesn't indicate anything is wrong with your installation; it is si
 
 <br>
 
+# Other General Errors
+
 ## InnoDB: Upgrade after a crash is not supported.
 
 The DB crashed while using MariaDB 10.4 and was then not restarted with the same MariaDB version so that it can recover from the redo log files but was updated to 10.5 which now is not able to handle the old redo log format (in 10.5 they changed that format).
@@ -76,6 +78,8 @@ Renaming the `ib_logfile0` (and if there are more `ib_logfile*` files those too)
 You can find those files here: `/var/lib/docker/volumes/azuracast_db_data/_data`
 
 Stop your AzuraCast via `docker-compose down`, then try renaming them via `mv ib_logfile0 ib_logfile0.old` and after that run the update again.
+
+<br>
 
 ## Failed Database Migrations
 
