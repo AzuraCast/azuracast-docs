@@ -2,7 +2,7 @@
 title: Troubleshooting
 description: Having trouble with AzuraCast? This page has several resources that can help you solve your problem and be back up and running.
 published: true
-date: 2022-02-17T21:07:30.113Z
+date: 2022-09-11T02:47:43.515Z
 tags: getting started, debugging
 editor: markdown
 dateCreated: 2021-02-05T21:17:05.327Z
@@ -76,6 +76,35 @@ Renaming the `ib_logfile0` (and if there are more `ib_logfile*` files those too)
 You can find those files here: `/var/lib/docker/volumes/azuracast_db_data/_data`
 
 Stop your AzuraCast via `docker-compose down`, then try renaming them via `mv ib_logfile0 ib_logfile0.old` and after that run the update again.
+
+## Failed Database Migrations
+
+In some situations, especially if the automated update process is interrupted for any reason, you can wind up in a state where a databse migration has only halfway completed. During subsequent updates, the migration will try to run from the beginning, which leads to it re-running queries that have already run, which results in an error that looks like:
+
+```
+SQLSTATE[42000]: Syntax error or access violation: ...
+```
+
+### What Causes This
+
+We use MariaDB as our database layer, and while MariaDB is a very powerful and capable database solution, one of its limitations is that it cannot do transactional table alterations. In other words, you can't wrap "ALTER TABLE" statements in a transaction that can then be rolled back in the event of errors. Some other databases (like PostGreSQL) support transactional table alterations, but switching databases would be difficult, if not impossible, for our installed user base.
+
+### Easy Solution: Restore from a Backup
+
+This situation is one of the primary reasons why we strongly encourage users to keep regular backups of their installations. Restoring from a backup is a very simple way to resolve the issue, as it will bring you back to a known working state, where you can then run the update process again (and it will likely continue without issues).
+
+### Advanced Solution: Modify the Database
+
+**Caution:** This is only advised for very advanced users who are comfortable modifying the underlying database powering AzuraCast.
+
+We don't provide specific instructions for this process as it can cause irreparable damage to your installation, but basically, the process would be:
+
+ - Identify which migration is failing.
+ - Find the corresponding migration (in the `src/Entity/Migrations` folder).
+ - Find which step is failing in the `up` function, and find the corresponding SQL commands to undo those specific migrations in the `down` command in the same file.
+ - Manually run those commands via 
+   `./docker.sh dbal:run-sql "SQL COMMAND HERE"`
+ - Re-run the update process.
 
 # Submitting an Issue
 
