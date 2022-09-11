@@ -2,7 +2,7 @@
 title: Troubleshooting
 description: Having trouble with AzuraCast? This page has several resources that can help you solve your problem and be back up and running.
 published: true
-date: 2022-09-11T02:48:37.973Z
+date: 2022-09-11T02:49:46.319Z
 tags: getting started, debugging
 editor: markdown
 dateCreated: 2021-02-05T21:17:05.327Z
@@ -107,7 +107,7 @@ We don't provide specific instructions for this process as it can cause irrepara
  - Find the corresponding migration (in the `src/Entity/Migrations` folder).
  - Find which step is failing in the `up` function, and find the corresponding SQL commands to undo those specific migrations in the `down` command in the same file.
  - Manually run those commands via 
-   `./docker.sh dbal:run-sql "SQL COMMAND HERE"`
+   `./docker.sh cli dbal:run-sql "SQL COMMAND HERE"`
  - Re-run the update process.
 
 # Submitting an Issue
