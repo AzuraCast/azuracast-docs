@@ -2,7 +2,7 @@
 title: SSL & Let's Encrypt
 description: Securing your AzuraCast installation with SSL / HTTPS
 published: true
-date: 2022-06-19T13:03:21.249Z
+date: 2022-09-12T05:30:11.472Z
 tags: administration, docker
 editor: markdown
 dateCreated: 2021-02-05T19:28:14.682Z
@@ -10,8 +10,7 @@ dateCreated: 2021-02-05T19:28:14.682Z
 
 # Enabling HTTPS with LetsEncrypt
 
-> Automatic LetsEncrypt setup and renewal are only available in the Docker installation. For other installation types, you can directly use [Certbot](https://certbot.eff.org/).
-{.is-info}
+AzuraCast now includes built-in support for creating and managing SSL (HTTPS) certificates via LetsEncrypt from the System Settings panel.
 
 LetsEncrypt is a free and simple way to allow safe and secure connections to your AzuraCast installation. With a valid SSL certificate, you can:
 
@@ -31,41 +30,23 @@ Before setting up LetsEncrypt, you should make sure the following conditions are
 
 # Enabling LetsEncrypt
 
-Connect to your host server via a terminal (SSH) connection and execute the following commands:
+To enable LetsEncrypt, follow these steps:
 
-```
-cd /var/azuracast
-./docker.sh update-self
-./docker.sh letsencrypt-create
-```
+- Log in to your AzuraCast installation
+- Click the dropdown on the top right, then "System Administration"
+- Click "System Settings"
+- Select the "Services" tab
+- Complete the LetsEncrypt section fields
+- Click "Save Changes" at the bottom
 
-Answer the prompts as shown to complete the setup process.
+The HTTPS certificate will automatically be generated in the next few minutes, but you can do it manually by clicking the "Create/Renew Certificate" button under the LetsEncrypt fields.
 
-<br>
+> If users are still having issues with audio not playing, please ensure you have the "Use Web Proxy" option enabled in your System Settings. 
+{.is-info}
 
 ## Renewing a Let's Encrypt Certificate
 
 The web service will automatically renew your LetsEncrypt certificates. If you provide an e-mail in the initial setup process, that e-mail will be used to send you reminders of upcoming expiration in the event that automatic renewal fails.
-
-## What to do when Let's Encrypt is not working
-> If users are still having issues with audio not playing, please ensure you have the Web Proxy Radio Option enabled in your System Settings. 
-{.is-success}
-
-
-The first thing that you should do when you have set up Let's Encrypt as described above and you still see AzuraCast serving a self-signed certificate is to restart AzuraCast via the following commands:
-
-```
-docker-compose down
-docker-compose up -d
-```
-
-After starting AzuraCast, wait a few minutes just to be sure that everything has started up correctly then check if AzuraCast is still serving the self-signed certificate.
-
-If it is still serving the self-signed certificate, take a look into the logs of the container to see if there are any errors related to retrieving or renewing the certificate:
-
-```
-docker-compose logs -f
-```
 
 # Using a Custom Certificate
 
