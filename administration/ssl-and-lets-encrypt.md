@@ -2,7 +2,7 @@
 title: SSL & Let's Encrypt
 description: Securing your AzuraCast installation with SSL / HTTPS
 published: true
-date: 2022-09-12T07:36:13.077Z
+date: 2022-09-12T22:06:56.630Z
 tags: administration, docker
 editor: markdown
 dateCreated: 2021-02-05T19:28:14.682Z
@@ -24,7 +24,7 @@ LetsEncrypt is a free and simple way to allow safe and secure connections to you
 
 Before setting up LetsEncrypt, you should make sure the following conditions are met:
 
-- **AzuraCast must be on its own domain or subdomain.** You can't set up LetsEncrypt using only an IP address; you must have a domain (i.e. mysite.com) or a subdomain (radio.mysite.com) set up to point to your AzuraCast installation.
+- **AzuraCast must be on its own domain or subdomain.** You can't set up LetsEncrypt using only an IP address; you must have a domain (i.e. example.com) or a subdomain (radio.example.com) set up to point to your AzuraCast installation.
 
 - **AzuraCast's web server must be served on the default ports, 80 for HTTP and 443 for HTTPS.** By default, AzuraCast is already set up this way, but if you've modified the ports to serve the site on a secondary port, you must switch the ports back to the defaults when setting up LetsEncrypt and when performing renewals.
 
