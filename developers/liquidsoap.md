@@ -2,7 +2,7 @@
 title: Liquidsoap
 description: Liquidsoap the audio processing tool and language
 published: true
-date: 2021-05-30T14:20:57.325Z
+date: 2021-05-30T14:21:00.161Z
 tags: development, audio processing, advanced feature
 editor: markdown
 dateCreated: 2021-02-06T19:39:05.548Z

@@ -2,7 +2,7 @@
 title: Scaling AzuraCast
 description: Expectations on what resources are required to host an AzuraCast instance, and tips on how to scale up as your station grows.
 published: true
-date: 2021-10-09T02:48:28.494Z
+date: 2021-10-09T02:48:30.612Z
 tags: 
 editor: markdown
 dateCreated: 2021-10-08T23:42:49.762Z

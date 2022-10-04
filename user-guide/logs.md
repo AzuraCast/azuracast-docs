@@ -2,7 +2,7 @@
 title: Logs
 description: How to get logs and what logs are available
 published: true
-date: 2022-03-08T22:43:29.586Z
+date: 2022-05-20T14:33:03.102Z
 tags: getting started, debugging
 editor: markdown
 dateCreated: 2021-02-05T22:33:04.885Z

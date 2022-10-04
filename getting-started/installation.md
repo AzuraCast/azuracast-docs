@@ -2,7 +2,7 @@
 title: Installation
 description: How to install AzuraCast on your server
 published: true
-date: 2021-12-14T07:43:44.802Z
+date: 2021-12-14T07:43:46.749Z
 tags: getting started
 editor: markdown
 dateCreated: 2021-02-05T19:10:58.100Z

@@ -2,7 +2,7 @@
 title: Media Management
 description: Managing and uploading media files in AzuraCast
 published: true
-date: 2021-02-09T03:17:29.777Z
+date: 2021-02-09T03:17:33.498Z
 tags: user guide
 editor: markdown
 dateCreated: 2021-02-06T01:46:50.643Z

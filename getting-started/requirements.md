@@ -2,7 +2,7 @@
 title: Requirements
 description: This page tells you what is required to run AzuraCast
 published: true
-date: 2022-04-14T15:46:06.890Z
+date: 2022-05-20T14:32:58.323Z
 tags: getting started
 editor: markdown
 dateCreated: 2021-02-05T18:58:13.221Z

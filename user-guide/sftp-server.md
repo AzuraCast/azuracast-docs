@@ -2,7 +2,7 @@
 title: SFTP Server
 description: The built-in SFTP server for Docker installations
 published: true
-date: 2021-02-08T04:56:06.547Z
+date: 2021-02-08T04:56:11.895Z
 tags: user guide, docker
 editor: markdown
 dateCreated: 2021-02-06T01:52:19.098Z

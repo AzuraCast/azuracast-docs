@@ -2,7 +2,7 @@
 title: Release Channels
 description: How to change the release channel for your installation
 published: true
-date: 2022-01-21T12:51:02.126Z
+date: 2022-01-21T12:51:04.387Z
 tags: docker, getting started
 editor: markdown
 dateCreated: 2021-02-05T20:17:15.010Z

@@ -2,7 +2,7 @@
 title: Einhängepunkte
 description: Verwalte mit Einhängepunkten wie Hörer sich mit Übertragungen verbinden und diese anhören können
 published: true
-date: 2022-06-06T21:56:48.475Z
+date: 2022-06-06T21:56:50.383Z
 tags: user guide
 editor: markdown
 dateCreated: 2022-06-06T21:56:48.475Z

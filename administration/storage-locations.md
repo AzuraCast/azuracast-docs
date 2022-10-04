@@ -2,7 +2,7 @@
 title: Storage Locations
 description: Managing the storage locations of your media files, recordings and backups for your stations
 published: true
-date: 2021-02-22T22:51:29.326Z
+date: 2021-02-22T22:51:32.285Z
 tags: administration
 editor: markdown
 dateCreated: 2021-02-06T07:09:01.235Z

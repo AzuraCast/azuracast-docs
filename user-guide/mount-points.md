@@ -2,7 +2,7 @@
 title: Mount Points
 description: Managing how listeners connect and listen to your broadcasts with Mount Points
 published: true
-date: 2021-02-09T03:19:05.073Z
+date: 2021-04-09T08:32:34.823Z
 tags: user guide
 editor: markdown
 dateCreated: 2021-02-06T22:44:39.864Z

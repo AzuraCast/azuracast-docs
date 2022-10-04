@@ -2,7 +2,7 @@
 title: Press Kit
 description: Press Kit for the media and journalists
 published: true
-date: 2022-02-06T02:46:40.188Z
+date: 2022-02-06T02:46:42.170Z
 tags: press, media, pr, journalists, journalism
 editor: markdown
 dateCreated: 2022-02-04T02:53:30.025Z

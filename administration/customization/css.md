@@ -2,7 +2,7 @@
 title: Styling your AzuraCast installation with CSS
 description: 
 published: true
-date: 2021-05-10T17:37:33.212Z
+date: 2021-05-10T17:37:35.870Z
 tags: administration
 editor: markdown
 dateCreated: 2021-02-06T06:55:55.731Z

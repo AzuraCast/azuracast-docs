@@ -2,7 +2,7 @@
 title: Installing AzuraCast on Windows
 description: 
 published: true
-date: 2021-12-14T07:32:52.563Z
+date: 2021-12-14T07:32:54.423Z
 tags: 
 editor: markdown
 dateCreated: 2021-12-14T07:32:52.563Z

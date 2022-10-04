@@ -2,7 +2,7 @@
 title: Backup & Restore
 description: Creating backups and restoring your AzuraCast installation from them
 published: true
-date: 2021-10-06T01:34:34.977Z
+date: 2021-10-06T01:34:36.917Z
 tags: administration
 editor: markdown
 dateCreated: 2021-02-06T07:01:08.655Z

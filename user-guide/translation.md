@@ -2,7 +2,7 @@
 title: Translation
 description: Translating AzuraCast into other languages
 published: true
-date: 2021-02-08T04:58:47.860Z
+date: 2021-02-08T04:58:51.892Z
 tags: getting started
 editor: markdown
 dateCreated: 2021-02-06T02:23:37.020Z
