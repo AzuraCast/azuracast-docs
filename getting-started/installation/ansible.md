@@ -1,11 +1,11 @@
 ---
 title: Installing AzuraCast with Ansible
 description: 
-published: true
-date: 2022-06-30T22:51:26.964Z
+published: 1
+date: 2022-10-22T11:43:59.349Z
 tags: advanced feature, ansible
 editor: markdown
-dateCreated: 2021-02-05T19:53:05.881Z
+dateCreated: 2022-10-04T18:55:16.560Z
 ---
 
 > **We do not recommend this installation method for most users.** See the "Disadvantages" section below for more information. A greater familiarity with the Linux shell is required to use this installation method, and we don't provide support for many Ansible-specific issues. For most users, we strongly recommend the Docker installation method.
@@ -39,7 +39,8 @@ When evaluating which installation method to use, be aware of the following cons
 
 Currently, the following operating systems are supported:
 
-- **Ubuntu 20.04 "Focal" LTS (Recommended)**
+- **Ubuntu 22.04 "Jammy" LTS (Recommended)**
+- Ubuntu 20.04 "Focal" LTS
 
 Our support for LTS versions of Ubuntu follows the [Ubuntu support lifecycle](https://ubuntu.com/about/release-cycle). Typically, LTS versions are supported for a period of 5 years following their release.
 
