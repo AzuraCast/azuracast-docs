@@ -1,12 +1,15 @@
 ---
 title: Installation
 description: How to install AzuraCast on your server
-published: true
-date: 2021-12-14T07:43:46.749Z
+published: 1
+date: 2022-10-27T14:27:10.155Z
 tags: getting started
 editor: markdown
-dateCreated: 2021-02-05T19:10:58.100Z
+dateCreated: 2022-10-04T18:51:19.324Z
 ---
+
+> AzuraCast is completely free for you to install and use, even for commercial purposes. If you enjoy it, please consider [donating](/en/contribute/donate) to support us. We are a small team building a very big application, so your support is very important to us.
+{.is-info}
 
 AzuraCast is server-based software that is installed on a VPS, dedicated server or other computer and serves both your station broadcasts and its own web interface through the server's network connection.
 
