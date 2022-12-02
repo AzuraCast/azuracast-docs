@@ -1,11 +1,11 @@
 ---
 title: Now Playing Data APIs
 description: 
-published: true
-date: 2021-02-08T05:10:48.738Z
-tags: development, api
+published: 1
+date: 2022-12-02T15:43:48.633Z
+tags: api, development
 editor: markdown
-dateCreated: 2021-02-06T19:26:07.120Z
+dateCreated: 2022-10-04T18:55:13.622Z
 ---
 
 The most important and frequently accessed pieces of information that AzuraCast stores are all served as part of a single group of data, which we refer to as the "Now Playing" data.
@@ -139,14 +139,101 @@ http://your-azuracast-site.example.com/api/nowplaying_static/station_shortcode.j
 
 Implementations of this method look exactly the same as for the Standard Now Playing API (above), except with the URL updated to the static URL for the station.
 
-# Live Websocket/EventSource
+# High-Performance Updates
+
+## High Performance Updates {.tabset}
+
+### Version 0.17.6 or Newer
+
+We deliver a high-performance (low-latency and low server CPU burden) Now Playing feed thanks to a realtime messaging library called [Centrifugo](https://centrifugal.dev/). Using this connection method, each listener gets immediate track updates while only maintaining a single lightweight HTTP connection.
+
+Now Playing updates are delivered as unidirectional messages via Websocket, Server-Sent Events (SSE) or Long Polling web streams. 
+
+#### Websockets
+
+The URL for websocket connections is:
+
+```
+wss://your-azuracast-url/api/live/nowplaying/websocket
+```
+
+Upon connection, you should send a connection string in the form of a JSON request:
+
+```json
+{ "subs": { "station:your_station_name": {} }}
+```
+
+Replacing `your_station_name` with your station's URL stub or short name.
+
+You will start to receive a feed of empty pings (`{}`) and Now Playing updates. You can identify Now Playing updates as they will have, in their parsed JSON, `pub.data.np`.
+
+An example JavaScript implementation is below:
+
+```javascript
+let socket = new WebSocket("wss://your-azuracast-url/api/live/nowplaying/websocket");
+
+socket.onopen = function(e) {
+  socket.send(JSON.stringify({
+    "subs": {
+      "station:azuratest_radio": {}
+    } 
+  });
+};
+
+socket.onmessage = function(event) {
+  const data = JSON.parse(event.data);
+  const np = data?.pub?.data?.np || null;
+  if (np) {
+    // Process Now Playing data in `np` var.
+  }
+};
+```
+
+#### Server-Sent Events (SSE/EventSource)
+
+The URL for SSE connections is:
+
+```
+https://your-azuracast-url/api/live/nowplaying/sse?cf_connect=TOKEN
+```
+
+Where the `cf_connect` URL parameter is the same connection token as the first message in the Websocket example.
+
+An example JavaScript implementation is below:
+
+```javascript
+const sseUri = "https://your-azuracast-url/api/live/nowplaying/sse?cf_connect="+JSON.stringify({
+  "subs": {
+    "station:azuratest_radio": {}
+  }
+});
+
+let sse = new EventSource(sseUri);
+
+sse.onmessage = (e) => {
+  const data = JSON.parse(e.data);
+  const np = data?.pub?.data?.np || null;
+  if (np) {
+    // Handle Now Playing data update as `np` variable.
+  }
+};
+```
+
+#### HTTP Stream
+
+The URL for HTTP Stream connections is:
+
+```
+https://your-azuracast-url/api/live/nowplaying/http_stream?cf_connect=TOKEN
+```
+
+Where the `cf_connect` URL parameter is the same connection token as the first message in the Websocket example.
+
+### Version 0.17.0 or Earlier
 
 This method uses the [Nchan](https://nchan.io/) plugin for Nginx to handle connections to browsers and relays a single update from AzuraCast immediately to a large number of recipients. Because it's an Nginx plugin, it's optimized for high performance and can handle many hundreds of thousands of concurrent users.
 
 If this method is available, AzuraCast will automatically use it for all of its public players.
-
-> This feature is available on all Docker installations and Ansible ("Traditional") installations using Ubuntu 18.04. Installations using the older Ubuntu 16.04 cannot use this feature and should upgrade to take advantage of it.
-{.is-warning}
 
 The Websocket/EventSource API URL for a given station is available at:
 
@@ -158,14 +245,14 @@ http://your-azuracast-site.example.com/api/live/nowplaying/station_shortcode
 
 <br>
 
-## Advantages
+#### Advantages
 
 - This is the fastest way to receive updates when a song or other metadata changes. As soon as changes are detected by AzuraCast, they are immediately broadcast to all connected users within a fraction of a second.
 - Because the Nchan plugin optimizes message delivery, this method results in the lowest load on your server per connected user.
 
 <br>
 
-## Disadvantages
+#### Disadvantages
 
 - Any URLs in the API responses will always use the "Base URL" of your AzuraCast installation.
 - The "elapsed" and "remaining" durations will only be accurate as of when the file was written, not when it was downloaded by your client. You should instead compare the user's current UNIX timestamp against the `played_at` timestamp.
@@ -173,7 +260,7 @@ http://your-azuracast-site.example.com/api/live/nowplaying/station_shortcode
 
 <br>
 
-## Example Implementation
+#### Example Implementation
 
 To use this API method on a web site, first make sure the [Nchan Subscriber JavaScript library](https://github.com/slact/nchan.js/blob/master/NchanSubscriber.js) is loaded. This library can also be loaded via the NPM package manager using the command `npm i nchan`.
 
