@@ -1,11 +1,11 @@
 ---
 title: Docker
 description: All about Docker installations of AzuraCast
-published: true
-date: 2022-05-20T14:32:46.772Z
+published: 1
+date: 2022-12-12T15:07:17.528Z
 tags: administration, docker
 editor: markdown
-dateCreated: 2021-02-06T06:41:47.092Z
+dateCreated: 2022-10-04T18:50:19.720Z
 ---
 
 Docker installations come with four files by default:
