@@ -1,11 +1,11 @@
 ---
 title: Ansible
 description: 
-published: true
-date: 2021-02-08T04:26:37.483Z
-tags: advanced feature, ansible, administration
+published: 1
+date: 2022-12-29T16:45:14.617Z
+tags: administration, advanced feature, ansible
 editor: markdown
-dateCreated: 2021-02-06T06:50:37.504Z
+dateCreated: 2022-10-04T18:50:01.247Z
 ---
 
 # Why is Ansible Unsupported?
