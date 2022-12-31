@@ -24,10 +24,10 @@ AzuraCast provides you with the possibility to add custom JS via the `Custom Bra
 
 There you can add your own JavaScripts to the public pages with the editor for `Custom JS for Public Pages`.
 
-You can attach to events of the public player via the global `Vue_PublicFullPlayer` variable like this:
+You can attach to events of the public player like this:
 
 ```
-Vue_PublicFullPlayer.$eventHub.$on('np_updated', function(np_new) {
+$(document).on('now-playing', function(np_new) {
     // custom code with np_new
 });
 ```
