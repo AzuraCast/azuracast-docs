@@ -44,7 +44,7 @@ On-screen prompts will show you how the installation is progressing.
 
 ## Troubleshooting
 
-Some Virtual Private Server (VPS) providers sometimes ship a old version of Docker or Docker-Compose with their systems and the version isn't fully compatable with our installation script. This can be resolved by running these commands then attempting the installation process again. 
+Some Virtual Private Server (VPS) providers sometimes ship a old version of Docker or Docker-Compose with their systems and the version isn't fully compatible with our installation script. This can be resolved by running these commands then attempting the installation process again. 
 ``` bash
 cd /var/azuracast
 ./docker.sh install-docker
