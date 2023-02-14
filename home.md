@@ -1,11 +1,11 @@
 ---
 title: AzuraCast Docs
 description: Documentation for AzuraCast
-published: true
-date: 2022-05-20T14:33:00.522Z
+published: 1
+date: 2023-02-14T01:24:12.352Z
 tags: 
 editor: markdown
-dateCreated: 2021-02-05T06:09:43.264Z
+dateCreated: 2022-10-04T18:49:39.855Z
 ---
 
 > **AzuraCast is currently in beta.**
@@ -49,28 +49,29 @@ AzuraCast works for web radio stations of all types and sizes, and is built to r
 
 AzuraCast will automatically retrieve and install these components for you:
 
-#### Radio Software
+### Radio Software
 
 * **[Liquidsoap](https://www.liquidsoap.info/)** as the always-playing "AutoDJ"
-* **[Icecast 2.4](https://icecast.org/)** as a radio broadcasting frontend (Icecast-KH installed on supported platforms)
+* **[Icecast-KH](https://icecast.org/)** as a radio broadcasting frontend
 
 For x86/x64 installations, [SHOUTcast 2 DNAS](http://wiki.shoutcast.com/wiki/SHOUTcast_DNAS_Server_2) can also be used as a broadcasting frontend. SHOUTcast is non-free software and does not come bundled with AzuraCast, but can be installed via the administration panel after AzuraCast has been installed.
 
-#### Supporting Software
+### Supporting Software
 
 * **[NGINX](https://www.nginx.com)** for serving web pages and the radio proxy
 * **[MariaDB](https://mariadb.org/)** as the primary database
-* **[PHP 8.0](https://secure.php.net/)** powering the web application
+* **[PHP](https://secure.php.net/)** powering the web application
 * **[Redis](https://redis.io/)** for sessions, message queue storage, database and general caching
+* **[Centrifugo](https://centrifugal.dev/)** for high-performance "Now Playing" data feeds
 
 # AzuraCast API
 
-Once installed and running, AzuraCast exposes an API that allows you to monitor and interact with your stations.
-Documentation about this API and its endpoints are available on
-the [AzuraCast API Documentation](https://www.azuracast.com/api/index.html).
+Once installed and running, AzuraCast exposes a REST API that allows you to monitor and interact with your stations. Documentation about this API and its endpoints are available on the [AzuraCast API Documentation](https://www.azuracast.com/api/index.html).
+
+All of AzuraCast's frontend actions are performed through the API, so through API calls, you can manage your station(s) entirely via the API.
 
 # License
-AzuraCast is licensed under the [Apache license, version 2.0](https://github.com/AzuraCast/AzuraCast/blob/master/LICENSE.txt). This project is free and open-source software, and pull requests are always welcome
+AzuraCast is licensed under the [Affero GNU General Public License (GPL), version 3.0](https://github.com/AzuraCast/AzuraCast/blob/main/LICENSE.md). This project is free and open-source software, and pull requests are always welcome
 
 # Friends of AzuraCast
 We would like to thank the following organizations for their support of AzuraCast's ongoing development:
@@ -80,6 +81,7 @@ We would like to thank the following organizations for their support of AzuraCas
 - [CrowdIn](https://crowdin.com/) For giving us a simple and powerful tool to help translate our application for users around the world
 - [Netlify](https://www.netlify.com/) For supporting open-source software like ours and for serving as the host of our web site!
 - [BrowserStack](https://www.browserstack.com/) For providing us a tool that allows us to test across multiple browsers in one place
+- [Depot](https://depot.dev/?utm_source=AzuraCast) for powering our Docker image builds.
 {.links-list}
 
-The creators and maintainers of the many free and open-source tools that AzuraCast is built on, who have done so much to help move FOSS forward
+...and the creators and maintainers of the many free and open-source tools that AzuraCast is built on, who have done so much to help move FOSS forward!
