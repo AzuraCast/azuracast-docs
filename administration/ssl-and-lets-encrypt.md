@@ -2,7 +2,7 @@
 title: SSL & Let's Encrypt
 description: Securing your AzuraCast installation with SSL / HTTPS
 published: 1
-date: 2023-02-16T00:33:55.429Z
+date: 2023-02-16T00:34:15.002Z
 tags: administration, docker
 editor: markdown
 dateCreated: 2022-10-04T18:50:30.572Z
@@ -54,7 +54,7 @@ From the "System Settings" panel inside AzuraCast, you can enable the "Always Us
 
 Once this setting is enabled, not only will all users be redirected to the secure version of AzuraCast when visiting, but HTTP Strict Transport Security (HSTS) will be enabled, which requires a valid SSL certificate to function. This significantly improves the security of your connection to AzuraCast and should be enabled whenever possible.
 
-### Disabling HSTS via CLI
+## Disabling HSTS via CLI
 
 If you enable HTTP Strict Transport Security, and then your domain is no longer available via HTTPS, you will normally be unable to access your installation via your web browser.
 
