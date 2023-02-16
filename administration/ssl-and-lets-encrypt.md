@@ -1,11 +1,11 @@
 ---
 title: SSL & Let's Encrypt
 description: Securing your AzuraCast installation with SSL / HTTPS
-published: true
-date: 2022-09-12T22:07:00.058Z
+published: 1
+date: 2023-02-16T00:33:55.429Z
 tags: administration, docker
 editor: markdown
-dateCreated: 2021-02-05T19:28:14.682Z
+dateCreated: 2022-10-04T18:50:30.572Z
 ---
 
 # Enabling HTTPS with LetsEncrypt
@@ -48,10 +48,28 @@ The HTTPS certificate will automatically be generated in the next few minutes, b
 
 The web service will automatically renew your LetsEncrypt certificates. If you provide an e-mail in the initial setup process, that e-mail will be used to send you reminders of upcoming expiration in the event that automatic renewal fails.
 
+# Always Use HTTPS (HTTP Strict Transport Security)
+
+From the "System Settings" panel inside AzuraCast, you can enable the "Always Use HTTPS" setting in the "Security & Privacy" tab.
+
+Once this setting is enabled, not only will all users be redirected to the secure version of AzuraCast when visiting, but HTTP Strict Transport Security (HSTS) will be enabled, which requires a valid SSL certificate to function. This significantly improves the security of your connection to AzuraCast and should be enabled whenever possible.
+
+### Disabling HSTS via CLI
+
+If you enable HTTP Strict Transport Security, and then your domain is no longer available via HTTPS, you will normally be unable to access your installation via your web browser.
+
+You can, however, turn this setting off via the SSH terminal, by using the code below:
+
+```bash
+cd /var/azuracast
+bash docker.sh cli azuracast:settings:set always_use_ssl 0
+```
+
+This will disable the setting and enable you to reconnect to your installation.
+
 # Using a Custom Certificate
 
 If you have a custom SSL certificate on your host, you should create a `docker-compose.override.yml` file in your `/var/azuracast` directory on the host server with the contents below, modified to reflect your domain name and the path to your SSL certificate and key:
-
 
 ### By Version {.tabset}
 #### Stable Release Version (0.16.0) and newer
