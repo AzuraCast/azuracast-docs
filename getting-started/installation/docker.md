@@ -1,11 +1,11 @@
 ---
 title: Docker Installation Guide
 description: How to install AzuraCast with Docker
-published: true
-date: 2022-05-20T14:32:56.204Z
+published: 1
+date: 2023-04-25T05:14:05.223Z
 tags: docker, getting started
 editor: markdown
-dateCreated: 2021-02-05T19:38:47.919Z
+dateCreated: 2022-10-04T18:55:22.502Z
 ---
 
 AzuraCast is powered by Docker and uses pre-built images that contain every component of the software. Don't worry if you aren't very familiar with Docker; our easy installer tools will handle installing Docker and Docker Compose for you, and updates are very simple.
@@ -79,3 +79,11 @@ chmod a+x docker.sh
 yes 'Y' | ./docker.sh setup-release
 yes '' | ./docker.sh install
 ```
+
+# After Installation
+
+Once you've installed AzuraCast, you're ready to use our web interface to set up your administrator account, create your first station and customize the system settings.
+
+Follow our [Post-Installation Steps](/en/getting-started/installation/post-installation-steps) for more details.
+
+If you want to optimize your installation to get the most out of a server with limited resources, follow our [Optimizing](/en/getting-started/installation/optimizing) guide.
