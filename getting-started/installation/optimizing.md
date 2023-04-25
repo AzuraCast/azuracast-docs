@@ -2,7 +2,7 @@
 title: Optimizing AzuraCast
 description: Tips for how to get the most out of AzuraCast on limited-resource installations.
 published: 1
-date: 2023-04-25T05:09:29.560Z
+date: 2023-04-25T05:20:49.003Z
 tags: 
 editor: markdown
 dateCreated: 2023-04-25T05:09:29.560Z
@@ -24,6 +24,8 @@ ENABLE_MEILISEARCH=false
 
 You can then restart your system (i.e. with `./docker.sh restart`) to disable Meilisearch.
 
+<br>
+
 ### Disable Audio Post-Processing
 
 If your installation is limited in available CPU, you should disable any "Audio Post-Processing" settings on any stations hosted on your server.
@@ -35,17 +37,23 @@ The total amount of extra resources per station consumed by post-processing is r
  - Basic Compression/Normalization (Low-Med CPU)
  - No Post-Processing (Least CPU)
 
+<br>
+
 ### Disable Unnecessary Mount Points
 
 If you have configured multiple mount points for your station, consider reducing the total number of mount points to a smaller subset if possible. Every mount point that the AutoDJ has to broadcast to uses a small, but steady, amount of CPU at all times.
 
 For example, if you offer a mobile MP3 and AAC/Ogg stream, consider limiting the mobile stream strictly to the (higher-performance per bit) AAC/Ogg stream, if your clients support it.
 
+<br>
+
 ### Keep Less Playback History
 
 In "System Settings", you will notice a setting called "Days of Playback History to Keep". This setting not only controls how far back you can view song history, but also how far back you can view detailed listener statistics.
 
 Setting it to a large value or "Indefinitely" will quickly fill up your available hard drive space. If you change this setting, within an hour or so AzuraCast will automatically "trim" any extra song history and listener data, which will often result in a significant reduction in disk space used.
+
+<br>
 
 ### Use Remote Storage for Media, Backups, etc.
 
