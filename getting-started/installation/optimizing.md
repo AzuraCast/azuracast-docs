@@ -2,7 +2,7 @@
 title: Optimizing AzuraCast
 description: Tips for how to get the most out of AzuraCast on limited-resource installations.
 published: 1
-date: 2023-04-25T05:20:49.003Z
+date: 2023-04-25T05:31:35.363Z
 tags: 
 editor: markdown
 dateCreated: 2023-04-25T05:09:29.560Z
@@ -61,7 +61,7 @@ If your VPS or cloud hosting environment is limited in disk space, you can alway
 
 The most popular method of remote storage in AzuraCast is S3-compatible bucket storage. There are very many providers of S3-compatible storage out there, from the namesake Amazon's Simple Storage Service (S3) to Cloudflare's R2, Backblaze B1, or Wasabi. Pricing for storage and bandwidth can vary greatly between providers, so consider which option is best for your setup.
 
-If configuring a remote storage location for station media, be sure to select one that has little or no so-called "egress" bandwidth to your server, as there is a lot of back-and-forth traffic between AzuraCast and media storage locations. This is less of a concern if you are using S3 buckets for backups or recordings.
+If configuring a remote storage location for station media, be sure to select one that has little or no fees for so-called "egress" bandwidth to your server, as there is a lot of back-and-forth traffic between AzuraCast and media storage locations. This is less of a concern if you are using S3 buckets for backups or recordings.
 
 ## Docker
 
