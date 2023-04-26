@@ -2,7 +2,7 @@
 title: Installation
 description: How to install AzuraCast on your server
 published: 1
-date: 2023-02-07T18:27:59.340Z
+date: 2023-04-26T16:14:10.061Z
 tags: getting started
 editor: markdown
 dateCreated: 2022-10-04T18:51:19.324Z
@@ -49,16 +49,19 @@ Deploy a new Vultr VPS with the one-click installer on the Vultr marketplace.
 ## Installation Methods {.tabset}
 ### :whale: Docker (Recommended)
 
+**Docker installation now supports ARM64 devices as well (i.e. newer Raspbery Pi devices, and ARM64-based cloud hosts), so you can follow these same installation steps.**
+
 For a majority of users, our Docker installation method is the preferred way of installing and using AzuraCast. Click the link below for Docker installation instructions.
 
 - [Installing AzuraCast with Docker](/en/getting-started/installation/docker)
 {.links-list}
 
-### Raspberry Pi/ARM64 Devices
+### Docker App Installers
 
-We have created a specialized guide with installation instructions for users of the Raspberry Pi device series or other similar ARM64-based computers.
+AzuraCast is also available via Docker-based app installer tools. These tools let you install AzuraCast alongside other Docker images in a simple visual manner.
 
-- [Installing AzuraCast on an ARM64 Computer](/en/getting-started/installation/arm64)
+- [DockSTARTer](https://dockstarter.com/apps/azuracast/)
+- 
 {.links-list}
 
 ### Windows 10/11 (WSL2)
