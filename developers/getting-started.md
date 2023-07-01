@@ -1,11 +1,11 @@
 ---
 title: Getting Started
 description: Developing with AzuraCast
-published: true
-date: 2021-08-08T23:07:24.443Z
+published: 1
+date: 2023-07-01T13:20:23.605Z
 tags: development
 editor: markdown
-dateCreated: 2021-02-06T07:31:58.854Z
+dateCreated: 2022-10-04T18:51:03.836Z
 ---
 
 # Best Practices
@@ -109,16 +109,11 @@ docker-compose up -d
 
 AzuraCast uses a special Docker container containing the full static asset build stack. This makes it very easy to rebuild the compiled assets after having made changes to the JS or SCSS files.
 
-To access the static container, run:
+To build and run the container for building the static assets / compiling the frontend run the following commands:
 
 ```bash
-bash docker.sh static
-```
-
-When inside the container run the following command to build the assets:
-
-```bash
-npm run build
+docker compose -p azuracast_frontend -f docker-compose.frontend.yml build
+docker compose -p azuracast_frontend -f docker-compose.frontend.yml run --rm frontend npm run build
 ```
 
 By default, this will clean up the existing asset manifests and build new CSS and JS files. 
