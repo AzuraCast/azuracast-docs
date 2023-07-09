@@ -2,7 +2,7 @@
 title: Getting Started
 description: Developing with AzuraCast
 published: 1
-date: 2023-07-01T13:20:23.605Z
+date: 2023-07-09T12:00:34.735Z
 tags: development
 editor: markdown
 dateCreated: 2022-10-04T18:51:03.836Z
@@ -113,6 +113,7 @@ To build and run the container for building the static assets / compiling the fr
 
 ```bash
 docker compose -p azuracast_frontend -f docker-compose.frontend.yml build
+docker compose -p azuracast_frontend -f docker-compose.frontend.yml run --rm frontend npm ci --include=dev
 docker compose -p azuracast_frontend -f docker-compose.frontend.yml run --rm frontend npm run build
 ```
 
