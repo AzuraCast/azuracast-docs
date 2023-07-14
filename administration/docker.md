@@ -2,7 +2,7 @@
 title: Docker
 description: All about Docker installations of AzuraCast
 published: 1
-date: 2022-12-12T15:07:17.528Z
+date: 2023-07-14T12:58:43.398Z
 tags: administration, docker
 editor: markdown
 dateCreated: 2022-10-04T18:50:19.720Z
@@ -316,6 +316,10 @@ services:
     volumes:
       - /path/on/host/computer:/var/azuracast/stations
 ```
+
+Modify the `/path/on/host/computer` with the path to the directory that you want to mount.
+
+You will need to restart your Docker containers using `docker-compose down`, then `docker-compose up -d` to apply any changes made to this file.
 
 ### Version 0.15.2 Stable and Older
 
