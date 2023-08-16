@@ -2,10 +2,10 @@
 title: SFTP Server
 description: The built-in SFTP server for Docker installations
 published: true
-date: 2021-02-08T04:56:11.895Z
-tags: user guide, docker
+date: 2023-08-16T20:59:33.651Z
+tags: docker, user guide
 editor: markdown
-dateCreated: 2021-02-06T01:52:19.098Z
+dateCreated: 2023-07-30T12:14:43.684Z
 ---
 
 > The Built-in SFTP server is only available on the Docker installation.
@@ -28,13 +28,26 @@ AZURACAST_SFTP_PORT=2022
 > Note, this is a file named `.env`, with no filename, and not the `azuracast.env` file
 {.is-info}
 
+# Connecting to SFTP
 
-# SFTP clients
+## SFTP clients
 Here's a small list of FTP clients you can use that are known to work with AzuraCast's SFTP system.
 
-- [Filezilla](https://filezilla-project.org/) - Windows, Mac OS X and Linux 32 bit & 64 bit
+- [Filezilla](https://filezilla-project.org/) - Windows, MacOS and Linux 32 bit & 64 bit
 - [WinSCP](https://winscp.net/eng/download.php) - Windows only
-- [Cyberduck](https://cyberduck.io/) - Windows and Mac
+- [Cyberduck](https://cyberduck.io/) - Windows and MacOS
 {.links-list}
 
 A more exhaustive list can be found [here](https://en.wikipedia.org/wiki/Comparison_of_FTP_client_software).
+
+## Mounting as a Directory on Your Computer
+
+There are also numerous tools that let you create a virtual filesystem based on an SFTP connection, which then lets you drag and drop files to and from the filesystem using your OS's standard file explorer:
+
+- [Mountain Duck](https://mountainduck.io/) - Windows and MacOS
+- [ExpanDrive](https://www.expandrive.com/) - Windows, MacOS and Linux
+- [SSHFS for Linux](https://github.com/libfuse/sshfs)
+- [SSHFS for Windows](https://github.com/winfsp/sshfs-win)
+{.links-list}
+
+For more information on configuring SSHFS, see [this thread](https://github.com/AzuraCast/AzuraCast/discussions/6510).
