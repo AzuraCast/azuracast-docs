@@ -2,7 +2,7 @@
 title: SFTP Server
 description: The built-in SFTP server for Docker installations
 published: true
-date: 2023-08-16T20:59:33.651Z
+date: 2023-08-16T21:04:45.633Z
 tags: docker, user guide
 editor: markdown
 dateCreated: 2023-07-30T12:14:43.684Z
@@ -15,7 +15,10 @@ All AzuraCast Docker installations come with a built-in SFTP server that allows 
 
 # Creating SFTP Users
 
-Under the "Utilities" section of your station, you will see an entry labeled "SFTP Users". Click this to view existing users and the connection details for connecting to your server via an SFTP client of your choice.
+> You will only be able to connect to the SFTP server to manage your media if your station's storage location is a "Local" one to the server. If you're connecting to S3, Dropbox, etc. then you can instead use clients that can connect directly to the same storage location your station is using.
+{.is-info}
+
+Under the `Media` sidebar menu for a given station, you will see an entry labeled `SFTP Users`. Click this to view existing users and the connection details for connecting to your server via an SFTP client of your choice.
 
 # Default Port
 
