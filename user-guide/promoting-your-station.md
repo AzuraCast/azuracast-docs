@@ -2,7 +2,7 @@
 title: Promoting Your Station
 description: Tools for helping listeners discover your station.
 published: true
-date: 2023-08-31T04:13:19.578Z
+date: 2023-08-31T04:15:08.030Z
 tags: 
 editor: markdown
 dateCreated: 2023-08-31T03:30:06.364Z
@@ -63,7 +63,7 @@ You can add the following entry to broadcast to the Xiph directory:
 
 ### Internet-radio.com
 
-The station directory at [internet-radio.com]() supports and recommends using Icecast's YellowPages directory to manage your station listing on their web site. Their forum includes [specific instructions for Icecast](https://www.internet-radio.com/community/threads/icecast-server-yp-directory-settings.22223/).
+The station directory at [internet-radio.com](https://www.internet-radio.com/) supports and recommends using Icecast's YellowPages directory to manage your station listing on their web site. Their forum includes [specific instructions for Icecast](https://www.internet-radio.com/community/threads/icecast-server-yp-directory-settings.22223/).
 
 To integrate the custom directory code into AzuraCast, edit your station's profile, then under the "Broadcasting" tab, you will find "Custom Configuration" at the bottom of the page.
 
