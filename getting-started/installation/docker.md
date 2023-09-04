@@ -2,7 +2,7 @@
 title: Docker Installation Guide
 description: How to install AzuraCast with Docker
 published: true
-date: 2023-09-04T15:53:44.131Z
+date: 2023-09-04T15:54:14.387Z
 tags: docker, getting started
 editor: markdown
 dateCreated: 2023-07-30T12:16:02.778Z
@@ -20,14 +20,14 @@ Connect to the server or computer you want to install AzuraCast on via an SSH te
 
 Pick a base directory on your host computer that AzuraCast can use. If you're on Linux, you can follow the steps below to use the recommended directory:
 
-```
+```bash
 mkdir -p /var/azuracast
 cd /var/azuracast
 ```
 
 Use these commands to download our Docker Utility Script, set it as executable and then run the Docker installation process:
 
-```
+```bash
 curl -fsSL https://raw.githubusercontent.com/AzuraCast/AzuraCast/main/docker.sh > docker.sh
 chmod a+x docker.sh
 ./docker.sh install
